@@ -2,8 +2,8 @@
 
 namespace DoctrineMigrations;
 
-use Doctrine\DBAL\Migrations\AbstractMigration;
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\Migrations\AbstractMigration;
 
 /**
  * Auto-generated Migration: Please modify to your needs!
@@ -14,6 +14,12 @@ final class Version20180619161633 extends AbstractMigration
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
+
+        $this->addSql('UPDATE IGNORE card SET release_date = release_datetime WHERE release_date = "0000-00-00 00:00:00" OR release_date IS NULL');
+        $this->addSql('UPDATE IGNORE collection SET expiry_date = NULL WHERE expiry_date = "0000-00-00"');
+        $this->addSql('UPDATE IGNORE collection SET expiry_datetime = NULL WHERE expiry_datetime = "0000-00-00 00:00:00"');
+        $this->addSql('UPDATE IGNORE feat SET date_achieved = "2020-01-01" WHERE date_achieved = "0000-00-00"');
+        $this->addSql('UPDATE IGNORE queue SET published_at = NULL WHERE published_at = "0000-00-00 00:00:00"');
 
         $this->addSql('DROP TABLE alt_recipe');
         $this->addSql('DROP TABLE lock_recipe');
@@ -30,6 +36,8 @@ final class Version20180619161633 extends AbstractMigration
         $this->addSql('ALTER TABLE card_news CHANGE identifier identifier VARCHAR(100) NOT NULL, CHANGE timestamp timestamp DATETIME NOT NULL');
         $this->addSql('ALTER TABLE card_news_archive CHANGE identifier identifier VARCHAR(100) NOT NULL, CHANGE timestamp timestamp DATETIME NOT NULL');
         $this->addSql('ALTER TABLE queue CHANGE created_at created_at DATETIME NOT NULL, CHANGE published published TINYINT(1) NOT NULL, CHANGE pause pause TINYINT(1) NOT NULL, CHANGE push push TINYINT(1) NOT NULL');
+
+        $this->addSql('UPDATE IGNORE feat SET date_achieved = NULL WHERE date_achieved = "2020-01-01"');
     }
 
     public function down(Schema $schema) : void
