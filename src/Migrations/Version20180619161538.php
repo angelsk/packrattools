@@ -31,6 +31,17 @@ final class Version20180619161538 extends AbstractMigration
         $this->addSql('CREATE TABLE IF NOT EXISTS lock_recipe (lock_recipe_id int(11) NOT NULL AUTO_INCREMENT, card_id int(11) NOT NULL, current tinyint(1) NOT NULL DEFAULT \'1\', PRIMARY KEY (lock_recipe_id), KEY card_id (card_id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
         $this->addSql('CREATE TABLE IF NOT EXISTS queue (id int(11) NOT NULL AUTO_INCREMENT, type varchar(50) NOT NULL, tweet varchar(255) NOT NULL, created_at timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP, published tinyint(1) NOT NULL DEFAULT \'0\', published_at timestamp NULL DEFAULT NULL, pause tinyint(1) NOT NULL DEFAULT \'0\', push tinyint(1) NOT NULL DEFAULT \'0\', error varchar(255) DEFAULT NULL, PRIMARY KEY (id), KEY published (published)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
 
+        // LEGACY weird dates
+        $this->addSql('UPDATE IGNORE card SET release_date = release_datetime WHERE release_date = "0000-00-00 00:00:00" OR release_date IS NULL');
+        $this->addSql('UPDATE IGNORE collection SET expiry_date = NULL WHERE expiry_date = "0000-00-00"');
+        $this->addSql('UPDATE IGNORE collection SET expiry_datetime = NULL WHERE expiry_datetime = "0000-00-00 00:00:00"');
+        $this->addSql('UPDATE IGNORE feat SET date_achieved = "2022-01-01" WHERE date_achieved = "0000-00-00"');
+        $this->addSql('UPDATE IGNORE queue SET published_at = NULL WHERE published_at = "0000-00-00 00:00:00"');
+
+        $this->addSql('ALTER TABLE feat CHANGE date_achieved date_achieved DATE DEFAULT NULL');
+
+        $this->addSql('UPDATE IGNORE feat SET date_achieved = NULL WHERE date_achieved = "2022-01-01"');
+
         // LEGACY TABLE format
         $this->addSql("ALTER TABLE artist ENGINE=InnoDB");
         $this->addSql("ALTER TABLE card ENGINE=InnoDB");
