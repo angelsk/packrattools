@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(
- *      name="card_news",
- *      uniqueConstraints={
- *          @ORM\UniqueConstraint(name="news_type", columns={"news_type", "identifier", "market"})
- *      }
+ *     name="card_news",
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="news_type", columns={"news_type", "identifier", "market"})
+ *     }
  * )
  * @ORM\Entity
  */
@@ -27,7 +27,7 @@ class News
     /**
      * @var string
      *
-     * @ORM\Column(name="news_type", type="string", length=0, nullable=false, options={"default"="card"})
+     * @ORM\Column(name="news_type", type="string", length=0, nullable=false, options={"default" = "card"})
      * Options: 'card','collection'
      */
     public $type = 'card';
@@ -35,7 +35,7 @@ class News
     /**
      * @var string
      *
-     * @ORM\Column(name="release_type", type="string", length=0, nullable=false, options={"default"="new"})
+     * @ORM\Column(name="release_type", type="string", length=0, nullable=false, options={"default" = "new"})
      * Options: 'new','existing','draw','rat','recipe','thawed','update_recipe'
      */
     public $releaseType = 'new';

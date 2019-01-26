@@ -6,16 +6,16 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(
- *      name="card_history",
- *      uniqueConstraints={
- *          @ORM\UniqueConstraint(
- *              name="card_market_day", 
- *              columns={"card_id", "market", "price", "price_type", "price_date"}
- *          )
- *      }, 
- *      indexes={
- *          @ORM\Index(name="card_id_idx", columns={"card_id"})
- *      }
+ *     name="card_history",
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(
+ *             name="card_market_day",
+ *             columns={"card_id", "market", "price", "price_type", "price_date"}
+ *         )
+ *     },
+ *     indexes={
+ *         @ORM\Index(name="card_id_idx", columns={"card_id"})
+ *     }
  * )
  * @ORM\Entity
  */
@@ -24,7 +24,7 @@ class CardHistory
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned"=true})
+     * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned" = true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

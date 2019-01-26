@@ -8,13 +8,12 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(
  *     name="card",
  *     uniqueConstraints={
- *          @ORM\UniqueConstraint(name="card_identifier", columns={"card_identifier", "collection_id"}),
- *          @ORM\UniqueConstraint(name="packrat_api_id", columns={"packrat_id"})
- *      },
- *      indexes={
- *          @ORM\Index(name="collection_id", columns={"collection_id"}), 
- *          @ORM\Index(name="card_type", columns={"card_type"})
- *      }
+ *         @ORM\UniqueConstraint(name="card_identifier", columns={"card_identifier", "collection_id"}),
+ *         @ORM\UniqueConstraint(name="packrat_api_id", columns={"packrat_id"})
+ *     },
+ *     indexes={
+ *         @ORM\Index(name="card_type", columns={"card_type"})
+ *     }
  * )
  * @ORM\Entity
  */
