@@ -44,7 +44,7 @@ class News
      * @var string
      *
      * @ORM\Column(name="identifier", type="string", length=100, nullable=false)
-     * @TODO: Convert to ID
+     * @TODO: Convert to ID?
      */
     public $cardIdentifier;
 

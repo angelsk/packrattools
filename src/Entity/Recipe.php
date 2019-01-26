@@ -13,6 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Recipe
 {
+    use Common\CardTrait;
+
     /**
      * @var int
      *
@@ -20,20 +22,13 @@ class Recipe
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="card_id", type="integer", nullable=false)
-     * @TODO: Link to cards
-     */
-    public $cardId;
+    private $id;
 
     /**
      * @var int
      *
      * @ORM\Column(name="ingredient_1", type="integer", nullable=false)
+     * @TODO: Link to card
      */
     public $ingredient1;
 
@@ -50,4 +45,12 @@ class Recipe
      * @ORM\Column(name="ingredient_3", type="integer", nullable=false)
      */
     public $ingredient3;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }

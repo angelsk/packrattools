@@ -21,22 +21,16 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class CardHistory
 {
+    use Common\CardTrait;
+
     /**
-     * @var int
+     * @var int|null
      *
      * @ORM\Column(name="id", type="integer", nullable=false, options={"unsigned" = true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="card_id", type="integer", nullable=false)
-     * @TODO: Link to card
-     */
-    public $cardId;
+    private $id;
 
     /**
      * @var string
@@ -48,14 +42,14 @@ class CardHistory
     /**
      * @var int
      *
-     * @ORM\Column(name="price", type="integer", nullable=false)
+     * @ORM\Column(name="price", type="integer", nullable=false, options={"default" = 0})
      */
     public $price = 0;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="price_type", type="string", length=0, nullable=false)
+     * @ORM\Column(name="price_type", type="string", length=0, nullable=false, options={"default" = "Cr"})
      * Options: 'Cr','Tx','Eggs'
      */
     public $type = 'Cr';
@@ -66,4 +60,12 @@ class CardHistory
      * @ORM\Column(name="price_date", type="date", nullable=false)
      */
     public $date;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }

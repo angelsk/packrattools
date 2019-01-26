@@ -5,19 +5,27 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(name="feat", indexes={@ORM\Index(name="collection_id", columns={"collection_id"})})
+ * @ORM\Table(name="feat")
  * @ORM\Entity
  */
 class Feat
 {
     /**
-     * @var int
+     * @var int|null
      *
      * @ORM\Column(name="feat_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
+
+    /**
+     * @var Collection|null
+     *
+     * @ORM\OneToOne(targetEntity="Collection", inversedBy="feat")
+     * @ORM\JoinColumn(referencedColumnName="collection_id")
+     */
+    private $collection;
 
     /**
      * @var string
@@ -39,14 +47,6 @@ class Feat
      * @ORM\Column(name="feat_title", type="string", length=255, nullable=false)
      */
     public $title;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="collection_id", type="integer", nullable=true)
-     * @TODO: Link to collection
-     */
-    public $collectionId;
 
     /**
      * @var string|null
@@ -73,14 +73,14 @@ class Feat
     /**
      * @var int
      *
-     * @ORM\Column(name="feat_points", type="integer", nullable=false)
+     * @ORM\Column(name="feat_points", type="integer", nullable=false, options={"default" = 1000})
      */
     public $points = 1000;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="feat_credits", type="integer", nullable=false)
+     * @ORM\Column(name="feat_credits", type="integer", nullable=false, options={"default" = 1000})
      */
     public $credits = 1000;
 
@@ -101,7 +101,7 @@ class Feat
     /**
      * @var bool
      *
-     * @ORM\Column(name="confirmed_num1", type="boolean", nullable=false)
+     * @ORM\Column(name="confirmed_num1", type="boolean", nullable=false, options={"default" = false})
      * NOTE: Do we need this any more now it's in the API?
      */
     public $confirmedNum1 = false;
@@ -109,7 +109,7 @@ class Feat
     /**
      * @var bool
      *
-     * @ORM\Column(name="available", type="boolean", nullable=false)
+     * @ORM\Column(name="available", type="boolean", nullable=false, options={"default" = true})
      */
     public $available = true;
 
@@ -119,4 +119,28 @@ class Feat
      * @ORM\Column(name="notes", type="text", nullable=true)
      */
     public $notes;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return Collection|null
+     */
+    public function getCollection(): ?Collection
+    {
+        return $this->collection;
+    }
+
+    /**
+     * @param Collection $collection
+     */
+    public function setCollection(Collection $collection): void
+    {
+        $this->collection = $collection;
+    }
 }

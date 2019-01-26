@@ -2,29 +2,51 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection as DoctrineCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(
- *      name="collection",
- *      uniqueConstraints={
- *          @ORM\UniqueConstraint(name="collection_identifier", columns={"collection_identifier"}),
- *          @ORM\UniqueConstraint(name="packrat_idx", columns={"packrat_id"})
- *      },
- *      indexes={@ORM\Index(name="family_id", columns={"family_id"})}
+ *     name="collection",
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="collection_identifier", columns={"collection_identifier"}),
+ *         @ORM\UniqueConstraint(name="packrat_idx", columns={"packrat_id"})
+ *     }
  * )
  * @ORM\Entity
  */
 class Collection
 {
     /**
-     * @var int
+     * @var int|null
      *
      * @ORM\Column(name="collection_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
+
+    /**
+     * @var Family|null
+     *
+     * @ORM\ManyToOne(targetEntity="Family", inversedBy="collections")
+     * @ORM\JoinColumn(referencedColumnName="family_id")
+     */
+    private $family;
+
+    /**
+     * @var Feat|null
+     *
+     * @ORM\OneToOne(targetEntity="Feat", mappedBy="collection")
+     */
+    private $feat;
+
+    /**
+     * @var DoctrineCollection
+     *
+     * @ORM\OneToMany(targetEntity="Card", mappedBy="collection")
+     */
+    private $cards;
 
     /**
      * @var int|null
@@ -46,14 +68,6 @@ class Collection
      * @ORM\Column(name="collection_name", type="string", length=100, nullable=true)
      */
     public $name;
-
-    /**
-     * @var int|null
-     *
-     * @ORM\Column(name="family_id", type="integer", nullable=true)
-     * @TODO: Link to family
-     */
-    public $familyId;
 
     /**
      * @var string|null
@@ -197,4 +211,46 @@ class Collection
      * @ORM\Column(name="has_changed", type="boolean", nullable=false)
      */
     public $hasChanged = false;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return Family|null
+     */
+    public function getFamily(): ?Family
+    {
+        return $this->family;
+    }
+
+    /**
+     * @param Family $family
+     */
+    public function setFamily(Family $family): void
+    {
+        $this->family = $family;
+    }
+
+    /**
+     * @return DoctrineCollection
+     */
+    public function getCards(): DoctrineCollection
+    {
+        return $this->cards;
+    }
+
+    /**
+     * @param Card $card
+     */
+    public function addCard(Card $card): void
+    {
+        if (!$this->cards->contains($card)) {
+            $this->cards->add($card);
+        }
+    }
 }
