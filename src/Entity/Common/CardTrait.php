@@ -11,7 +11,7 @@ trait CardTrait
      * @var Card|null
      *
      * @ORM\ManyToOne(targetEntity="Card")
-     * @ORM\JoinColumn(referencedColumnName="card_id")
+     * @ORM\JoinColumn(referencedColumnName="card_id", nullable=false)
      */
     private $card;
 

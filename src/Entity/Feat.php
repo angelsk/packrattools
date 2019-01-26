@@ -51,14 +51,6 @@ class Feat
     /**
      * @var string|null
      *
-     * @ORM\Column(name="feat_card", type="string", length=255, nullable=true)
-     * NOTE: I think I'm not using this any more
-     */
-    public $card;
-
-    /**
-     * @var string|null
-     *
      * @ORM\Column(name="feat_image", type="string", length=255, nullable=true)
      */
     public $image;
@@ -97,14 +89,6 @@ class Feat
      * @ORM\Column(name="datetime_achieved", type="datetime", nullable=true)
      */
     public $apiDateAchieved;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="confirmed_num1", type="boolean", nullable=false, options={"default" = false})
-     * NOTE: Do we need this any more now it's in the API?
-     */
-    public $confirmedNum1 = false;
 
     /**
      * @var bool

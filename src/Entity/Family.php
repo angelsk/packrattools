@@ -51,13 +51,6 @@ class Family
     /**
      * @var string|null
      *
-     * @ORM\Column(name="foil", type="string", length=255, nullable=true)
-     */
-    public $foil;
-
-    /**
-     * @var string|null
-     *
      * @ORM\Column(name="family_colour", type="string", length=6, nullable=true)
      */
     public $colour;
