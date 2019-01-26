@@ -71,6 +71,10 @@ class Recipe
     public function setIngredient1(Card $card): void
     {
         $this->ingredient1 = $card;
+
+        if ($this->card->getCollection() != $card->getCollection()) {
+            $this->card->getCollection()->addRelatedCollection($card->getCollection());
+        }
     }
 
     /**
@@ -79,6 +83,10 @@ class Recipe
     public function setIngredient2(Card $card): void
     {
         $this->ingredient2 = $card;
+
+        if ($this->card->getCollection() != $card->getCollection()) {
+            $this->card->getCollection()->addRelatedCollection($card->getCollection());
+        }
     }
 
     /**
@@ -87,5 +95,9 @@ class Recipe
     public function setIngredient3(Card $card): void
     {
         $this->ingredient3 = $card;
+
+        if ($this->card->getCollection() != $card->getCollection()) {
+            $this->card->getCollection()->addRelatedCollection($card->getCollection());
+        }
     }
 }
