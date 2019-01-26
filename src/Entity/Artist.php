@@ -17,7 +17,7 @@ class Artist
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
 
     /**
      * @var string
@@ -67,4 +67,12 @@ class Artist
      * @ORM\Column(name="information", type="text", nullable=true)
      */
     public $information;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }
