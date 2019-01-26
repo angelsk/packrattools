@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection as DoctrineCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -11,13 +12,20 @@ use Doctrine\ORM\Mapping as ORM;
 class Family
 {
     /**
-     * @var int
+     * @var int|null
      *
      * @ORM\Column(name="family_id", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
+
+    /**
+     * @var DoctrineCollection
+     *
+     * @ORM\OneToMany(targetEntity="Collection", mappedBy="family")
+     */
+    private $collections;
 
     /**
      * @var string
@@ -60,4 +68,30 @@ class Family
      * @ORM\Column(name="family_border", type="string", length=6, nullable=true)
      */
     public $border;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return DoctrineCollection
+     */
+    public function getCollections(): DoctrineCollection
+    {
+        return $this->collections;
+    }
+
+    /**
+     * @param Collection $collection
+     */
+    public function addCollection(Collection $collection): void
+    {
+        if (!$this->collections->contains($collection)) {
+            $this->collections->add($collection);
+        }
+    }
 }

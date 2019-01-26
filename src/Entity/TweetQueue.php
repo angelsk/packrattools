@@ -43,7 +43,7 @@ class TweetQueue
     /**
      * @var bool
      *
-     * @ORM\Column(name="published", type="boolean", nullable=false)
+     * @ORM\Column(name="published", type="boolean", nullable=false, options={"default" = false})
      */
     public $published = false;
 
@@ -57,14 +57,14 @@ class TweetQueue
     /**
      * @var bool
      *
-     * @ORM\Column(name="pause", type="boolean", nullable=false)
+     * @ORM\Column(name="pause", type="boolean", nullable=false, options={"default" = false})
      */
     public $pause = false;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="push", type="boolean", nullable=false)
+     * @ORM\Column(name="push", type="boolean", nullable=false, options={"default" = false})
      */
     public $push = false;
 
