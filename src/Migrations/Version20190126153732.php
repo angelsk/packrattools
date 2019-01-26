@@ -20,6 +20,8 @@ final class Version20190126153732 extends AbstractMigration
         // Clean up old archived data
         $this->addSql('DELETE FROM card_market_archive WHERE card_id NOT IN (SELECT card_id FROM card)');
         $this->addSql('DELETE FROM card_patterns WHERE card_id NOT IN (SELECT card_id FROM card)');
+        $this->addSql('DELETE FROM card_recipe WHERE card_id NOT IN (SELECT card_id FROM card)');
+        $this->addSql('DELETE FROM card_history WHERE card_id NOT IN (SELECT card_id FROM card)');
 
         // Change PKs from mediumint (legacy) to int
         $this->addSql('ALTER TABLE collection CHANGE collection_id collection_id INT NOT NULL AUTO_INCREMENT');
