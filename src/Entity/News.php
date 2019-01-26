@@ -22,7 +22,7 @@ class News
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
 
     /**
      * @var string
@@ -76,4 +76,12 @@ class News
      * @ORM\Column(name="timestamp", type="datetime", nullable=false)
      */
     public $timestamp;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }

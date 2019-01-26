@@ -17,7 +17,7 @@ class TweetQueue
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
-    public $id;
+    private $id;
 
     /**
      * @var string
@@ -74,4 +74,12 @@ class TweetQueue
      * @ORM\Column(name="error", type="string", length=255, nullable=true)
      */
     public $error;
+
+    /**
+     * @return int|null
+     */
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
 }
