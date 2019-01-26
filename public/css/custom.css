@@ -1,0 +1,557 @@
+#nav { padding: 0pt 20px; background: transparent url("/assets/packrat/nav_bg.gif") repeat-x scroll left top; display: block; height: 43px; margin-top: 4px; list-style-image: none; list-style-position: outside; list-style-type: none; width: 720px; }
+#nav li { float: left; display: list-item; list-style-type: none; }
+#nav li a { border-top: 4px solid #f5f7fa; padding: 0pt 15px; background: transparent url("/assets/packrat/nav_divider.gif") no-repeat scroll right top; display: block; font-size: 14px; height: 39px; line-height: 14px; }
+#nav li a span { padding-top: 13px; float: left; font-size: 14px !important; color: rgb(59, 89, 152) !important; }
+#nav li a:hover { background: #d8dfea none repeat scroll 0% 0%; text-decoration: none; }
+#nav li.selected a { border-top: 4px solid #6d84b4; color: #333333; font-weight: bold; }
+#nav li.selected a span { color: rgb(51, 51, 51) !important; }
+#nav li.selected a:hover { text-decoration: none; }
+#nav li .counter { margin: -1px 0pt 0pt 4px; }
+#nav li .counter span { background: transparent url("/assets/packrat/nav_counter.png") no-repeat scroll left top; display: block; width: 23px; height: 21px; color: #ffffff; padding-top: 2px; font-size: 14px !important; font-weight: bold; text-align: center; }
+
+.vault_filter { border-bottom: 1px solid #dddddd; margin: 5px 20px 20px 5px; padding: 10px 15px; background: #e6e6e6 none repeat scroll 0% 0%; font-size: 11px; color: #666666; width: 690px; height: 22px; margin-left: 20px; }
+.vault_filter .reset { float: right; line-height: 25px; }
+.vault_filter b { margin-right: 5px; }
+.headline .icon { border: 1px solid #ffffff; padding: 4px; float: left; margin-right: 6px; }
+.headline .title { font-weight: bold; float: left; line-height: 26px; font-size: 13px !important; }
+.headline .right { float: right; line-height: 26px; font-size: 13px !important; }
+.headline .right a, .headline .right a b { font-size: 13px !important; color: rgb(59, 89, 152) !important; }
+
+.no_bg { background: rgb(238, 238, 238) !important; }
+.image_title { text-align:center; }
+.image_title a { font-size: 14px !important; color: rgb(59, 89, 152); }
+.image_rounded { width: 220px; padding: 20px 5px; margin-left: 17px; }
+.image_rounded div { width: 210px; height: 295px; border-radius: 1em; -moz-border-radius: 1em; -webkit-border-radius: 1em;  border: 2px solid rgb(59, 89, 152); }
+
+/*-- https://www.playpackrat.com/api/modifiers?cacheBuster=1461&version=1.0.7&build=1075 --*/
+
+/* -----------------------------| Foil |--------------------------------- */
+.card-wrapper.foil-gadgets .family  .points { color: #fff; }
+
+.card-wrapper.foil-blueberry .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d036b8a1f6bc9a61ce161c42d466deab') top left no-repeat !important; }
+.card-wrapper.foil-lime .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0cbedb918fcdb0cb1ce69426e57d15bc') top left no-repeat !important; }
+.card-wrapper.foil-banana .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/aa221dc136b45bd089f8f5c33c336972') top left no-repeat !important; }
+.card-wrapper.foil-mandarin .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c273083e25bf2587026ada21e104dc5e') top left no-repeat !important; }
+.card-wrapper.foil-chocolate .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/274e02809945b77560360b8a09573879') top left no-repeat !important; }
+.card-wrapper.foil-cherry .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/54ea32410e2bf97d5caa8bd042ae79a4') top left no-repeat !important; }
+.card-wrapper.foil-cotton-candy .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/acde343210d32ef9c05db3943280822c') top left no-repeat !important; }
+.card-wrapper.foil-lavender .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/127d70d79330886c63870786f308ffd3') top left no-repeat !important; }
+.card-wrapper.foil-gadgets .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3826659479896b2c50fdb477d8776a3d') top left no-repeat !important; }
+
+.card-wrapper-large.foil-banana .family { background: transparent url('/assets/packrat/foil-banana-lg.gif') top left no-repeat !important; }
+.card-wrapper-large.foil-blueberry .family { background: transparent url('/assets/packrat/foil-blueberry-lg.gif') top left no-repeat !important; }
+.card-wrapper-large.foil-cherry .family { background: transparent url('/assets/packrat/foil-cherry-lg.gif') top left no-repeat !important; }
+.card-wrapper-large.foil-chocolate .family { background: transparent url('/assets/packrat/foil-chocolate-lg.gif') top left no-repeat !important; }
+.card-wrapper-large.foil-cotton-candy .family { background: transparent url('/assets/packrat/foil-cotton-candy-lg.gif') top left no-repeat !important; }
+.card-wrapper-large.foil-lavender .family { background: transparent url('/assets/packrat/foil-lavender-lg.gif') top left no-repeat !important; }
+.card-wrapper-large.foil-lime .family { background: transparent url('/assets/packrat/foil-lime-lg.gif') bottom left no-repeat !important; }
+.card-wrapper-large.foil-mandarin .family { background: transparent url('/assets/packrat/foil-mandarin-lg.gif') bottom left no-repeat !important; }
+.card-wrapper-large.foil-easter .family { background: transparent url('/assets/packrat/foil-easter-lg.gif') top left no-repeat !important; }
+
+/**
+CUSTOM FOILS
+**/
+.overlay {
+  width: 120px;
+  height: 136px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+/* EASTER FAUX FOIL */
+.card-wrapper.foil-easter .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c00bf425f064b4eb5293c4d696129f8b') top left no-repeat !important; }
+
+/* EASTER EGGS */
+.card-wrapper.foil-eggstraordinary-easter-allen .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/fc57d00f0fd2861aedeed5d8d01d5431') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-max .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/56b535c76e1d98db805fdce847d93864') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-puff .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5c152d6e6d5b14ebe16222d2d0b0cf52') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-ben .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/bfb69d1c4f7a22e83536445159cfa20f') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-beemo .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/4a6043fc5ca75461419955b04d2354f8') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-toothy .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/45f0708dc376c7be45d29993fbf3af84') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-ken .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dab3a420c66cf40e3899a7bd9dbaee83') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-orky .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/594206b435937e41dde6456508bb969d') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-pat .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5023b8e8738c73526854feae39d33913') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-min .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f2eeac73ceddd9b76bfb48f6b1de50d2') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-pika .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ac3f241b8281173c66c42feaf4c421e1') center center no-repeat !important; }
+.card-wrapper.foil-eggstraordinary-easter-po-bear .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c6edb9557fada733ca2df6751408afa8') center center no-repeat !important; }
+
+/* BUMP IN THE NIGHT */
+.card-wrapper.foil-bump-in-the-night-brawer-in-drawer .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/717db67a7d64e507501e6aea3ec8f94f') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-gern-with-fern .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1c64714183cad57c64d6d8cf37f250d8') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-murtain-and-curtain .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5cb458b132b87b952186129f8318d9a9') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-plamps-on-lamps .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c3f29747ba3deebc846c8c24d5ccb704') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-snairs-on-stairs .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d1e6ff4172fdda4640eef837fa5151a2') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-bloks-on-clocks .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8e169aa311fd51b78d0719739f63a5d7') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-wrame-on-frame .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/74fd9b8fe93d483f629441222c4e1935') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-ghoom-in-room .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/34982e0f13638577001c9a8df5e095fb') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-gridge-in-fridge .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e7980280d956fb802c11adb3cb46e733') center center no-repeat !important; }
+.card-wrapper.foil-bump-in-the-night-sqed-by-bed .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d1643898189f98c35e8eb6e6ea87ad2f') center center no-repeat !important; }
+
+/* POTIONS */
+.card-wrapper.foil-potions-cupids-arrow .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/878636d48b5246994dec677b0308a75f') center center no-repeat !important; }
+.card-wrapper.foil-potions-dragons-breath .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5a66733ada976a2468df2a46065f8f00') center center no-repeat !important; }
+.card-wrapper.foil-potions-elixir-of-life .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/849df8de9b855f6e9bc5001269b24e0c') center center no-repeat !important; }
+.card-wrapper.foil-potions-liquid-luck .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/4881d0851a45da78bda1e2f6c8e5eb83') center center no-repeat !important; }
+.card-wrapper.foil-potions-panacea .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0efa20562053f7f1b29d591786262f72') center center no-repeat !important; }
+.card-wrapper.foil-potions-polyjuice .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e3bb8cc8e6f388d53acb1121ef4799dc') center center no-repeat !important; }
+.card-wrapper.foil-potions-sibyls-blessing .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/aa3d26a06932dcb9b93ffe36af34275e') center center no-repeat !important; }
+.card-wrapper.foil-potions-sirens-song .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/830a505124392f5ff4c7004549f65b52') center center no-repeat !important; }
+.card-wrapper.foil-potions-tonic-of-invisibility .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d3137daf2f8172f8e90d0a1382e9fad1') center center no-repeat !important; }
+.card-wrapper.foil-potions-veritaserum .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e0d74b8dc2ecc5ead4d921a9e10a7f91') center center no-repeat !important; }
+
+/* GHOST TOWN */
+.card-wrapper.foil-ghost-town-robbing .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/2ddcf10a004a19f01dcf27b2c50a8899') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-bartending .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9c7f88d9969d693d4dea457ad90f9c93') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-drifting .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/23625638992c5be6e97d9fa817bc5be4') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-gunslinging .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5c45782597dd579e99a0cc425ef23784') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-piano-playing .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/65e709599b5ad528c734e8ec9eba5c33') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-prospecting .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a923eb08b35fc77a3b1270c21845bce0') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-saloon-owning .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/eb156e1dc797c3ee76f9ad0c7c176e89') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-schoolmarming .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c0542273f3512a2b2b1ffe35584c605f') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-law-enforcing .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dd195b5a33ba75cf73c931fd0ae83ba8') center center no-repeat !important; }
+.card-wrapper.foil-ghost-town-shopkeeping .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/63fd3bd12a59f380d5c34af288252d99') center center no-repeat !important; }
+
+/* BUNNIES */
+.card-wrapper.foil-it-must-be-bunnies-bunnicula .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b17ce8d14103892b5139ae92d451b3aa') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-dusty .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/6cd3965a249bc56cbcdc31f65e2ed0a7') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-fiver .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0fc9f77524797b3cb280263e12254eb5') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-jackie .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1cdb40491e206d937b74daa3d1a8c4dd') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-perky .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f32b49fd788a4ea03144a3596098289d') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-presto .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f475ac6fe19d7227f573aa865a8036b7') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-snowy .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0f5658d0b892ab11e1adf8275c07a3ed') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-speedy .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dd0d7db9b2a0e0e91f08591b980a1289') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-tardy .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/af81a5bed18a721c7dbe071c8e156cd3') center center no-repeat !important; }
+.card-wrapper.foil-it-must-be-bunnies-wascally .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/50e8324a032f4dd58da461655d5ba1b2') center center no-repeat !important; }
+
+/* BIRDWATCHING */
+.card-wrapper.foil-birdwatching-blue-bird-of-paradise .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8409b889b997f229d15474405afd9643') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-painted-bunting .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/79674e3e294976de47904394467f8285') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-cockatoo .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f616aee6424aa0c20a57bef2076d13cd') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-rainbow-finch .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/2477d0d1e664b044bb50011dbaa38feb') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-golden-tailed-sapphire-hummingbird .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0dc8ac86eecef309d26a58c2d9059baf') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-oriole .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9f5bc2bff8918616368fa2454778c9ad') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-quetzal .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c8e20a66d25926cd2db07f39488e27ee') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-robin .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/27f460a94ddb6a86c20d9e13485fc6d0') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-warbler .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3e8df88d95646434f1a95bed598db7f7') center center no-repeat !important; }
+.card-wrapper.foil-birdwatching-pileated-woodpecker .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c60d795ccce97c3907cbe9f89ece288a') center center no-repeat !important; }
+
+/* THANKFUL PUMPKINS */
+.card-wrapper.foil-the-thankful-pumpkin-patch-arigato .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b3e3f5d9738cf8591c10a05a912bd231') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-danke .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f1c748c6656efca7db022ab72bc9d238') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-dhanyavaad .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e8d129ef4431ed3e7cb73a1b846b4089') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-gracias .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1e8e59602dbe83be4f4a707435186bf9') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-grazie .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dac5804eca5bd6077dd2def118f0ec18') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-merci .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f4481bfc65662be0c095ef522da02ace') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-shukran .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cf71791418f6dc565392857b8309deac') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-spasibo .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8dba0808bdaefc019ea44162c2ca38e6') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-thanks .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8e03a56f414793cf7366db82b87986a0') center center no-repeat !important; }
+.card-wrapper.foil-the-thankful-pumpkin-patch-xie-xie .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/00b35349996408d9fbfb4212751a6615') center center no-repeat !important; }
+
+/* IMAGINARY FRIENDS */
+.card-wrapper.foil-imaginary-friends-chuck-and-durden .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/39b305d5239b5f3a096286fb53bb2de6') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-dani-and-franky .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/17a6e2f0d3e5e32b70d76a49070fd24c') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-dee-and-koosh .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f8ed1fab25a010c408bcdcb13bcdde70') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-gordie-and-snuffy .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/488f1f8c664b2c3e2204e6d26f085508') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-juan-and-kidlat .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5ebfcbe0f73eb3a4f3eaa02f97db2cbd') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-kumiko-and-niki .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dea5b7e57dbc23d664f46fd7122cab87') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-luna-and-the-narglettes .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/90b86c7ad21e56ec38f74080a8b8780f') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-petey-and-elly .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/23c2476135c92062a24e85c0d748cf54') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-riley-and-blingo .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0c81f3cf409b2c142f85427d18ec1e18') center center no-repeat !important; }
+.card-wrapper.foil-imaginary-friends-vinny-and-cobbs .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/323b1c7c8ceb9115bfd3c5d9c2f0a979') center center no-repeat !important; }
+
+/* Door to Door */
+.card-wrapper.foil-door-to-door-disguises-bewitching-winifred .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d9902c939f254baed3a6ca115efc513f') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-martian-marshall .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/30382c76b7525892f2a55007e54e061d') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-captain-jacky .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/31e6414e0a15afd6916715e1ec84e4eb') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-cowboy-andy .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f402cb92b5e8e96dbd83110e1df914cf') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-zombie-bride-victoria .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/43f69b1fe0acd1e45a4d15485c66746a') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-wally-wyatt .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0b90d6fa373d381c8ed267eb375d787b') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-exterminator-raymond .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f49030ede06d47d290691d4cacbd11ee') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-princess-gigi .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/309a07ee45d52f721dbeeb2c0078e995') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-mad-doc-emmett .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/74316fe79f21b89166d58e8ef6b422d6') center center no-repeat !important; }
+.card-wrapper.foil-door-to-door-disguises-shrouded-isobelle .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5b5ee3ff95033f496967c0dfe2b84bed') center center no-repeat !important; }
+
+/** Literary classics */
+.card-wrapper.foil-literary-classics-treasure-island .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/37b039476f65b880c8483eabb87292a5') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-the-time-machine .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/12e837172607b70c059d4bfdb9428729') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-the-jungle-book .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1d1d09e9483082e36ca8d9a7a8a5313d') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-the-iliad-and-the-odyssey .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c492ed211dba4fac26b1b9ad5b9bd1b4') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-the-adventures-of-huckleberry-finn .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8038534c3644068ad75c6a33842eaafa') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-pride-and-prejudice .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1c2924d65930fc5bd9635c4371fa1c90') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-one-thousand-and-one-nights .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c0da138a334c3802915db543cd2b43dd') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-little-women .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d553f4ab9001608ab7ce903baf08e05f') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-gullivers-travels .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/214502a712b7de59f91e31781213439e') center center no-repeat !important; }
+.card-wrapper.foil-literary-classics-20-000-leagues-under-the-sea .overlay  { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/94daf62e6b04bc210274b4619e6e4c3b') center center no-repeat !important; }
+
+/* -----------------------------| Bling/ Custom Family Backgrounds |--------------------------------- */
+/*.card-wrapper.custom-banana .family { background: transparent url('/assets/packrat/bling-banana.gif') top left no-repeat !important; }
+.card-wrapper.custom-blueberry .family { background: transparent url('/assets/packrat/bling-blueberry.gif') top left no-repeat !important; }
+.card-wrapper.custom-cherry .family { background: transparent url('/assets/packrat/bling-cherry.gif') top left no-repeat !important; }
+.card-wrapper.custom-chocolate .family { background: transparent url('/assets/packrat/bling-chocolate.gif') top left no-repeat !important; }
+.card-wrapper.custom-cotton-candy .family { background: transparent url('/assets/packrat/bling-cotton-candy.gif') top left no-repeat !important; }
+.card-wrapper.custom-lavender .family { background: transparent url('/assets/packrat/bling-lavender.gif') top left no-repeat !important; }
+.card-wrapper.custom-lime .family { background: transparent url('/assets/packrat/bling-lime.gif') top left no-repeat !important; }
+.card-wrapper.custom-mandarin .family { background: transparent url('/assets/packrat/bling-mandarin.gif') top left no-repeat !important; }*/
+
+.card-wrapper.custom-blueberry .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a0f24e7301aaad7d3893e9a217b25cf3') top left no-repeat !important; }
+.card-wrapper.custom-lime .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/36e78c2b16338ff885000606df49d4e8') top left no-repeat !important; }
+.card-wrapper.custom-banana .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7165a90df5ff3e6631ec2ba2042927d1') top left no-repeat !important; }
+.card-wrapper.custom-mandarin .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b67569823bfa93c90bd21fd8467127aa') top left no-repeat !important; }
+.card-wrapper.custom-chocolate .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/eddcf7e6b0ee18dcf85e2e909050377c') top left no-repeat !important; }
+.card-wrapper.custom-cherry .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f537f4cc5c70a92dae31eb42e849a897') top left no-repeat !important; }
+.card-wrapper.custom-cotton-candy .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3d012ec9ee640cffdb130100a7a763a0') top left no-repeat !important; }
+.card-wrapper.custom-lavender .family { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c7eadbf57c4ce6d04e3d7dc87cd79d8b') top left no-repeat !important; }
+
+.card-wrapper .bling {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    z-index: 1;
+    width: 96px;
+    height: 118px;
+}
+
+/* -----------------------------| Bling: Christmas Lights |--------------------------------- */
+.card-wrapper .christmas-lights { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1bdfed98b23f9b349fcab22b80d98797') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Fire |--------------------------------- */
+.card-wrapper .fire { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/02e9a8d27566102c958ffa41eb891b22') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Clouds |--------------------------------- */
+.card-wrapper.family-blueberry .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c36423866cbfc3635e23b999557fb44d') top left no-repeat !important; }
+.card-wrapper.family-lime .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/daff2c6ea4e66b9be712c47aaeed467d') top left no-repeat !important; }
+.card-wrapper.family-banana .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d47df2fc0d88872aea651fd24e7dd7b6') top left no-repeat !important; }
+.card-wrapper.family-mandarin .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c9ae4653a9a172a7ca67da1def95976f') top left no-repeat !important; }
+.card-wrapper.family-chocolate .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c545547612055405be626ff3127b220f') top left no-repeat !important; }
+.card-wrapper.family-cherry .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0cf8f7c32c1a37e472f7c0deba9ded68') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/aa03f298aaa3a56a1048985b4a59d6f8') top left no-repeat !important; }
+.card-wrapper.family-lavender .clouds { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c705bd4ed8257c96f68a6be595b52028') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Floral |--------------------------------- */
+.card-wrapper.family-blueberry .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7e85540fb080b791c166279b835e6853') top left no-repeat !important; }
+.card-wrapper.family-lime .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f731228c137cb9f07de8327b303254ca') top left no-repeat !important; }
+.card-wrapper.family-banana .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/2336bd91d5b8b34ab4e816ab3a91ca60') top left no-repeat !important; }
+.card-wrapper.family-mandarin .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e481423dda0d63db53ae57e528e98cff') top left no-repeat !important; }
+.card-wrapper.family-chocolate .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dd4a5985e21a68290900d25562878260') top left no-repeat !important; }
+.card-wrapper.family-cherry .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7b186c8d243f0c51a0ae5268414bc491') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/50c3507a4d2f41220c8bc17cac7cb178') top left no-repeat !important; }
+.card-wrapper.family-lavender .floral { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e8836af1e6b8a9893aa4b54421bf5138') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Pawprint |--------------------------------- */
+.card-wrapper.family-blueberry .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d4c9fa147d7148ef6aed3558fcd5c53e') top left no-repeat !important; }
+.card-wrapper.family-lime .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9cf87a4cfcca1a2399748d282fb58214') top left no-repeat !important; }
+.card-wrapper.family-banana .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8e0179950a2463e3777463deb15b1dc5') top left no-repeat !important; }
+.card-wrapper.family-mandarin .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/96ac8bcb5a272f89e01ceaaa28c01ab1') top left no-repeat !important; }
+.card-wrapper.family-chocolate .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1d3cdb458681fa8068a8337a31120646') top left no-repeat !important; }
+.card-wrapper.family-cherry .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9f87fba14443a60e9a4ac65a5d94704c') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f4c3d5ec47c1dad4df794f5bafe0a494') top left no-repeat !important; }
+.card-wrapper.family-lavender .paw-print { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/398e1ce3fe2c04ffcc2b2f21833d3a35') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Rainbow |--------------------------------- */
+.card-wrapper.family-blueberry .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cecaaa7ffd046e324ee6a5c5148b776e') top left no-repeat !important; }
+.card-wrapper.family-lime .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/43248282521e7ca8ba288d2a819afb2d') top left no-repeat !important; }
+.card-wrapper.family-banana .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cd1e3f9d20d660f4ccd2557193290cc9') top left no-repeat !important; }
+.card-wrapper.family-mandarin .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/4be43a1f757c90a1b71de5c1b7da3ef1') top left no-repeat !important; }
+.card-wrapper.family-chocolate .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/01bd8015bbb9eddf5dcd4f5741c8d98d') top left no-repeat !important; }
+.card-wrapper.family-cherry .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/31ea1f2adcd3c9601323b84d379a02b1') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f94372e3507a7507edd1dc4f5e0d9421') top left no-repeat !important; }
+.card-wrapper.family-lavender .rainbow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9786aa59b70c7c94eb782806c1e50dc0') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Fireworks |--------------------------------- */
+.card-wrapper.family-blueberry .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/bc1748a369097c605a57c6e8501c5789') top left no-repeat !important; }
+.card-wrapper.family-lime .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/827ae64157b2f12ce4dd6b7477440e35') top left no-repeat !important; }
+.card-wrapper.family-banana .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/2f8cf2b344089be88803728ead63f858') top left no-repeat !important; }
+.card-wrapper.family-mandarin .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3e30a5e419b92bbb40c314b6b79ef09a') top left no-repeat !important; }
+.card-wrapper.family-chocolate .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ab5d9129c0764da59053192707be5b16') top left no-repeat !important; }
+.card-wrapper.family-cherry .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/30ffeb0fcc100d171054db7ca9554b1a') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/be04a0c50165699a8a4e218e238a7039') top left no-repeat !important; }
+.card-wrapper.family-lavender .fireworks { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3b059d8ba0072a697e47d736013696ec') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Smiley |--------------------------------- */
+.card-wrapper.family-blueberry .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cd150fc6687d18f5fde6e595f22d2ad9') top left no-repeat !important; }
+.card-wrapper.family-lime .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9bf87b4b356ae87997bc0e039fdbeddd') top left no-repeat !important; }
+.card-wrapper.family-banana .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a460ea3e4355b2a10587a2f895e80842') top left no-repeat !important; }
+.card-wrapper.family-mandarin .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/43d7db67a658fdca02cdc86861343964') top left no-repeat !important; }
+.card-wrapper.family-chocolate .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/804f1159bfa3e66c6d44d151585246b1') top left no-repeat !important; }
+.card-wrapper.family-cherry .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ed1d26eb1c4d17a4f0b2a4144644c3cf') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/278ab42a5dcc7b92512f0888918f6acc') top left no-repeat !important; }
+.card-wrapper.family-lavender .smiley { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7901d8c8487ee5b35df3cd994369e259') top left no-repeat !important; }
+
+/* -----------------------------| Bling: PeaceSign |--------------------------------- */
+.card-wrapper.family-blueberry .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f344016ab8ddafca06095dd247eb411c') top left no-repeat !important; }
+.card-wrapper.family-lime .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a6e5579d62ee24e110cd1561fe419e57') top left no-repeat !important; }
+.card-wrapper.family-banana .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e656d7fe1c38c6d225d35387623205fc') top left no-repeat !important; }
+.card-wrapper.family-mandarin .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9418f4fa4f0966742930703d38e26cab') top left no-repeat !important; }
+.card-wrapper.family-chocolate .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cddc5563d2cab1afa729e6bf7dcbe856') top left no-repeat !important; }
+.card-wrapper.family-cherry .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0b4ee1aa091b7c228ce5ddacae3b4b70') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dca50e3e78b17f66f82f6ee5ee27fcd3') top left no-repeat !important; }
+.card-wrapper.family-lavender .peace-sign { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/55b8f7c69b8a17e9364993f01bd4fa45') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Vines |--------------------------------- */
+.card-wrapper.family-blueberry .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/47700bcf84cf4327a80a6fe8304f9c3d') top left no-repeat !important; }
+.card-wrapper.family-lime .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7def283ce3b91fc74c924363c2145791') top left no-repeat !important; }
+.card-wrapper.family-banana .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/98bc0ae7257e8efa1bffa5f281d0eaf1') top left no-repeat !important; }
+.card-wrapper.family-mandarin .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8e7b00c31d91127ba45bb13f76d51c4e') top left no-repeat !important; }
+.card-wrapper.family-chocolate .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a55f96b071cd453121c6680dc18bc770') top left no-repeat !important; }
+.card-wrapper.family-cherry .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b74a90bd86a71f0e3d13ed93a952227f') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c63813dfc08296152d4ba5a533c5954f') top left no-repeat !important; }
+.card-wrapper.family-lavender .vines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e6b5cac6cab1e3e4da1f509e227bff43') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Bubbles |--------------------------------- */
+.card-wrapper.family-blueberry .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/260e0fe5ff29ed371fdfe5400cf2c2ee') top left no-repeat !important; }
+.card-wrapper.family-lime .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f0d0cb11d0d24d1b21bb76e6092b0c6a') top left no-repeat !important; }
+.card-wrapper.family-banana .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5e10a2d7e51aeba178e055cd59b66bf1') top left no-repeat !important; }
+.card-wrapper.family-mandarin .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9111a93659958f3ea6d478d87beea001') top left no-repeat !important; }
+.card-wrapper.family-chocolate .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/213e6e1d7ad0df1e2bc6ca1a2da3bbbd') top left no-repeat !important; }
+.card-wrapper.family-cherry .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/23622f97663e3e55abb5133e26562f64') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d87cbafe6a7aa20de7a2f37750885fe7') top left no-repeat !important; }
+.card-wrapper.family-lavender .bubbles { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/502f40afcbf809eff609876c601f64ee') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Pixie Dust |--------------------------------- */
+.card-wrapper .pixie-dust { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/064fb0ab95dcfda7fe6800a41c74d4d3') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Skull/Jolly Roger |--------------------------------- */
+.card-wrapper.family-blueberry .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/700dfb253d00c51fe674e55682a4e005') top left no-repeat !important; }
+.card-wrapper.family-lime .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/97f0554c3059f3a2cc75e27177792ebb') top left no-repeat !important; }
+.card-wrapper.family-banana .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/088206db523550e8dd8f70db9e17f518') top left no-repeat !important; }
+.card-wrapper.family-mandarin .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c54ed7479f02fc2aff9740a5a49e4e4d') top left no-repeat !important; }
+.card-wrapper.family-chocolate .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cb55bc87ef39c55b57446c9914de6b38') top left no-repeat !important; }
+.card-wrapper.family-cherry .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/01e323816b61e9fa7f83f58512048203') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f48ac5cfac80154f25501972fd44172f') top left no-repeat !important; }
+.card-wrapper.family-lavender .jolly-roger { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/159eca1acd93d405f619e7865c60872d') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Cobweb |--------------------------------- */
+.card-wrapper.family-blueberry .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c2a4285942bfd1cce2972c584d85b643') top left no-repeat !important; }
+.card-wrapper.family-lime .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a4a5a4ce3cf453b0300eddfe384db3c0') top left no-repeat !important; }
+.card-wrapper.family-banana .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ea23e58a0289743e35782c86010081d1') top left no-repeat !important; }
+.card-wrapper.family-mandarin .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0597488ee761a8d702ad3493f3478784') top left no-repeat !important; }
+.card-wrapper.family-chocolate .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c2ba603a80474844cd71281d2ff6ceea') top left no-repeat !important; }
+.card-wrapper.family-cherry .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e9a0249bd6175cfab79de106d154240c') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ec881774c33153aaf8adfa22096752b8') top left no-repeat !important; }
+.card-wrapper.family-lavender .cobweb { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/47d68ed8adbdb61d67d0171df397deba') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Blood Spatter |--------------------------------- */
+.card-wrapper .blood-spatter { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7c8d12156c3e017e8bc3665bc810bc15') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Planet |--------------------------------- */
+.card-wrapper.family-blueberry .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8585788e30d3f851050c19ee826be60c') top left no-repeat !important; }
+.card-wrapper.family-lime .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/86a0c8117c77f76a4b7e503741f81c2d') top left no-repeat !important; }
+.card-wrapper.family-banana .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/6ba129e07b40ce218aa5b19d1ee12d38') top left no-repeat !important; }
+.card-wrapper.family-mandarin .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cbe6560534223c0e813ae46443b45733') top left no-repeat !important; }
+.card-wrapper.family-chocolate .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3323cb2ebe8c26f783b8ee847479d593') top left no-repeat !important; }
+.card-wrapper.family-cherry .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/43f5dc734d160d421a685dba8ea53436') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a00c7f3e3af4b44fcf4a6e839a4f53c5') top left no-repeat !important; }
+.card-wrapper.family-lavender .planet { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/72269f1475159a127adbf77770d4ee08') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Union Jack |--------------------------------- */
+.card-wrapper .union-jack { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c1fac6323749f1f1af5dc3e2e912218f') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Field |--------------------------------- */
+.card-wrapper .field { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a28a7842f70f8d36adb3ff0da4dc462d') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Number One |--------------------------------- */
+.card-wrapper.family-blueberry .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/867848ae1e583fd198a1f21814128b09') top left no-repeat !important; }
+.card-wrapper.family-lime .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0ad2ecfbb387bde3e03dc933343b8aa4') top left no-repeat !important; }
+.card-wrapper.family-banana .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/124aabf127149c3b760d5c217a617e12') top left no-repeat !important; }
+.card-wrapper.family-mandarin .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c24bbeb46eb3ee451f06a03e77b3a564') top left no-repeat !important; }
+.card-wrapper.family-chocolate .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/95726341c847bd3f051dfaf47800907e') top left no-repeat !important; }
+.card-wrapper.family-cherry .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/40667eb7714b7ff07cb44343e8364104') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/33482179b0cf6984159dcc47265251ea') top left no-repeat !important; }
+.card-wrapper.family-lavender .one { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/77cc86c30d08a55de0c1d3a3a4eb08d5') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Kiss |--------------------------------- */
+.card-wrapper .kiss { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0654a28c845516fb82b87202fb22f802') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Hearts |--------------------------------- */
+.card-wrapper.family-blueberry .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9be55880ed0496a97330125dd7062533') top left no-repeat !important; }
+.card-wrapper.family-lime .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5223f662f217cf87935dcab47cecb35f') top left no-repeat !important; }
+.card-wrapper.family-banana .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a1188ec37f73d4fb7b4cce8118b4b62c') top left no-repeat !important; }
+.card-wrapper.family-mandarin .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3bcfaa6ca8198d5008635aa04756ef2f') top left no-repeat !important; }
+.card-wrapper.family-chocolate .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f4cde44eedb7f17d0887d673f2585b20') top left no-repeat !important; }
+.card-wrapper.family-cherry .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/54dd794afa548a8bee4d724d01681289') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e598690eea78a238318db5b64f636b90') top left no-repeat !important; }
+.card-wrapper.family-lavender .hearts { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dfeea4590d98328beff5a87eb1a5e935') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Balloons |--------------------------------- */
+.card-wrapper .balloons { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f88ec8633eb60a0ce585c2933dd77b9f') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Jailhouse |--------------------------------- */
+.card-wrapper .jailhouse { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ac5aa52fb062a7d70f568f58e81412e9') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Bullet Hole |--------------------------------- */
+.card-wrapper.family-blueberry .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/40566a1502f86722ec268d03eebc0082') top left no-repeat !important; }
+.card-wrapper.family-lime .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/2a96ad36b439c6544282066475af20b4') top left no-repeat !important; }
+.card-wrapper.family-banana .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e10758a4926f920d740c582abb6f832e') top left no-repeat !important; }
+.card-wrapper.family-mandarin .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1bd40f82504dfc3f618e8d7815462e49') top left no-repeat !important; }
+.card-wrapper.family-chocolate .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/53727ce4173625755c334ecb24ba6879') top left no-repeat !important; }
+.card-wrapper.family-cherry .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/6f1b8d4874c64b2b1256607ec76af923') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a3d71a6964b2f77b7a307ad63d850f1a') top left no-repeat !important; }
+.card-wrapper.family-lavender .bullet-hole { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5a21fe6d8016b111096c32b4528125d4') top left no-repeat !important; }
+
+/* -----------------------------| Bling: Bow |--------------------------------- */
+.card-wrapper.family-blueberry .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ed952f4ff67eb1d162f17904c04524d7') top left no-repeat !important; }
+.card-wrapper.family-lime .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d69ca50c3279dcf7b900fbc9d5d21219') top left no-repeat !important; }
+.card-wrapper.family-banana .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/540b6e3fa50920ec48a0eaf18fd4e93f') top left no-repeat !important; }
+.card-wrapper.family-mandarin .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/782b30159ad013bcd3ca6c50256038a7') top left no-repeat !important; }
+.card-wrapper.family-chocolate .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b12b88140927733f40d353299c4e194c') top left no-repeat !important; }
+.card-wrapper.family-cherry .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/03c5df4dff2718ffeceb031eb49bcef6') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9dfed2d82a56f742e0c07c14a4aa433b') top left no-repeat !important; }
+.card-wrapper.family-lavender .bow { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/76799fe7d364a19c70668ee69c7e49af') top left no-repeat !important; }
+
+/* --------------------------| Bling: Horseshoe |------------------------------- */
+.card-wrapper.family-blueberry .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/fe583b50cbc1ef9f7f777440d7c8879f') top left no-repeat !important; }
+.card-wrapper.family-lime .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/afe036880c91d6844233d1d166d3e21a') top left no-repeat !important; }
+.card-wrapper.family-banana .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a3c0e49c126d9aafc9ba9c22b7bd4384') top left no-repeat !important; }
+.card-wrapper.family-mandarin .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a64a5f00666ae897a4b5f4a598467d3e') top left no-repeat !important; }
+.card-wrapper.family-chocolate .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b06da064269629efa2d63c1bad1fb73b') top left no-repeat !important; }
+.card-wrapper.family-cherry .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a4a7e133615515f15c34fbf3e994b48e') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/437a0edc3eb994744354f248b0076270') top left no-repeat !important; }
+.card-wrapper.family-lavender .horseshoe { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/586e4458c7838f80475a20217f03341c') top left no-repeat !important; }
+
+/* --------------------------| Bling: Snowflake |------------------------------- */
+.card-wrapper .snowflake { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e7350c8c5e80d5a60147ed4580fe7c89') top left no-repeat !important; }
+
+/* --------------------------| Bling: Snow-Flurry |------------------------------- */
+.card-wrapper.family-blueberry .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/fe06e1bff111dc4b4f51d03d08e8cf88') top left no-repeat !important; }
+.card-wrapper.family-lime .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/09f4af944147161cc834cd6a96389711') top left no-repeat !important; }
+.card-wrapper.family-banana .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/16bf2c25b034c13566e207383369354c') top left no-repeat !important; }
+.card-wrapper.family-mandarin .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3ea61c050b2ed04f71c81517290b1594') top left no-repeat !important; }
+.card-wrapper.family-chocolate .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/32c110ff3eb1d426b44e80b0192b6b96') top left no-repeat !important; }
+.card-wrapper.family-cherry .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/222ce843df5af10b1c944269dff306e8') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8e690ff57e9824116cdb55d5384d2848') top left no-repeat !important; }
+.card-wrapper.family-lavender .snow-flurry { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/59a8a5c4d1a88cd58f0cb6412111be1b') top left no-repeat !important; }
+
+/* --------------------------| Bling: First Edition |------------------------------- */
+.card-wrapper .first-edition { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d37357ec9bef294eae4dcfb621a7d82a') top left no-repeat !important; }
+
+/* --------------------------| Bling: Yum |------------------------------- */
+.card-wrapper.family-blueberry .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d0a2ecbdb8fef446e356f60f5ffba1a0') top left no-repeat !important; }
+.card-wrapper.family-lime .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9e758261454eda6477bd82a2faccbe5d') top left no-repeat !important; }
+.card-wrapper.family-banana .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b772930ab3ae8267178947db4a681601') top left no-repeat !important; }
+.card-wrapper.family-mandarin .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b276c577ab8eda1a1ffc2bb46a666857') top left no-repeat !important; }
+.card-wrapper.family-chocolate .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0678aeac2513821294d5159fc3133cbf') top left no-repeat !important; }
+.card-wrapper.family-cherry .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ed9f5f70fa47b3d379b195f10cc356e0') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/770ad6f254a4e79182c6634a03907a65') top left no-repeat !important; }
+.card-wrapper.family-lavender .yum { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0d5093847f7ce8eb38b13cf6f022669a') top left no-repeat !important; }
+
+/* --------------------------| Bling: Stars Stripes |------------------------------- */
+.card-wrapper .stars-and-stripes { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8ad518d7bdb8682a46c9bed139e442d0') top left no-repeat !important; }
+
+/* --------------------------| Bling: Music Note |------------------------------- */
+.card-wrapper .music-note { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a941fadfe39537536725655d10b49851') top left no-repeat !important; }
+
+/* --------------------------| Bling: Oh Canada |------------------------------- */
+.card-wrapper .o-canada { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a5716cb44f84438d32346415737e46be') top left no-repeat !important; }
+
+/* --------------------------| Bling: Slime |------------------------------- */
+.card-wrapper.family-blueberry .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3372819bbd50ffac9359f66be626047e') top left no-repeat !important; }
+.card-wrapper.family-lime .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e1a855c5826e702c807b077c685fddb4') top left no-repeat !important; }
+.card-wrapper.family-banana .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e07b7891867fea1833af180bc58b56a8') top left no-repeat !important; }
+.card-wrapper.family-mandarin .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8cdb3ce4ead368b31dc1cb73e58c85ec') top left no-repeat !important; }
+.card-wrapper.family-chocolate .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/eb50dab0f5c7fbbdba5e47675eaf9881') top left no-repeat !important; }
+.card-wrapper.family-cherry .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1b8b3ba3b08c65170c792261fcb1e4b8') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f9069789b84f25c3054208f662849178') top left no-repeat !important; }
+.card-wrapper.family-lavender .slime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e2e396a0fc0122a83b122004c3a76e14') top left no-repeat !important; }
+
+/* --------------------------| Bling: Candy |------------------------------- */
+.card-wrapper.family-blueberry .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/eda78a07b1224898ee9f40a21939562a') top left no-repeat !important; }
+.card-wrapper.family-lime .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/dbe539b671f92e65453eacbdbad5b279') top left no-repeat !important; }
+.card-wrapper.family-banana .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c05c9a512b5b7b91fdd4763149559c89') top left no-repeat !important; }
+.card-wrapper.family-mandarin .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/1bdb8a19f86c44206319187bba3bb29a') top left no-repeat !important; }
+.card-wrapper.family-chocolate .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8e3186af207211306aa2607bae766204') top left no-repeat !important; }
+.card-wrapper.family-cherry .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3174885ea7e6fc94d3d1d9c2cf4c6249') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/677e19f082456f45850cb90e9236780f') top left no-repeat !important; }
+.card-wrapper.family-lavender .candy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f86ccfc0f5edc73a8869dee41ce2fa3e') top left no-repeat !important; }
+
+/* --------------------------| Bling: Shamrock |------------------------------- */
+.card-wrapper .shamrock { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8dda51bcb172b66c2b762195068d2023') top left no-repeat !important; }
+
+/* --------------------------| Bling: Action |------------------------------- */
+.card-wrapper.family-blueberry .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0af5d53a93172b42b40ff4dbfc0d18f2') top left no-repeat !important; }
+.card-wrapper.family-lime .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3c874511df126ca752d6e101692a743f') top left no-repeat !important; }
+.card-wrapper.family-banana .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/5eb25b5a26eb647262307d0a5652270a') top left no-repeat !important; }
+.card-wrapper.family-mandarin .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cf17649fa37de57fa7126794f5789746') top left no-repeat !important; }
+.card-wrapper.family-chocolate .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/3195ba046a0f11b36dbccaf1029b0f64') top left no-repeat !important; }
+.card-wrapper.family-cherry .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/53282cef3ffc89aec647a81af8202bbe') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9e028f234f8bc4a5251536ec37ee5376') top left no-repeat !important; }
+.card-wrapper.family-lavender .action { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cb7e5992b4b195c80eb0ff23e23de109') top left no-repeat !important; }
+
+/* --------------------------| Bling: Bite |------------------------------- */
+.card-wrapper.family-blueberry .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e82b0c2d7d6f944bac8afa2b63962fb9') top left no-repeat !important; }
+.card-wrapper.family-lime .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/08a67581777f4a150b08fce80d177573') top left no-repeat !important; }
+.card-wrapper.family-banana .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/bd1370872361b76cdbf1539cbcbe1cde') top left no-repeat !important; }
+.card-wrapper.family-mandarin .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/24f5052bf2aac8dfc50b024934f9b11b') top left no-repeat !important; }
+.card-wrapper.family-chocolate .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/71afe320850aaeb0e778c92a71e09d4a') top left no-repeat !important; }
+.card-wrapper.family-cherry .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7108447ee3b40a5eea8d3ea29e9bd97a') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8de67e7fc210806ca4736235bd206c0b') top left no-repeat !important; }
+.card-wrapper.family-lavender .bite { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/63fa3ae02a5df861df087eaad86f9df6') top left no-repeat !important; }
+
+/* --------------------------| Bling: Autumn |------------------------------- */
+.card-wrapper.family-blueberry .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0eff0671f15ffc7b9ea51a56e9d43193') top left no-repeat !important; }
+.card-wrapper.family-lime .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/efcbfe400a99ebc67681bf9db679e30a') top left no-repeat !important; }
+.card-wrapper.family-banana .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/64d17b6593df400b87b36cf69140ecb3') top left no-repeat !important; }
+.card-wrapper.family-mandarin .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/aeeb286fc2985955524773a814b8fc87') top left no-repeat !important; }
+.card-wrapper.family-chocolate .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9e260ba3560850c32dacc82bf45b9c7e') top left no-repeat !important; }
+.card-wrapper.family-cherry .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/926a6f9f55fa7da7d37414c20a224e52') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/048566a44ef815af7da176688c224747') top left no-repeat !important; }
+.card-wrapper.family-lavender .autumn { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/35e3fc675b7e1895ed01851a964cab15') top left no-repeat !important; }
+
+/* --------------------------| Bling: Gear |------------------------------- */
+.card-wrapper.family-blueberry .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c449fcb988886f4ae3edb1cfc58359d8') top left no-repeat !important; }
+.card-wrapper.family-lime .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c66522b19c1e5f37cc0f258cba036e4c') top left no-repeat !important; }
+.card-wrapper.family-banana .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8438e3e697bd178c342ffe6b3d6ae94c') top left no-repeat !important; }
+.card-wrapper.family-mandarin .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/61b58635fbad36e49ee1e1a5795dfd97') top left no-repeat !important; }
+.card-wrapper.family-chocolate .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/03383e0e613b08d8406dc238e5ac7bd6') top left no-repeat !important; }
+.card-wrapper.family-cherry .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/40a3505f93f7661f3f2e4c215ae00899') top left no-repeat !important; }
+.card-wrapper.family-cotton-candy .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/36fb1dc24fde0903cf9219e22dd2228b') top left no-repeat !important; }
+.card-wrapper.family-lavender .gear { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/d80a1085777000f645428067e0d8dfd8') top left no-repeat !important; }
+
+/* PRIMARY COLORS 2016 */
+.card-wrapper .great { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/54d166bc5c400cbc18006bb91528ffed') top left no-repeat !important; }
+
+.card-wrapper .hero { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/6b58fdcba800d24adba69be85ed9974b') top left no-repeat !important; }
+
+.card-wrapper .honest { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f965a54425c31bc1061fe267ad205a79') top left no-repeat !important; }
+
+.card-wrapper .hope { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/391176bf804f1eaa537874a6df2d1c00') top left no-repeat !important; }
+
+.card-wrapper .vote { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/a1d60fc785225109a3b0bfa65ea4ed08') top left no-repeat !important; }
+
+.card-wrapper .bully { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/aa3fa820738c32b4a58618fce780ebdb') top left no-repeat !important; }
+
+.card-wrapper .cheat { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/34369b23c55bf42587fbda1f31e54f10') top left no-repeat !important; }
+
+.card-wrapper .crook { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/e75d578a92a7c30a4ba16175b527f876') top left no-repeat !important; }
+
+.card-wrapper .fraud { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/7b49f9443c411db9db47f3695ffcc863') top left no-repeat !important; }
+
+.card-wrapper .liar { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/8286572a10507603e70861354c795a1b') top left no-repeat !important; }
+
+/* --------------------------------------------------------- */
+.card-wrapper .wave { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/b68234435654ec6bf5ce8066bda06c3f') top left no-repeat !important; }
+
+.card-wrapper .springtime { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/cfe52a096a943abf40490db8800deb91') top left no-repeat !important; }
+
+.card-wrapper .night-sky { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0f25ad6fa14ef79c89c3f5f48b55b0ac') top left no-repeat !important; }
+
+.card-wrapper .kitty { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/9de130807f71a75846e472c79d6bfd88') top left no-repeat !important; }
+
+.card-wrapper .scrapbook { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/06ab69be3009c89fcdeb58a597c24c2c') top left no-repeat !important; }
+
+.card-wrapper .parchment { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/c292034df666686e62d641fe2da21478') top left no-repeat !important; }
+
+.card-wrapper .puppy { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0db00b02c734a7cc2bc09df8673ac71d') top left no-repeat !important; }
+
+.card-wrapper .halloween-night { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/ec4b1d6c64a3a3fedc4488bf32a86a61') top left no-repeat !important; }
+
+.card-wrapper .thanksgiving { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/0d4c50a9e1879fe814cdc53f6fdb2708') top left no-repeat !important; }
+
+.card-wrapper .season-s-greetings { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/fd638136bbd41d22bc5c434fd943a08d') top left no-repeat !important; }
+
+.card-wrapper .christmas-cookie { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/03d4af21de59a04c752b6011161c22d5') top left no-repeat !important; }
+
+.card-wrapper .hanukkah { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/35f3255f3752272b7aec4405174555eb') top left no-repeat !important; }
+
+.card-wrapper .snowy-pines { background: transparent url('https://s3.amazonaws.com/packrat-plus-live/modifiers/f9685bc8ea9810a377e3076b3f5b507a') top left no-repeat !important; }

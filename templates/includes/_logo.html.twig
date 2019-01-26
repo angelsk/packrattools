@@ -1,0 +1,13 @@
+<div class="header">
+    {% if route == 'tracker' %}
+        <a href="{{ path('tracker') }}" title="Packrat Market Tracker"><img class="logo" width="270" height="90" src="{{ asset('images/packrattracker.png') }}" alt="Packrat Market Tracker" title="Packrat Market Tracker" /></a>
+    {% elseif route == 'info' %}
+        <a href="{{ path('info') }}" title="Packrat Card Info and Recipes"><img class="logo" width="270" height="90" src="{{ asset('images/packratinfo.png') }}" alt="Packrat Card Info and Recipes" title="Packrat Recipes and Card Info" /></a>
+    {% elseif route == 'mockup' %}
+        <a href="{{ path('mockup') }}" title="Packrat Mockups"><img class="logo" width="270" height="90" src="{{ asset('images/packratmockups.png') }}" alt="Packrat Mockups" title="Packrat Mockups" /></a>
+    {% else %}
+        <a href="{{ path('home') }}" title="Packrat Tools"><img class="logo" width="270" height="90" src="{{ asset('images/packrattools.png') }}" alt="Packrat Tools" title="Packrat Tools" /></a>
+    {% endif %}
+
+    <br class="clear" />
+</div>
