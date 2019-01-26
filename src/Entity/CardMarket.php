@@ -6,14 +6,14 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(
- *      name="card_market", 
- *      uniqueConstraints={
- *          @ORM\UniqueConstraint(name="unq_card_market", columns={"card_id", "market"})
- *      }, 
- *      indexes={
- *          @ORM\Index(name="card_id", columns={"card_id"}), 
- *          @ORM\Index(name="market", columns={"market"})
- *      }
+ *     name="card_market",
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="unq_card_market", columns={"card_id", "market"})
+ *     },
+ *     indexes={
+ *         @ORM\Index(name="card_id", columns={"card_id"}),
+ *         @ORM\Index(name="market", columns={"market"})
+ *     }
  * )
  * @ORM\Entity
  */
@@ -53,7 +53,7 @@ class CardMarket
     /**
      * @var string
      *
-     * @ORM\Column(name="price_type", type="string", length=0, nullable=false, options={"default"="Cr"})
+     * @ORM\Column(name="price_type", type="string", length=0, nullable=false, options={"default" = "Cr"})
      * Options: 'Cr','Tx','Eggs'
      */
     public $type = 'Cr';

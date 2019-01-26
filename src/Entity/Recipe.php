@@ -6,8 +6,8 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(
- *      name="card_recipe", 
- *      uniqueConstraints={@ORM\UniqueConstraint(name="card_id", columns={"card_id"})}
+ *     name="card_recipe",
+ *     uniqueConstraints={@ORM\UniqueConstraint(name="card_id", columns={"card_id"})}
  * )
  * @ORM\Entity
  */

@@ -27,7 +27,7 @@ class GuzzleAdapter implements Adapter
      *
      * @return self
      */
-    public static function create(string $baseUri = PackratApi::PACKRAT_API_URL): self 
+    public static function create(string $baseUri = PackratApi::PACKRAT_API_URL): self
     {
         $client = new Client(
             [

@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace DoctrineMigrations;
 
@@ -10,7 +12,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20180619161538 extends AbstractMigration
 {
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
@@ -43,22 +45,22 @@ final class Version20180619161538 extends AbstractMigration
         $this->addSql('UPDATE IGNORE feat SET date_achieved = NULL WHERE date_achieved = "2022-01-01"');
 
         // LEGACY TABLE format
-        $this->addSql("ALTER TABLE artist ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_history ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_market ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_market_archive ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_news ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_news_archive ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_patterns ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE card_recipe ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE collection ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE family ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE feat ENGINE=InnoDB");
-        $this->addSql("ALTER TABLE queue ENGINE=InnoDB");
+        $this->addSql('ALTER TABLE artist ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_history ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_market ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_market_archive ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_news ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_news_archive ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_patterns ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE card_recipe ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE collection ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE family ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE feat ENGINE=InnoDB');
+        $this->addSql('ALTER TABLE queue ENGINE=InnoDB');
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
