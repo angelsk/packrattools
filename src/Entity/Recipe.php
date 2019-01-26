@@ -5,10 +5,7 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Table(
- *     name="card_recipe",
- *     uniqueConstraints={@ORM\UniqueConstraint(name="card_id", columns={"card_id"})}
- * )
+ * @ORM\Table(name="card_recipe")
  * @ORM\Entity
  */
 class Recipe
@@ -25,26 +22,28 @@ class Recipe
     private $id;
 
     /**
-     * @var int
+     * @var Card|null
      *
-     * @ORM\Column(name="ingredient_1", type="integer", nullable=false)
-     * @TODO: Link to card
+     * @ORM\ManyToOne(targetEntity="Card")
+     * @ORM\JoinColumn(name="ingredient_1", referencedColumnName="card_id", nullable=false)
      */
-    public $ingredient1;
+    private $ingredient1;
 
     /**
-     * @var int
+     * @var Card|null
      *
-     * @ORM\Column(name="ingredient_2", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Card")
+     * @ORM\JoinColumn(name="ingredient_2", referencedColumnName="card_id", nullable=false)
      */
-    public $ingredient2;
+    private $ingredient2;
 
     /**
-     * @var int
+     * @var Card|null
      *
-     * @ORM\Column(name="ingredient_3", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Card")
+     * @ORM\JoinColumn(name="ingredient_3", referencedColumnName="card_id", nullable=false)
      */
-    public $ingredient3;
+    private $ingredient3;
 
     /**
      * @return int|null
@@ -52,5 +51,41 @@ class Recipe
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    /**
+     * @return Card[]
+     */
+    public function getIngredients(): array
+    {
+        return [
+            $this->ingredient1,
+            $this->ingredient2,
+            $this->ingredient3
+        ];
+    }
+
+    /**
+     * @param Card $card
+     */
+    public function setIngredient1(Card $card): void
+    {
+        $this->ingredient1 = $card;
+    }
+
+    /**
+     * @param Card $card
+     */
+    public function setIngredient2(Card $card): void
+    {
+        $this->ingredient2 = $card;
+    }
+
+    /**
+     * @param Card $card
+     */
+    public function setIngredient3(Card $card): void
+    {
+        $this->ingredient3 = $card;
     }
 }

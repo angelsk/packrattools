@@ -118,9 +118,9 @@ class Card
     /**
      * @var int|null
      *
-     * @ORM\Column(name="limited", type="smallint", nullable=true, options={"default" = 0})
+     * @ORM\Column(name="limited", type="smallint", nullable=true, options={"default" = NULL})
      */
-    public $limited = 0;
+    public $limited = null;
 
     /**
      * @var bool
@@ -192,6 +192,13 @@ class Card
      * @ORM\Column(name="release_datetime", type="datetime", nullable=true)
      */
     public $apiReleaseDate;
+
+    /**
+     * @var string|null
+     *
+     * @ORM\Column(name="card_description", type="text", nullable=true)
+     */
+    public $description;
 
     /**
      * @return int|null

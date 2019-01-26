@@ -139,21 +139,6 @@ class Collection
     /**
      * @var string|null
      *
-     * @ORM\Column(name="feat_card", type="string", length=255, nullable=true)
-     * @TODO: Replace with Feat ID
-     */
-    public $featCard;
-
-    /**
-     * @var string|null
-     *
-     * @ORM\Column(name="feat_statement", type="text", nullable=true)
-     */
-    public $featStatement;
-
-    /**
-     * @var string|null
-     *
      * @ORM\Column(name="intro_text", type="text", nullable=true)
      */
     public $introText;
