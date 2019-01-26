@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection as DoctrineCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -40,6 +41,30 @@ class Collection
      * @ORM\OneToOne(targetEntity="Feat", mappedBy="collection")
      */
     private $feat;
+
+    /**
+     * @var DoctrineCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Artist")
+     * @ORM\JoinTable(
+     *     name="collection_artists",
+     *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="artist_id", referencedColumnName="artist_id")}
+     * )
+     */
+    private $artists;
+
+    /**
+     * @var DoctrineCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Collection")
+     * @ORM\JoinTable(
+     *     name="related_collections",
+     *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="related_collection_id", referencedColumnName="collection_id")}
+     * )
+     */
+    private $relatedCollections;
 
     /**
      * @var DoctrineCollection
@@ -134,22 +159,6 @@ class Collection
     public $introText;
 
     /**
-     * @var string|null
-     *
-     * @ORM\Column(name="artist_id", type="string", length=25, nullable=true)
-     * @TODO: Multiple artists - create joining table
-     */
-    public $artistId;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="related_collection_id", type="string", length=255, nullable=false)
-     * @TODO: Multiple related collections - create joining table?
-     */
-    public $relatedCollectionId;
-
-    /**
      * @var bool
      *
      * @ORM\Column(name="is_xl", type="boolean", nullable=false)
@@ -212,6 +221,13 @@ class Collection
      */
     public $hasChanged = false;
 
+    public function __construct()
+    {
+        $this->cards = new ArrayCollection();
+        $this->artists = new ArrayCollection();
+        $this->relatedCollections = new ArrayCollection();
+    }
+
     /**
      * @return int|null
      */
@@ -251,6 +267,44 @@ class Collection
     {
         if (!$this->cards->contains($card)) {
             $this->cards->add($card);
+        }
+    }
+
+    /**
+     * @return DoctrineCollection
+     */
+    public function getArtists(): DoctrineCollection
+    {
+        return $this->artists;
+    }
+
+    /**
+     * @param Artist $artist
+     */
+    public function addArtist(Artist $artist): void
+    {
+        if (!$this->artists->contains($artist)) {
+            $this->artists->add($artist);
+        }
+    }
+
+    /**
+     * @return DoctrineCollection
+     */
+    public function getRelatedCollections(): DoctrineCollection
+    {
+        return $this->relatedCollections;
+    }
+
+    /**
+     * @param Collection $collection
+     */
+    public function addRelatedCollection(Collection $collection)
+    {
+        if (!$this->relatedCollections->contains($collection)) {
+            $this->relatedCollections->add($collection);
+
+            $collection->addRelatedCollection($this); // Reciprocal not not infinite
         }
     }
 }
