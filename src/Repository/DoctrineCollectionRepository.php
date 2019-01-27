@@ -27,7 +27,7 @@ class DoctrineCollectionRepository implements DoctrineRepository, CollectionRepo
             ->select('collection, family, feat, related, relatedFeats, cards') // @TODO: Why is it force loading feat when not even rendering? maybe mark 121 as lazy load?
             ->addSelect('CASE WHEN family.id = :gadget THEN 1 ELSE 0 END AS HIDDEN isGadget')
             ->innerJoin('collection.family', 'family')
-            ->innerJoin('collection.feat', 'feat')
+            ->leftJoin('collection.feat', 'feat')
             ->leftJoin('collection.relatedCollections', 'related')
             ->leftJoin('related.feat', 'relatedFeats')
             ->leftJoin('collection.cards', 'cards')

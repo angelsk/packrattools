@@ -50,7 +50,6 @@
                         <span class="name"><a href="/info/?collection={{ collection.identifier }}">{{ collection.name }}</a></span>
                         <span class="details">
                             {% if collection.numberOfCards != collection.releasedCards %}{{ collection.releasedCards }}/{% endif %}
-                            {{ collection.releasedCards }}/
                             {{ collection.numberOfCards }}
                             Card{% if collection.numberOfCards != 1 %}s{% endif %}
                         </span>

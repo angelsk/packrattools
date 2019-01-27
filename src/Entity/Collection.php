@@ -104,7 +104,7 @@ class Collection
     /**
      * @var bool
      *
-     * @ORM\Column(name="num_cards", type="boolean", nullable=false)
+     * @ORM\Column(name="num_cards", type="smallint", nullable=false, options={"default" = 0})
      */
     public $numberOfCards = 0;
 
@@ -146,49 +146,49 @@ class Collection
     /**
      * @var bool
      *
-     * @ORM\Column(name="is_xl", type="boolean", nullable=false)
+     * @ORM\Column(name="is_xl", type="boolean", nullable=false, options={"default" = false})
      */
     public $isXl = false;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="is_premium", type="boolean", nullable=false)
+     * @ORM\Column(name="is_premium", type="boolean", nullable=false, options={"default" = false})
      */
     public $isPremium = false;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="credit_cost", type="smallint", nullable=false)
+     * @ORM\Column(name="credit_cost", type="smallint", nullable=false, options={"default" = 0})
      */
     public $creditCost = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="ticket_cost", type="smallint", nullable=false)
+     * @ORM\Column(name="ticket_cost", type="smallint", nullable=false, options={"default" = 0})
      */
     public $ticketCost = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="draw_cost", type="smallint", nullable=false)
+     * @ORM\Column(name="draw_cost", type="smallint", nullable=false, options={"default" = 0})
      */
     public $drawCost = 0;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="rat_cost", type="smallint", nullable=false)
+     * @ORM\Column(name="rat_cost", type="smallint", nullable=false, options={"default" = 0})
      */
     public $ratCost = 0;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="special_foils", type="boolean", nullable=false)
+     * @ORM\Column(name="special_foils", type="boolean", nullable=false, options={"default" = false})
      */
     public $specialFoils = false;
 
@@ -202,7 +202,7 @@ class Collection
     /**
      * @var bool
      *
-     * @ORM\Column(name="has_changed", type="boolean", nullable=false)
+     * @ORM\Column(name="has_changed", type="boolean", nullable=false, options={"default" = false})
      */
     public $hasChanged = false;
 
@@ -290,11 +290,11 @@ class Collection
     }
 
     /**
-     * @return int
+     * @return bool
      */
-    public function hasRelatedCollections(): int
+    public function hasRelatedCollections(): bool
     {
-        return $this->relatedCollections->count();
+        return $this->relatedCollections->count() > 0;
     }
 
     /**
