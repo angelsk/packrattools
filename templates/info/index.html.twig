@@ -1,20 +1,83 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello InfoController!{% endblock %}
+{% set route = 'info' %}
+
+{% block title %}Packrat Recipes and Card Info{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+    <div class="content">
+        <div>
+            <h1 class="section_header left"><img src="{{ asset('images/packrat/vault.png') }}" alt="Collections" title="Collections" />&nbsp; Collections</h1>
+            <p class="section_header left">
+            <a href="{{ path('info') }}" class="selected">Current</a>
+                | <a href="{{ path('info') }}?retired">Retired</a>
+            </p>
+        </div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+        <p class="section_header">
+            <img src="{{ asset('images/packrat/steal.png') }}" alt="Order" title="Order" />&nbsp; Order:
+            <a href="{{ path('info') }}" class="selected">Date</a>
+            | <a href="{{ path('info') }}?order=name">Collection name</a>
+        </p>
+        <br class="clear" />
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/Users/jo/Sites/packrattools/src/Controller/InfoController.php'|file_link(0) }}">src/Controller/InfoController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/Users/jo/Sites/packrattools/templates/info/index.html.twig'|file_link(0) }}">templates/info/index.html.twig</a></code></li>
-    </ul>
-</div>
+        {% for collection in collections %}
+            <div class="minicard">
+                <div>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ collection.family.border }}; background-color: # {{ collection.family.colour }};">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ collection.family.border }};">
+                            <a href="/info/?collection={{ collection.identifier }}">
+                                <img alt="{{ collection.name }}" width="16" height="16" src="{{ collection.icon }}" />
+                            </a>
+                        </p>
+                    </div>
+                    <p class="info">
+                        {% if collection.isXl or collection.isPremium or collection.hasRelatedCollections %}
+                            <span class="status">
+                                {% if collection.isXl %}<img src="{{ asset('images/packrat/XL_16.png') }}" alt="XL" title="XL" class="is_xl" />{% endif %}
+                                {% if collection.isPremium %}<img src="{{ asset('images/packrat/ticket-flat_16.png') }}" alt="Premium" title="Premium" class="is_premium" />{% endif %}
+                            </span>
+
+                            {% if collection.hasRelatedCollections %}
+                                <span class="related">
+                                    {% for altCollection in collection.relatedCollections %}
+                                        <a href="/info/?collection={{ altCollection.identifier }}"><img width="16" height="16" style="vertical-align:middle;" src="{{ altCollection.icon }}" alt="{{ altCollection.name }}" title="{{ altCollection.name }}" /></a>
+                                    {% endfor %}
+                                </span>
+                            {% endif %}
+                        {% endif %}
+
+                        <span class="name"><a href="/info/?collection={{ collection.identifier }}">{{ collection.name }}</a></span>
+                        <span class="details">
+                            {% if collection.numberOfCards != collection.releasedCards %}{{ collection.releasedCards }}/{% endif %}
+                            {{ collection.releasedCards }}/
+                            {{ collection.numberOfCards }}
+                            Card{% if collection.numberOfCards != 1 %}s{% endif %}
+                        </span>
+                    </p>
+
+                    <p class="bottom{% if collection.retireding %} expired{% endif %}">
+                        {% if collection.retireding %}
+                            <span class="bl expired">
+                                {% if collection.retired %}Retired {% else %}Retiring {% endif %} on
+                                {{ collection.expiryDate|date('d M Y') }}
+                            </span>
+                        {% else %}
+                            <span class="bl">
+                                Released on
+                                {{ collection.releaseDate|date('d M Y') }}
+                                {% if collection.expiryDate %}*{% endif %}
+                            </span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <br class="clear" /><br />
+
+        <div>* Retiring in over 2 weeks time</div>
+
+        <br class="clear" /><br />
+    </div>
 {% endblock %}

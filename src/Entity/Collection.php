@@ -246,6 +246,14 @@ class Collection
     }
 
     /**
+     * @return int
+     */
+    public function getReleasedCards(): int
+    {
+        return $this->cards->count();
+    }
+
+    /**
      * @param Card $card
      */
     public function addCard(Card $card): void
@@ -282,6 +290,14 @@ class Collection
     }
 
     /**
+     * @return int
+     */
+    public function hasRelatedCollections(): int
+    {
+        return $this->relatedCollections->count();
+    }
+
+    /**
      * @param Collection $collection
      */
     public function addRelatedCollection(Collection $collection)
@@ -291,5 +307,33 @@ class Collection
 
             $collection->addRelatedCollection($this); // Reciprocal not not infinite
         }
+    }
+
+    /**
+     * Retired or retiring in the next two weeka
+     *
+     * @return bool
+     */
+    public function isRetireding(): bool
+    {
+        if (null === $this->expiryDate) {
+            return false;
+        }
+
+        $twoWeeks = strtotime('+2 week');
+
+        return $twoWeeks >= $this->expiryDate->getTimestamp();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isRetired(): bool
+    {
+        if (null === $this->expiryDate) {
+            return false;
+        }
+
+        return time() >= $this->expiryDate->getTimestamp();
     }
 }
