@@ -45,7 +45,7 @@ class Collection
     /**
      * @var DoctrineCollection
      *
-     * @ORM\ManyToMany(targetEntity="Artist")
+     * @ORM\ManyToMany(targetEntity="Artist", inversedBy="collections")
      * @ORM\JoinTable(
      *     name="collection_artists",
      *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
@@ -334,6 +334,6 @@ class Collection
             return false;
         }
 
-        return time() >= $this->expiryDate->getTimestamp();
+        return time() > $this->expiryDate->getTimestamp();
     }
 }

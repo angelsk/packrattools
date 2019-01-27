@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection as DoctrineCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -18,6 +19,13 @@ class Artist
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
+
+    /**
+     * @var DoctrineCollection
+     *
+     * @ORM\ManyToMany(targetEntity="Collection", mappedBy="artists")
+     */
+    private $collections;
 
     /**
      * @var string
@@ -74,5 +82,33 @@ class Artist
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    /**
+     * @return DoctrineCollection
+     */
+    public function getCollections(): DoctrineCollection
+    {
+        return $this->collections;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCollectionCount(): int
+    {
+        return $this->collections->count();
+    }
+
+    /**
+     * @return int
+     */
+    public function getCurrentCollectionCount(): int
+    {
+        $currentCollections = $this->collections->filter(function (Collection $collection) {
+            return !$collection->isRetired();
+        });
+
+        return $currentCollections->count();
     }
 }

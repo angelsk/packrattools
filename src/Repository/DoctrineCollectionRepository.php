@@ -42,4 +42,21 @@ class DoctrineCollectionRepository implements DoctrineRepository, CollectionRepo
 
         return $queryBuilder->getQuery()->execute();
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function getStatistics(): array
+    {
+        $queryBuilder = $this->createQueryBuilder('collection')
+            ->select('COUNT(DISTINCT collection) AS totalCollectionCount')
+            ->addSelect('SUM(CASE WHEN collection.expiryDate >= :today OR collection.expiryDate IS NULL THEN 1 ELSE 0 END) AS currentCollectionCount')
+            //->addSelect('COUNT(card) AS totalCardCount')
+            //->innerJoin('collection.cards', 'card')
+            ->setParameter('today', date('Y-m-d'));
+
+        $result = $queryBuilder->getQuery()->getScalarResult();
+
+        return $result[0] ?? [];
+    }
 }

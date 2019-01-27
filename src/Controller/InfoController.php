@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Service\ArtistService;
 use App\Service\CollectionService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -22,15 +23,18 @@ class InfoController extends AbstractController
     }
 
     /**
+     * @param ArtistService $artistService
+     *
      * @Route("/info/", name="info")
      */
-    public function index()
+    public function index(ArtistService $artistService)
     {
-        $collections = $this->collectionService->getCurrentCollections();
-
         return $this->render('info/index.html.twig', [
             'controller_name' => 'InfoController',
-            'collections' => $collections
+            'collections' => $this->collectionService->getCurrentCollections(),
+            'artists' => $artistService->getArtists(),
+            'stats' => $this->collectionService->getStatistics(),
+            'families' => []
         ]);
     }
 }

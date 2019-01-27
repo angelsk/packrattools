@@ -9,7 +9,7 @@
         <div>
             <h1 class="section_header left"><img src="{{ asset('images/packrat/vault.png') }}" alt="Collections" title="Collections" />&nbsp; Collections</h1>
             <p class="section_header left">
-            <a href="{{ path('info') }}" class="selected">Current</a>
+                <a href="{{ path('info') }}" class="selected">Current</a>
                 | <a href="{{ path('info') }}?retired">Retired</a>
             </p>
         </div>
@@ -49,8 +49,7 @@
 
                         <span class="name"><a href="/info/?collection={{ collection.identifier }}">{{ collection.name }}</a></span>
                         <span class="details">
-                            {% if collection.numberOfCards != collection.releasedCards %}{{ collection.releasedCards }}/{% endif %}
-                            {{ collection.numberOfCards }}
+                            {% if collection.numberOfCards != collection.releasedCards %}{{ collection.releasedCards }}/{% endif %}{{ collection.numberOfCards }}
                             Card{% if collection.numberOfCards != 1 %}s{% endif %}
                         </span>
                     </p>
@@ -65,7 +64,7 @@
                             <span class="bl">
                                 Released on
                                 {{ collection.releaseDate|date('d M Y') }}
-                                {% if collection.expiryDate %}*{% endif %}
+                                {% if collection.expiryDate is not empty %}*{% endif %}
                             </span>
                         {% endif %}
                     </p>
@@ -78,5 +77,101 @@
         <div>* Retiring in over 2 weeks time</div>
 
         <br class="clear" /><br />
+
+        {# if current show artists, feats, statistics #}
+        <h1 id="artists"><img src="{{ asset('images/packrat/packrat.png') }}" alt="Artists" title="Artists" />&nbsp; Artists</h1>
+
+        {% for artist in artists %}
+            <div class="minicard">
+                <div>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ artist.colour }}; background-color: #cccccc;">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ artist.colour }};">
+                            <a href="/info/?artist={{ artist.identifier }}"><img alt="{{ artist.name|raw }}" width="16" height="16" src="{{ artist.icon }}" /></a>
+                        </p>
+                    </div>
+                    <p class="info two_line">
+                        <span class="name"><a href="/info/?artist={{ artist.identifier }}">{{ artist.name|raw }}</a></span>
+                        <span class="details">{{ artist.collectionCount }} collections ({{ artist.currentCollectionCount }} current)</span>
+                    </p>
+                    <p class="bottom">&nbsp;</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <br class="clear" /><br />
+
+        <h1 id="feats"><img src="{{ asset('images/packrat/vault.png') }}" alt="Feats" title="Feats" />&nbsp; Feats</h1>
+
+        <div class="minicard">
+            <div>
+                <div class="collection-icon" style="border-bottom: 1px solid #4d4d4d; background-color: #cccccc;">
+                    <p style="border: 1px solid #ffffff; background-color: #4d4d4d;">
+                        <a href="/info/feats"><img alt="Collection Feats" src="{{ asset('images/packrat-icon.gif') }}" /></a>
+                    </p>
+                </div>
+                <p class="info two_line">
+                    <span class="name"><a href="/info/feats">Collection Feats</a></span>
+                    <span class="details">{# feats.collectionFeatCount #}/{# feats.featCount #} feats ({# feats.collectionCurrentFeatCount #} current)</span>
+                </p>
+                <p class="bottom">&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="minicard">
+            <div>
+                <div class="collection-icon" style="border-bottom: 1px solid #4d4d4d; background-color: #cccccc;">
+                    <p style="border: 1px solid #ffffff; background-color: #4d4d4d;">
+                        <a href="/info/feats?task"><img alt="Achievement Feats" src="{{ asset('images/packrat-icon.gif') }}" /></a>
+                    </p>
+                </div>
+                <p class="info two_line">
+                    <span class="name"><a href="/info/feats?task">Achievement Feats</a></span>
+                    <span class="details">{# feats.taskFeatCount #}/{# feats.featCount #} feats ({# feats.taskCurrentFeatCount #} current)</span>
+                </p>
+                <p class="bottom">&nbsp;</p>
+            </div>
+        </div>
+
+        <br class="clear" /><br />
+
+        <h1><img src="{{ asset('images/packrat/vault.png') }}" alt="Statistics" title="Statistics" />&nbsp; Statistics</h1>
+
+        <div class="minicard">
+            <div>
+                <div class="collection-icon" style="border-bottom: 1px solid #4d4d4d; background-color: #cccccc;">
+                    <p style="border: 1px solid #ffffff; background-color: #4d4d4d;">
+                        <a href="/info/"><img alt="All Collections" src="{{ asset('images/packrat-icon.gif') }}" /></a>
+                    </p>
+                </div>
+                <p class="info two_line">
+                    <span class="name"><a href="/info/">All</a></span>
+                    <span class="details">{{ stats.totalCollectionCount }} Collections ({{ stats.currentCollectionCount }} current)<br />
+                    {# stats.totalCardCount #} Cards ({# stats.currentCardCount #} current)</span>
+                </p>
+                <p class="bottom">&nbsp;</p>
+            </div>
+        </div>
+
+        {% for family in families %}
+            <div class="minicard">
+                <div>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ family.border }}; background-color: #{{ family.colour }};">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ family.border }};">
+                            <a href="/info/?family={{ family.identifier }}"><img alt="{{ family.name }}" src="/assets/foils/{{ family.icon }}" /></a>
+                        </p>
+                    </div>
+                    <p class="info two_line">
+                        <span class="name"><a href="/info/?family={{ family.identifier }}">{{ family.name }}</a></span>
+                        <span class="details">
+                            {{ family.collectionCount }} Collections {% if 0 != family.id %}({{ family.currentCollectionCount }} current){% endif %}<br />
+                            {{ family.cardCount }} Cards {% if 0 != family.id %}({{ family.currentCardCount }} current){% endif %}
+                        </span>
+                    </p>
+                    <p class="bottom">&nbsp;</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <br class="clear" />
     </div>
 {% endblock %}
