@@ -12,7 +12,7 @@ use Doctrine\Migrations\AbstractMigration;
  */
 final class Version20190126221713 extends AbstractMigration
 {
-    public function up(Schema $schema) : void
+    public function up(Schema $schema): void
     {
         // check we have all the related collections added properly
         $statement = $this->connection->prepare('SELECT DISTINCT r.recipe_id, c.collection_id AS collection, i1.collection_id AS i1, i2.collection_id AS i2, i3.collection_id AS i3 FROM card_recipe r LEFT JOIN card c ON c.card_id = r.card_id LEFT JOIN card i1 ON i1.card_id = r.ingredient_1 LEFT JOIN card i2 ON i2.card_id = r.ingredient_2 LEFT JOIN card i3 ON i3.card_id = r.ingredient_3 WHERE c.collection_id != i1.collection_id OR c.collection_id != i2.collection_id OR c.collection_id != i3.collection_id');
@@ -28,7 +28,7 @@ final class Version20190126221713 extends AbstractMigration
 
             foreach ($collectionIds as $primaryId) {
                 foreach ($collectionIds as $secondaryId) {
-                    if ($primaryId != $secondaryId) {
+                    if ($primaryId !== $secondaryId) {
                         $this->addSql(
                             sprintf('INSERT IGNORE INTO related_collections VALUES (%d, %s)', $primaryId, $secondaryId)
                         );
@@ -38,7 +38,7 @@ final class Version20190126221713 extends AbstractMigration
         }
     }
 
-    public function down(Schema $schema) : void
+    public function down(Schema $schema): void
     {
         // nothing here
     }
