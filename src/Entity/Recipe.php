@@ -72,7 +72,7 @@ class Recipe
     {
         $this->ingredient1 = $card;
 
-        if ($this->card->getCollection() != $card->getCollection()) {
+        if ($this->card->getCollection() !== $card->getCollection()) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
     }
@@ -84,7 +84,7 @@ class Recipe
     {
         $this->ingredient2 = $card;
 
-        if ($this->card->getCollection() != $card->getCollection()) {
+        if ($this->card->getCollection() !== $card->getCollection()) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
     }
@@ -96,7 +96,7 @@ class Recipe
     {
         $this->ingredient3 = $card;
 
-        if ($this->card->getCollection() != $card->getCollection()) {
+        if ($this->card->getCollection() !== $card->getCollection()) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
     }
