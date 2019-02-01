@@ -17,7 +17,7 @@ return PhpCsFixer\Config::create()
         // Include all PSR-2 rules
         '@PSR2' => true,
 
-        // Agreed Explorify standards
+        // Agreed standards
         'array_syntax' => ['syntax' => 'short'],
         'strict_comparison' => true, // @risky
         'is_null' => true, // [@Symfony:risky]
