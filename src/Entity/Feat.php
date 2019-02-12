@@ -35,6 +35,13 @@ class Feat
     public $identifier;
 
     /**
+     * @var int|null
+     *
+     * @ORM\Column(name="packrat_id", type="integer", nullable=false)
+     */
+    public $apiId;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="feat_name", type="string", length=255, nullable=false)
