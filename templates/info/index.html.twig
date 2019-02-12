@@ -24,7 +24,7 @@
         {% for collection in collections %}
             <div class="minicard">
                 <div>
-                    <div class="collection-icon" style="border-bottom: 1px solid #{{ collection.family.border }}; background-color: # {{ collection.family.colour }};">
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ collection.family.border }}; background-color: #{{ collection.family.colour }};">
                         <p style="border: 1px solid #ffffff; background-color: #{{ collection.family.border }};">
                             <a href="/info/?collection={{ collection.identifier }}">
                                 <img alt="{{ collection.name }}" width="16" height="16" src="{{ collection.icon }}" />
