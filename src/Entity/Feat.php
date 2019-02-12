@@ -37,7 +37,7 @@ class Feat
     /**
      * @var int|null
      *
-     * @ORM\Column(name="packrat_id", type="integer", nullable=false)
+     * @ORM\Column(name="packrat_id", type="integer", nullable=true)
      */
     public $apiId;
 
