@@ -208,7 +208,7 @@ ul.message li, ul.information li {
 }
 
 .basket {
-  background: url('/assets/cart.png') top left no-repeat;
+  background: url('/images/cart.png') top left no-repeat;
   text-indent: 20px;
   height: 16px;
 }
@@ -356,7 +356,7 @@ ul.pack_colours li input {
 }
 
 .feat_img {
-    background: url('/assets/feat-bg.gif') top left no-repeat;
+    background: url('/images/feat-bg.gif') top left no-repeat;
     text-align: center;
     position: relative;
 }
@@ -393,9 +393,9 @@ hr.new_items {
     margin:10px 0;
 }
 
-.collection-wrapper { display: inline-block; overflow: hidden; margin-bottom: 17px; float: left; background-color: rgb(238, 238, 238); background-image: url('/assets/packrat/content-bg.gif'); width: 625px; padding: 15px 0pt 13px 15px; }
+.collection-wrapper { display: inline-block; overflow: hidden; margin-bottom: 17px; float: left; background-color: rgb(238, 238, 238); background-image: url('/images/packrat/content-bg.gif'); width: 625px; padding: 15px 0pt 13px 15px; }
 .headline { border-bottom: 1px solid #dddddd; margin: 0pt 22px 7px 5px; overflow: hidden; display: block; font-size: 13px; color: #888888; padding-bottom: 10px; }
-.big_wrapper { background: url('/assets/packrat/content-bg.gif') repeat-y scroll rgb(238, 238, 238); overflow: hidden; }
+.big_wrapper { background: url('/images/packrat/content-bg.gif') repeat-y scroll rgb(238, 238, 238); overflow: hidden; }
 
 .artist_rounded { width: 150px; padding: 0; margin-right: 20px; float: left; }
 .artist_rounded div { width: 150px; height: 150px; border-radius: 1em; -moz-border-radius: 1em; -webkit-border-radius: 1em;  border: 2px solid rgb(59, 89, 152); }
@@ -408,7 +408,7 @@ hr.new_items {
 .card-wrapper .action.alt { background: #ffdede none repeat scroll 0% 0%; }
 .card-wrapper .action:hover { background: #6d84b4 none repeat scroll 0% 0%; color: #ffffff; font-weight: bold; text-decoration: none; }
 .card-wrapper .action.bling:hover { background: transparent; }
-.card { border-style: solid solid none; border-color: #eeeeee #eeeeee #ffffff; border-width: 5px 5px medium; margin: 0 auto 4px;; padding: 8px; background: #ffffff url("/assets/packrat/bottom-border.gif") repeat-x scroll left bottom; position: relative; display: block; width: 94px; }
+.card { border-style: solid solid none; border-color: #eeeeee #eeeeee #ffffff; border-width: 5px 5px medium; margin: 0 auto 4px;; padding: 8px; background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom; position: relative; display: block; width: 94px; }
 .card .family { padding: 4px; overflow: hidden; }
 .card .front .icon { padding: 11px; width: 64px; height: 64px; background-color: #ffffff; background-position: 50% 50%; background-repeat: no-repeat; }
 .card .front .collection { width: 22px; height: 21px; background-position: 50% 50%; background-repeat: no-repeat; float: left; }
@@ -421,26 +421,26 @@ hr.new_items {
 .card .back .issue { padding: 6px 0pt; line-height: 11px; text-align: center; font-weight: bold; color: #333333; }
 
 .card-wrapper.feat { height: auto !important; }
-.card-wrapper.feat .card { border: 5px solid #eeeeee; background: transparent url("/assets/packrat/feat-bg.gif") repeat-x scroll left top; }
-.card-wrapper.feat .family { background: #676768 url("/assets/packrat/feat-bg-inner.gif") repeat-x scroll left top; }
+.card-wrapper.feat .card { border: 5px solid #eeeeee; background: transparent url("/images/packrat/feat-bg.gif") repeat-x scroll left top; }
+.card-wrapper.feat .family { background: #676768 url("/images/packrat/feat-bg-inner.gif") repeat-x scroll left top; }
 .card-wrapper.feat .points { color: #ffffff; line-height: 10px; }
-.card-wrapper.feat .feat-icon { background: transparent url("/assets/packrat/feat-bg-icon.gif") repeat-x scroll left top; display: block; }
+.card-wrapper.feat .feat-icon { background: transparent url("/images/packrat/feat-bg-icon.gif") repeat-x scroll left top; display: block; }
 .card-wrapper.feat .icon { border: 1px solid #a199cc; width: 62px; height: 62px; background-color: transparent; }
 .card-wrapper.feat .feat-name { color: #ffffff; text-align: center; line-height: 12px; padding-top: 18px; height: 54px; }
 .card-wrapper.feat .issue span { display: block; font-size: 9px; padding-bottom: 2px; color: #aaaaaa; font-weight: normal; }
 .card-wrapper.feat .issue { font-weight: bold; color: #ffffff; }
 .card-wrapper.feat.feat-disabled { filter: alpha(opacity=50); opacity: 0.5; }
 .card-wrapper.feat.gold .issue span { color: #ffffff; }
-.card-wrapper.feat.gold .family { background: transparent url("/assets/packrat/feat-gold-inner.png") repeat-x scroll left top; }
-.card-wrapper.feat.gold .card { background: transparent url("/assets/packrat/feat-gold-bg.png") repeat-x scroll left top; }
-.card-wrapper.feat.silver .family { background: transparent url("/assets/packrat/feat-silver-inner.png") repeat-x scroll left top; }
-.card-wrapper.feat.silver .card { background: transparent url("/assets/packrat/feat-silver-bg.png") repeat-x scroll left top; }
+.card-wrapper.feat.gold .family { background: transparent url("/images/packrat/feat-gold-inner.png") repeat-x scroll left top; }
+.card-wrapper.feat.gold .card { background: transparent url("/images/packrat/feat-gold-bg.png") repeat-x scroll left top; }
+.card-wrapper.feat.silver .family { background: transparent url("/images/packrat/feat-silver-inner.png") repeat-x scroll left top; }
+.card-wrapper.feat.silver .card { background: transparent url("/images/packrat/feat-silver-bg.png") repeat-x scroll left top; }
 .card-wrapper.feat.bronze .issue span { color: #ffffff; }
-.card-wrapper.feat.bronze .family { background: transparent url("/assets/packrat/feat-bronze-inner.png") repeat-x scroll left top; }
-.card-wrapper.feat.bronze .card { background: transparent url("/assets/packrat/feat-bronze-bg.png") repeat-x scroll left top; }
+.card-wrapper.feat.bronze .family { background: transparent url("/images/packrat/feat-bronze-inner.png") repeat-x scroll left top; }
+.card-wrapper.feat.bronze .card { background: transparent url("/images/packrat/feat-bronze-bg.png") repeat-x scroll left top; }
 
 .card-wrapper.foil-gadgets .family  .points { color: #fff; }
-.card-wrapper.foil-gadgets .family  { background: transparent url('/assets/packrat/foil-gadgets.gif') top left no-repeat !important; }
+.card-wrapper.foil-gadgets .family  { background: transparent url('/images/packrat/foil-gadgets.gif') top left no-repeat !important; }
 
 .dialog-wrapper { overflow: hidden; }
 .dialog-wrapper.successful .card { border: 1px solid #C1DC94 !important; margin: 5px 0pt 3px 5px; }
@@ -481,7 +481,7 @@ hr.new_items {
 }
 
 .tip-wrapper.left .tip {
-    background: transparent url('/assets/packrat/tooltip-left.png') no-repeat scroll 0% 0%;
+    background: transparent url('/images/packrat/tooltip-left.png') no-repeat scroll 0% 0%;
     left: 0pt;
 }
 .tip:hover {
@@ -489,7 +489,7 @@ hr.new_items {
     text-decoration: none;
 }
 .tip {
-    background: transparent url('/assets/packrat/tooltip.png') no-repeat scroll 50% 0%;
+    background: transparent url('/images/packrat/tooltip.png') no-repeat scroll 50% 0%;
     border: medium none white !important;
     color: white;
     font-size: 11px;
@@ -739,23 +739,23 @@ h1.section_header { display: inline; }
 #sidebar ul { margin-bottom: 15px; }
 #sidebar li.selected a, #sidebar li.selected a:hover { border-bottom: 1px solid #dddddd; background: #eeeeee none repeat scroll 0% 0%; color: #333333; font-weight: bold; margin-left: 0pt; }
 #sidebar li.selected a b { font-weight: bold; }
-#sidebar li.selected a.arrow { padding: 15px 12px; background: #eeeeee url("/assets/packrat/sidebar-arrow.png") no-repeat scroll left 19px; }
+#sidebar li.selected a.arrow { padding: 15px 12px; background: #eeeeee url("/images/packrat/sidebar-arrow.png") no-repeat scroll left 19px; }
 #sidebar li a { border-bottom: 1px solid #dddddd; padding: 15px 12px; background: #e6e6e6 none repeat scroll 0% 0%; display: block; font-size: 13px; margin-left: 1px; }
 #sidebar li a:hover { text-decoration: none; background-color: #eceff5; }
 #sidebar li a b { font-weight: normal; }
 #sidebar li.bottom a { border-bottom: medium none #ffffff; }
 #sidebar li .counter { margin: -1px 0pt 0pt 4px; position: absolute; right: 10px; }
-#sidebar li .counter span { background: transparent url("/assets/packrat/nav_counter.png") no-repeat scroll left top; display: block; width: 23px; height: 17px; line-height: 12px; color: #ffffff; padding-top: 2px; font-size: 12px; font-weight: bold; text-align: center; }
+#sidebar li .counter span { background: transparent url("/images/packrat/nav_counter.png") no-repeat scroll left top; display: block; width: 23px; height: 17px; line-height: 12px; color: #ffffff; padding-top: 2px; font-size: 12px; font-weight: bold; text-align: center; }
 #sidebar .collection.sm { display: block; width: 42px; height: 42px; float: left; margin-right: 8px; }
-#sidebar li .vault b { background: transparent url("/assets/packrat/vault.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .make b { background: transparent url("/assets/packrat/make.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .draw b { background: transparent url("/assets/packrat/draw.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .gadget b { background: transparent url("/assets/packrat/gadget.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .lock b { background: transparent url("/assets/packrat/lock.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .unlock b { background: transparent url("/assets/packrat/unlock.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .trade b { background: transparent url("/assets/packrat/trade.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .steal b { background: transparent url("/assets/packrat/steal.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .return b { background: transparent url("/assets/packrat/return.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .vault b { background: transparent url("/images/packrat/vault.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .make b { background: transparent url("/images/packrat/make.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .draw b { background: transparent url("/images/packrat/draw.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .gadget b { background: transparent url("/images/packrat/gadget.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .lock b { background: transparent url("/images/packrat/lock.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .unlock b { background: transparent url("/images/packrat/unlock.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .trade b { background: transparent url("/images/packrat/trade.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .steal b { background: transparent url("/images/packrat/steal.png") no-repeat scroll left top; padding-left: 22px; }
+#sidebar li .return b { background: transparent url("/images/packrat/return.png") no-repeat scroll left top; padding-left: 22px; }
 
 #card-container {
   position: absolute;
@@ -783,11 +783,11 @@ h1.section_header { display: inline; }
 	left: 50px;
 	width: 660px;
 }
-.dialog-wrapper { background: transparent url("/assets/packrat/bg-sm-bot.png") no-repeat scroll left bottom; z-index: 10; /*position: absolute; top: 40px; left: 150px;*/ width: 465px; padding-bottom: 10px; margin-left: 90px; }
+.dialog-wrapper { background: transparent url("/images/packrat/bg-sm-bot.png") no-repeat scroll left bottom; z-index: 10; /*position: absolute; top: 40px; left: 150px;*/ width: 465px; padding-bottom: 10px; margin-left: 90px; }
 .dialog-wrapper2.lg {
-	background: transparent url('/assets/packrat/bg-lg-top.png') no-repeat scroll 0% 0%;
+	background: transparent url('/images/packrat/bg-lg-top.png') no-repeat scroll 0% 0%;
 }
-.dialog-wrapper2 { padding: 10px 10px 0pt; background: transparent url("/assets/packrat/bg-sm-top.png") no-repeat scroll left top; display: block; }
+.dialog-wrapper2 { padding: 10px 10px 0pt; background: transparent url("/images/packrat/bg-sm-top.png") no-repeat scroll left top; display: block; }
 .dialog-title { border: 1px solid #3b5998; padding: 8px 10px; background: #6d84b4 none repeat scroll 0% 0%; display: block; color: #ffffff; font-weight: bold; font-size: 13px; }
 .dialog-title span { font-size: 11px; font-weight: normal; }
 .dialog { border-style: none solid; border-color: #ffffff #555555; border-width: medium 1px; padding: 10px; background: #ffffff none repeat scroll 0% 0%; overflow: hidden; display: block; }
@@ -801,18 +801,18 @@ h1.section_header { display: inline; }
 .dialog-footer p { float: left; line-height: 29px; }
 .dialog-footer .action { float: right; }
 .dialog-footer .action .cancel { line-height: 29px; margin-right: 5px; float: left; }
-.close-dialog { background: transparent url("/assets/packrat/close.gif") no-repeat scroll 5px 5px; position: absolute; top: 15px; right: 15px; display: block; width: 28px; height: 28px; }
+.close-dialog { background: transparent url("/images/packrat/close.gif") no-repeat scroll 5px 5px; position: absolute; top: 15px; right: 15px; display: block; width: 28px; height: 28px; }
 .close-dialog:hover { background-position: 5px -23px; }
 .dialog.pack { padding: 15px 0pt 13px 15px; background: #eeeeee none repeat scroll 0% 0%; }
-.dialog.pack .card { border: 5px solid #eeeeee; margin: 0pt auto; background: #ffffff url("/assets/packrat/bottom-border.gif") repeat-x scroll left bottom; }
+.dialog.pack .card { border: 5px solid #eeeeee; margin: 0pt auto; background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom; }
 .dialog-wrapper .card-column {
 	float: left;
 	width: 110px;
 }
-.dialog-wrapper.successful .dialog { background: #ecf8d0 url("/assets/packrat/success-bg.gif") repeat-x scroll left top; }
+.dialog-wrapper.successful .dialog { background: #ecf8d0 url("/images/packrat/success-bg.gif") repeat-x scroll left top; }
 .dialog-wrapper.successful .dialog-footer { background: #ffffff none repeat scroll 0% 0%;  }
 .dialog-wrapper.successful .dialog-footer p { font-size: 12px !important; }
-.publish_form_submit { border: medium none #ffffff; margin: 0pt; padding: 0pt; background: transparent url("/assets/packrat/button-submit.gif") no-repeat scroll left top; display: block; color: #ffffff; width: 78px; height: 29px; font-size: 13px; font-weight: bold; text-align: center; cursor: pointer; }
+.publish_form_submit { border: medium none #ffffff; margin: 0pt; padding: 0pt; background: transparent url("/images/packrat/button-submit.gif") no-repeat scroll left top; display: block; color: #ffffff; width: 78px; height: 29px; font-size: 13px; font-weight: bold; text-align: center; cursor: pointer; }
 .submit-button:hover, .publish_form_submit:hover { color: #dee4f1; }
 .dialog-wrapper .afire-feed {  float: left; margin-bottom: 10px; }
 .afire-feed {

@@ -91,24 +91,4 @@ class Artist
     {
         return $this->collections;
     }
-
-    /**
-     * @return int
-     */
-    public function getCollectionCount(): int
-    {
-        return $this->collections->count();
-    }
-
-    /**
-     * @return int
-     */
-    public function getCurrentCollectionCount(): int
-    {
-        $currentCollections = $this->collections->filter(function (Collection $collection) {
-            return !$collection->isRetired();
-        });
-
-        return $currentCollections->count();
-    }
 }

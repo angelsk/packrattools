@@ -1,0 +1,262 @@
+{% extends 'base.html.twig' %}
+
+{% set route = 'info' %}
+
+{% block title %}{{ collection.name }} - Packrat Recipes and Card Info{% endblock %}
+{% block og_title %}{{ collection.name }} - Packrat Recipes and Card Info{% endblock %}
+{% block og_image %}{{ collection.feat.image }}{% endblock %}
+
+{% block body %}
+    {% set missing = collection.numberOfCards - collection.releasedCards %}
+
+    <div class="content">
+
+        <div class="information filter" style="border: 1px solid #{{ collection.family.border }}; background-color: #{{ collection.family.colour }};">
+            <h2>
+                <img src="{{ collection.icon }}" width="16" height="16" alt="{{ collection.name }}" class="coll_icon" style="background-color: #{{ collection.family.border }};" />
+                <span class="left" style="width: 117px; {#{% if (18 >= strlen(str_replace(array(',','.'),'',collection.name))  %}#}padding-top: 5px;{#{% endif %}#}">{{ collection.name }}</span>
+            </h2>
+            <br class="clear" />
+
+            <div class="meta">
+                <p><b>Release Date:</b> {{ collection.releaseDate|date('d M Y') }}</p>
+            </div>
+
+            {% if collection.expiryDate %}
+                <div class="meta">
+                    <p><b>Expiry Date:</b> {{ collection.expiryDate|date('d M Y') }}</p>
+                </div>
+            {% endif %}
+
+            {% if 0 != collection.family.id %}
+                <div class="meta">
+                    <p><b>#1 Date:</b>
+                    {% if collection.feat.dateAchieved %}
+                        {{ collection.feat.dateAchieved|date('d M Y') }}</p>
+                        <p><i>(View the <a href="https://playpackrat.com/leaderboard/{{ collection.apiId }}" target="_blank">Leaderboard</a>)</i></p>
+                    {% else  %}
+                        <i>Incomplete</i></p>
+                    {% endif %}
+                </div>
+            {% endif %}
+
+            {#{%
+                $totalCostCollection = array();
+                if (0 != collection.ticket_cost) $totalCostCollection[] = collection.ticket_cost . ' tickets';
+                if (0 != collection.credit_cost) $totalCostCollection[] = collection.credit_cost . ' credits';
+                if (0 != collection.draw_cost) $totalCostCollection[] = collection.draw_cost . ' draw card'.((1 != collection.draw_cost) ? 's' : '');
+                if (0 != collection.rat_cost) $totalCostCollection[] = collection.rat_cost . ' rat card'.((1 != collection.rat_cost) ? 's' : '');
+                $collectionCost = implode('<br />', $totalCostCollection);
+                if (!empty($collectionCost) and ('locks' != collection.identifier))
+                {
+                    $collectionCost = '<br class="clear" /><br /><div class="meta"><p><b>'.('0000-00-00' != collection.feat.dateAchieved ? ($expired ? 'Estimated cost' : 'Total cost') : 'Cost so far').':</b><i>' . $collectionCost.'</i></p></div>';
+                    echo $collectionCost;
+                }
+            ?>#}
+            <br class="clear" /><br />
+
+            {% if collection.hasRelatedCollections %}
+                <p class="related_collections">Related collection(s) *:
+                    {% for altCollection in collection.relatedCollections %}
+                        <br /><span><img src="{{ altCollection.image }}" alt="{{ altCollection.name }}" width="16" height="16" /> {{ altCollection.name }}</span>
+                    {% endfor %}
+                </p>
+                <br class="clear" />
+            {% endif %}
+
+            {% if 'locks' != collection.identifier %}
+                <p class="card_rel" style="border: solid 1px #{{ collection.family.border }}; background-color: #{{ collection.family.border }};"><span class="number">{{ collection.numberOfCards }}</span><br />collected</p>
+                <p class="card_rel" style="border: solid 1px #{{ collection.family.border }};"><span class="number">{{ missing }}</span><br />missing</p>
+                <br class="clear" /><br />
+            {% endif %}
+
+            {% if 0 != collection.family.id %}
+                {% if collection.feat.image and collection.feat.dateAchieved %}
+                    <p class="feat feat_img"><img src="{{ collection.feat.image }}" alt="{{ collection.name }} Feat" title="{{ collection.name }} Feat" /><span class="feat_points">1000</span></p>
+                {% else  %}
+                    <p class="feat"><img src="{{ asset('images/feat-placeholder.gif') }}" alt="Feat not available" title="Feat not available" /></p>
+                {% endif %}
+                <br />
+
+                {% if collection.feat.statement %}
+                    {% if collection.feat.dateAchieved %}
+                        <p class="feat_st">&laquo; {{ collection.feat.statement|raw|nl2br }} &raquo;</p>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+
+            {% if collection.introText %}
+                <p class="feat_st">&laquo; {{ collection.introText|raw|nl2br }} &raquo;</p>
+            {% endif %}
+            <br />
+
+            {% if collection.artists %}
+                <p>
+                    <span style="float:left;"><img style="padding: 0 2px;" src="{{ asset('images/packrat/packrat.png') }}" alt="Artist" title="Art by" />Art by </span>
+                    <span class="artist" style="float: left; padding-left: 3px; padding-top: 3px;">
+                        {% for artist in collection.artists %}
+                            {% if not loop.first %}<br />{% endif %}
+                            <a href="/info/?artist={{ artist.identifier }}" title="Click to view more information and all collections by {{ artist.name }}">{{ artist.name }}</a>
+                        {% endfor %}
+                    </span>
+                </p>
+                <br class="clear" />
+            {% endif %}
+
+            <p>
+                <img src="{{ asset('images/packrat/credit-flat_16.png') }}" alt="Market Tracker" title="Hover over market names to see latest Tracker information" />
+                View <a href="/tracker/?collection={{ collection.identifier }}" title="Hover over market names to see latest Tracker information">Market Tracker.</a>
+            </p>
+
+            {% if collection.feat and collection.feat.dateAchieved %}
+                <p><img src="{{ asset('images/packrat/feat-icon.png') }}" alt="Feat Mockup" title="View feat mockup"> View <a href="/mockup/feats?feat={{ collection.identifier }}" title="View feat mockup">Feat Mockup</a></p>
+            {% endif %}
+
+            <p><img src="{{ asset('images/foils/' ~ collection.family.icon) }}" alt="Foil Mockup" title="View the whole collection in foil" /> View cards in <a href="/mockup/foils?collection={{ collection.identifier }}" title="View the whole collection in foil">Foil</a></p>
+
+            {% if collection.specialFoils %}
+               <p><img src="{{ asset('images/foils/' ~ collection.family.icon) }}" alt="Special Foil Mockup" title="View the whole collection in special foils" /> View the <a href="/mockup/foils?collection={{ collection.identifier }}&amp;special=1" title="View the whole collection in special foils">SPECIAL Foils</a></p>
+            {% endif %}
+
+            <p><img src="{{ asset('images/packrat/bling.gif') }}" alt="Bling Mockup" title="View the collection cards mocked up with various bling"> View cards with <a href="/mockup/bling?collection={{ collection.identifier }}" title="View the collection cards mocked up with various bling">Bling</a></p>
+        </div>
+
+        <div class="information selection_form">
+            <p class="left"><img src="{{ asset('images/packrat/return.png') }}" alt="All Collections" title="All Collections" /> &nbsp;<a href="{{ path('info') }}">All</a></p>
+            <p style="text-align:right">
+                {#% if 1 < collection.id %}
+                    {% set prevcol = collection.id - 1 %}
+                    <a href="/info/?collection={{ collections[prevcol].identifier }}">&laquo; {{ collections[prevcol].name }}</a>
+                {% endif %}
+                &nbsp; &nbsp;
+                {% if $fullcollcount > collection.id %}
+                    {% set nextcol = collection.id + 1 %}
+                    <a href="/info/?collection={{ collections[nextcol].identifier }}">{{ collections[nextcol].name }} &raquo;</a>
+                {% endif %}
+                <br class="clear" />#}
+            </p>
+        </div>
+
+        <div class="fb-like" style="float:left; margin-left: 18px;" data-href="http://packrattools.com{{ path('collection', {'identifier': collection.identifier}) }}" data-send="false" data-layout="button_count" data-width="80" data-show-faces="false" style="vertical-align: middle;"></div>
+        <p style="display:none; float:left;" id="request_uri">http://packrattools.com{{ path('collection', {'identifier': collection.identifier}) }}</p>
+        <p style="float:left; margin-left: 18px;"><g:plusone size="medium" count="true" href="http://packrattools.com{{ path('collection', {'identifier': collection.identifier}) }}"></g:plusone></p>
+
+        <p class="section_header">
+            <img src="{{ asset('images/packrat/steal.png') }}" alt="Order" title="Order" />&nbsp; Order:
+            <a href="" class="selected">Card points</a> | <a href="?order=name">Card name</a>
+        </p>
+        <br />
+
+        <table class="last_seen selection_form card_info_cells">
+            {% if missing > 0 %}
+                {% for count in range(0, missing) %}
+                    <tr{% if count % 2 == 1 %} class="odd"{% endif %}>
+                        <td style="width: 33px;"><img src="{{ asset('images/missing-card.gif') }}" alt="?" title="?" /></td>
+                        <td style="width: 125px;"><strong>?</strong></td>
+                        <td style="width: 240px;">&nbsp;</td>
+                        <td style="width: 115px;">&nbsp;</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
+
+            {% for card in collection.cards %}
+                <tr{% if loop.index0 % 2 == 1 %} class="odd"{% endif %}>
+                    <td style="width: 33px;"{% if 'credit' != card.cardType %} class="{{ card.cardType }}"{% endif %}>
+                        <img class="small_image pointer" src="{{ card.image }}" alt="{{ card.name }}" title="{{ card.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ collection.identifier }}&amp;card={{ card.identifier }}"  />
+                    </td>
+                    <td style="width: 125px;">
+                        <strong>{{ card.name }}</strong>
+                        <br />{{ card.pointValue }} points
+                    </td>
+                    <td{% if 'credit' != card.cardType %} class=" {{ card.cardType }}"{% endif %} style="width: 240px;">
+                        {#% if !empty($row['recipe)) : $info_count++}}
+                              {%
+                              $totalCostRecipe = array();
+                              if (0 != $row['info['ticket_cost) $totalCostRecipe[] = $row['info['ticket_cost . ' tickets';
+                              if (0 != $row['info['credit_cost) $totalCostRecipe[] = $row['info['credit_cost . ' credits';
+                              if (0 != $row['info['draw_cost) $totalCostRecipe[] = $row['info['draw_cost . ' draw card'.((1 != $row['info['draw_cost) ? 's' : '');
+                              if (0 != $row['info['rat_cost) $totalCostRecipe[] = $row['info['rat_cost . ' rat card'.((1 != $row['info['rat_cost) ? 's' : '');
+                              $recipeAlt = implode(', ', $totalCostRecipe);
+                              if (!empty($recipeAlt)) $recipeAlt = ' - Cost: ' . $recipeAlt;
+                              ?>
+                              <img src="/assets/packrat/make.png" alt="Recipe{{ $recipeAlt}}" title="Recipe{{ $recipeAlt}}" />
+                              {%
+                              Card::drawRecipe($row['recipe, $cardIds, $altimage);
+                              ?>
+                          {% endif %}
+                          {% if 'recipe' == card.cardType and !empty($row['markets %}<br />{% endif %}
+                          {% if !empty($row['markets)) : $info_count++;
+                            foreach ($row['markets as $marketType => $marketRows %}
+                              <img src="{% switch ($marketType)
+                              {
+                                  case 'LX': $typeText = 'XL Subscriber Markets'; echo '/assets/packrat/XL_16.png'; break;
+                                  case 'Tx': $typeText = 'Premium Ticket Markets'; echo '/assets/packrat/ticket-flat_16.png'; break;
+                                  default: $typeText = 'Standard Markets'; echo '/assets/packrat/credit-flat_16.png'; break;
+                              } ?>" alt="{{ $typeText}}" title="{{ $typeText}}" />
+                              {% if count($marketRows) == 1 %}
+                                  {{ $marketRows[0]['price }}
+                                  {{ ('Tx' == $marketRows[0]['price_type ? 'tickets' : ('Cr' == $marketRows[0]['price_type ? 'credits' : strtolower($marketRows[0]['price_type)))}} in
+                                  <a href="https://www.playpackrat.com/" onclick="return !window.open(this.href);" title="{{ Card::getLastSeen($marketRows[0]['last_seen, true)}}"  style="cursor:help;">{{ Market::formatMarketName($marketRows[0]['market)}}</a><br />
+                              {% else  %}
+                                  {{ $marketRows[0]['price }}
+                                  {{ ('Tx' == $marketRows[0]['price_type ? 'tickets' : ('Cr' == $marketRows[0]['price_type ? 'credits' : strtolower($marketRows[0]['price_type)))}} in
+                                  {% $combineMarkets = array();
+                                  foreach ($marketRows as $marketRow) :
+                                      $combineMarkets[] = '<a href="https://www.playpackrat.com/" onclick="return !window.open(this.href);" title="' . Card::getLastSeen($marketRow['last_seen, true) . '"  style="cursor:help;">'.Market::formatMarketName($marketRow['market).'</a>';
+                                  endfor;
+                                  echo implode('/ ', $combineMarkets)}}<br />
+                              {% endif %}
+                          {% endfor;
+                        endif}#}
+                        {% if 'draw' == card.cardType and not collection.retired %}
+                            <img src="{{ asset('images/packrat/draw.png') }}" alt="Draw card" title="Draw card" /> Draw card
+                        {% elseif 'rat' == card.cardType %}
+                            <img src="{{ asset('images/packrat/rats.png') }}" alt="Rat findings" title="Rat findings" /> *May* be seeded to the rats
+                        {% endif %}
+                        {% if card.soldOut %}
+                            <img src="{{ asset('images/packrat/steal.png') }}" alt="Sold out" title="Sold out" />
+                            {#% if !empty($row['markets) || 'draw' == card.cardType) echo '<br />'}}
+                                {% if 100 < $row['info['limited %}
+                                    Sold out - there were only <b>{{ $row['info['limited }}</b> available
+                                {% elseif (0 < $row['info['limited %}
+                                    Rarest card in PackRat - fewer than <b>{{ $row['info['limited }}</b> have been sold
+                                {% else  %}
+                                    Sold out - this card has sold out
+                                {% endif %}
+                            {% elseif (0 == $info_count and !$expired and 'recipe' != card.cardType %}
+                                {% if 'bling' == collection.identifier %}
+                                {% else  %}
+                                    <img src="/assets/packrat/steal.png" alt="Moved" title="Moved" /> Manually added (click on the image to see price history).
+                                    {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}}
+                                {% endif %#}
+                            {#% elseif (($expired || 0 < $info_count) and 0 < $row['info['limited %}
+                                {% if !empty($row['markets) || 'draw' == card.cardType) echo '<br />'}}
+                            <img src="/assets/packrat/steal.png" alt="Limited" title="Limited" /> Limited - this card has limited availability {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}#}
+                        {% endif %}
+                    </td>
+                    <td style="width: 115px;">
+                        {#% if !empty($row['recipe)) :
+                            $ing1 = $cardIds[$row['recipe['ingredient_1];
+                            $ing2 = $cardIds[$row['recipe['ingredient_2];
+                            $ing3 = $cardIds[$row['recipe['ingredient_3]}}
+                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ $ing1['medium_image }}" alt="{% if isset($ing1['collection)) echo $ing1['collection . ' - '}}{{ $ing1['card_name }}" title="{% if isset($ing1['collection)) echo $ing1['collection . ' - '}}{{ $ing1['card_name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ $ing1['identifier }}&card={{ $ing1['card_identifier }}" />
+                            <img style="padding: none !important; vertical-align:middle; cursor:pointer;" src="{{ $ing2['medium_image }}" alt="{% if isset($ing2['collection)) echo $ing2['collection . ' - '}}{{ $ing2['card_name }}" title="{% if isset($ing2['collection)) echo $ing2['collection . ' - '}}{{ $ing2['card_name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ $ing2['identifier }}&card={{ $ing2['card_identifier }}" />
+                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ $ing3['medium_image }}" alt="{% if isset($ing3['collection)) echo $ing3['collection . ' - '}}{{ $ing3['card_name }}" title="{% if isset($ing3['collection)) echo $ing3['collection . ' - '}}{{ $ing3['card_name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ $ing3['identifier }}&card={{ $ing3['card_identifier }}" />
+                        {% endif %#}
+                        {% if 0 != card.quantityNeeded and collection.feat %}
+                            <img src="{{ asset('images/packrat/make.png') }}" alt="Needed" title="Needed" /> <em>{{ card.quantityNeeded }}</em> needed
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </table>
+
+        {% if collection.hasRelatedCollections %}
+            <br class="clear" /><br />
+            <p>* See the related collection page for other cards and recipes not included in this collection.</p>
+        {% endif %}
+
+        <br class="clear" />
+    </div>
+
+{% endblock %}

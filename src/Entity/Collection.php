@@ -238,6 +238,22 @@ class Collection
     }
 
     /**
+     * @return Feat|null
+     */
+    public function getFeat(): ?Feat
+    {
+        return $this->feat;
+    }
+
+    /**
+     * @param Feat $feat
+     */
+    public function setFeat(Feat $feat): void
+    {
+        $this->feat = $feat;
+    }
+
+    /**
      * @return DoctrineCollection
      */
     public function getCards(): DoctrineCollection
