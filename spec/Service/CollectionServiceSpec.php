@@ -2,7 +2,6 @@
 
 namespace spec\App\Service;
 
-use App\Entity\Collection;
 use App\Repository\CollectionRepository;
 use App\Service\CollectionService;
 use PhpSpec\ObjectBehavior;
@@ -28,14 +27,5 @@ class CollectionServiceSpec extends ObjectBehavior
             ->willReturn([]);
 
         $this->getCurrentCollections()->shouldBeArray();
-    }
-
-    public function it_should_get_statistics_on_collections(CollectionRepository $repository)
-    {
-        $repository->getStatistics()
-            ->shouldBeCalled()
-            ->willReturn([]);
-
-        $this->getStatistics()->shouldBeArray();
     }
 }

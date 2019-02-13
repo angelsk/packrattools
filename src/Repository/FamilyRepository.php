@@ -2,10 +2,15 @@
 
 namespace App\Repository;
 
-interface ArtistRepository
+interface FamilyRepository
 {
     /**
      * @return array
      */
     public function getStatistics(): array;
+
+    /**
+     * @return array
+     */
+    public function getCardStatistics(): array;
 }

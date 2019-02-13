@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-interface ArtistRepository
+interface FeatRepository
 {
     /**
      * @return array

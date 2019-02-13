@@ -2,24 +2,24 @@
 
 namespace spec\App\Service;
 
-use App\Repository\ArtistRepository;
-use App\Service\ArtistService;
+use App\Repository\FeatRepository;
+use App\Service\FeatService;
 use PhpSpec\ObjectBehavior;
 use Prophecy\Argument;
 
-class ArtistServiceSpec extends ObjectBehavior
+class FeatServiceSpec extends ObjectBehavior
 {
     public function it_is_initializable()
     {
-        $this->shouldHaveType(ArtistService::class);
+        $this->shouldHaveType(FeatService::class);
     }
 
-    public function let(ArtistRepository $repository)
+    public function let(FeatRepository $repository)
     {
         $this->beConstructedWith($repository);
     }
 
-    public function it_should_get_statistics(ArtistRepository $repository)
+    public function it_should_get_statistics(FeatRepository $repository)
     {
         $repository->getStatistics()
             ->shouldBeCalled()

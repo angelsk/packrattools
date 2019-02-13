@@ -27,12 +27,4 @@ class CollectionService
     {
         return $this->repository->getCurrentCollectionsWithFamily();
     }
-
-    /**
-     * @return array
-     */
-    public function getStatistics(): array
-    {
-        return $this->repository->getStatistics();
-    }
 }

@@ -84,14 +84,14 @@
         {% for artist in artists %}
             <div class="minicard">
                 <div>
-                    <div class="collection-icon" style="border-bottom: 1px solid #{{ artist.colour }}; background-color: #cccccc;">
-                        <p style="border: 1px solid #ffffff; background-color: #{{ artist.colour }};">
-                            <a href="/info/?artist={{ artist.identifier }}"><img alt="{{ artist.name|raw }}" width="16" height="16" src="{{ artist.icon }}" /></a>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ artist.artist_colour }}; background-color: #cccccc;">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ artist.artist_colour }};">
+                            <a href="/info/?artist={{ artist.artist_identifier }}"><img alt="{{ artist.artist_name|raw }}" width="16" height="16" src="{{ artist.artist_icon }}" /></a>
                         </p>
                     </div>
                     <p class="info two_line">
-                        <span class="name"><a href="/info/?artist={{ artist.identifier }}">{{ artist.name|raw }}</a></span>
-                        <span class="details">{{ artist.collectionCount }} collections ({{ artist.currentCollectionCount }} current)</span>
+                        <span class="name"><a href="/info/?artist={{ artist.artist_identifier }}">{{ artist.artist_name|raw }}</a></span>
+                        <span class="details">{{ artist.total }} collections ({{ artist.current }} current)</span>
                     </p>
                     <p class="bottom">&nbsp;</p>
                 </div>
@@ -111,7 +111,7 @@
                 </div>
                 <p class="info two_line">
                     <span class="name"><a href="/info/feats">Collection Feats</a></span>
-                    <span class="details">{# feats.collectionFeatCount #}/{# feats.featCount #} feats ({# feats.collectionCurrentFeatCount #} current)</span>
+                    <span class="details">{{ feats.collections }}/{{ feats.total }} feats ({{ feats.currentCollections }} current)</span>
                 </p>
                 <p class="bottom">&nbsp;</p>
             </div>
@@ -125,8 +125,8 @@
                     </p>
                 </div>
                 <p class="info two_line">
-                    <span class="name"><a href="/info/feats?task">Achievement Feats</a></span>
-                    <span class="details">{# feats.taskFeatCount #}/{# feats.featCount #} feats ({# feats.taskCurrentFeatCount #} current)</span>
+                    <span class="name"><a href="/info/feats?task">Achievements</a></span>
+                    <span class="details">{{ feats.achievements }}/{{ feats.total }} feats ({{ feats.currentAchievements }} current)</span>
                 </p>
                 <p class="bottom">&nbsp;</p>
             </div>
@@ -145,26 +145,26 @@
                 </div>
                 <p class="info two_line">
                     <span class="name"><a href="/info/">All</a></span>
-                    <span class="details">{{ stats.totalCollectionCount }} Collections ({{ stats.currentCollectionCount }} current)<br />
-                    {# stats.totalCardCount #} Cards ({# stats.currentCardCount #} current)</span>
+                    <span class="details">{{ totalCollections }} Collections ({{ currentCollections }} current)<br />
+                    {{ totalCards }} Cards ({{ currentCards }} current)</span>
                 </p>
                 <p class="bottom">&nbsp;</p>
             </div>
         </div>
 
-        {% for family in families %}
+        {% for index, family in families %}
             <div class="minicard">
                 <div>
-                    <div class="collection-icon" style="border-bottom: 1px solid #{{ family.border }}; background-color: #{{ family.colour }};">
-                        <p style="border: 1px solid #ffffff; background-color: #{{ family.border }};">
-                            <a href="/info/?family={{ family.identifier }}"><img alt="{{ family.name }}" src="/assets/foils/{{ family.icon }}" /></a>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ family.family_border }}; background-color: #{{ family.family_colour }};">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ family.family_border }};">
+                            <a href="/info/?family={{ family.family_identifier }}"><img alt="{{ family.family_name }}" src="{{ asset('images/foils/' ~ family.family_icon) }}" /></a>
                         </p>
                     </div>
                     <p class="info two_line">
-                        <span class="name"><a href="/info/?family={{ family.identifier }}">{{ family.name }}</a></span>
+                        <span class="name"><a href="/info/?family={{ family.family_identifier }}">{{ family.family_name }}</a></span>
                         <span class="details">
-                            {{ family.collectionCount }} Collections {% if 0 != family.id %}({{ family.currentCollectionCount }} current){% endif %}<br />
-                            {{ family.cardCount }} Cards {% if 0 != family.id %}({{ family.currentCardCount }} current){% endif %}
+                            {{ family.total }} {% if 0 != family.family_id %}Collections ({{ family.current }} current){% else %}Sets{% endif %}<br />
+                            {{ familyCards[index].total }} {% if 0 != family.family_id %}Cards ({{ familyCards[index].current }} current){% else %}Gadgets{% endif %}
                         </span>
                     </p>
                     <p class="bottom">&nbsp;</p>

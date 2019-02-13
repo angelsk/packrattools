@@ -2,19 +2,19 @@
 
 namespace App\Service;
 
-use App\Repository\ArtistRepository;
+use App\Repository\FeatRepository;
 
-class ArtistService
+class FeatService
 {
     /**
-     * @var ArtistRepository
+     * @var FeatRepository
      */
     private $repository;
 
     /**
-     * @param ArtistRepository $repository
+     * @param FeatRepository $repository
      */
-    public function __construct(ArtistRepository $repository)
+    public function __construct(FeatRepository $repository)
     {
         $this->repository = $repository;
     }

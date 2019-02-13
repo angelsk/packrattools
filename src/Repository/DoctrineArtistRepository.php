@@ -21,14 +21,20 @@ class DoctrineArtistRepository implements DoctrineRepository, ArtistRepository
     /**
      * @inheritDoc
      */
-    public function getArtistsWithCollections(): array
+    public function getStatistics(): array
     {
         $queryBuilder = $this->createQueryBuilder('artist')
-            ->select('artist, collection, feat') // @TODO: See collection repo
+            ->select('artist')
+            ->addSelect('COUNT(DISTINCT collection) AS total')
+            ->addSelect(
+                'SUM(CASE WHEN collection.expiryDate >= :today OR collection.expiryDate IS NULL THEN 1 ELSE 0 END) ' .
+                'AS current'
+            )
             ->innerJoin('artist.collections', 'collection')
-            ->leftJoin('collection.feat', 'feat')
+            ->setParameter('today', date('Y-m-d'))
+            ->groupBy('artist')
             ->orderBy('artist.name');
 
-        return $queryBuilder->getQuery()->execute();
+        return $queryBuilder->getQuery()->getScalarResult();
     }
 }
