@@ -24,7 +24,6 @@ class DoctrineCollectionRepository implements DoctrineRepository, CollectionRepo
     public function getCurrentCollectionsWithFamily(): array
     {
         $queryBuilder = $this->createQueryBuilder('collection')
-            // @TODO: Why is it force loading feat when not even rendering? maybe mark 121 as lazy load?
             ->select('collection, family, feat, related, relatedFeats, cards')
             ->addSelect('CASE WHEN family.id = :gadget THEN 1 ELSE 0 END AS HIDDEN isGadget')
             ->innerJoin('collection.family', 'family')
