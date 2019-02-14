@@ -51,6 +51,7 @@ class Collection
      *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="artist_id", referencedColumnName="artist_id")}
      * )
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $artists;
 
@@ -63,6 +64,7 @@ class Collection
      *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="related_collection_id", referencedColumnName="collection_id")}
      * )
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $relatedCollections;
 
@@ -70,6 +72,7 @@ class Collection
      * @var DoctrineCollection
      *
      * @ORM\OneToMany(targetEntity="Card", mappedBy="collection")
+     * @ORM\OrderBy({"displayOrder" = "ASC", "pointValue" = "DESC"})
      */
     private $cards;
 
@@ -285,6 +288,14 @@ class Collection
     public function getArtists(): DoctrineCollection
     {
         return $this->artists;
+    }
+
+    /**
+     * @return bool
+     */
+    public function hasArtists(): bool
+    {
+        return $this->artists->count() > 0;
     }
 
     /**

@@ -10,7 +10,6 @@
     {% set missing = collection.numberOfCards - collection.releasedCards %}
 
     <div class="content">
-
         <div class="information filter" style="border: 1px solid #{{ collection.family.border }}; background-color: #{{ collection.family.colour }};">
             <h2>
                 <img src="{{ collection.icon }}" width="16" height="16" alt="{{ collection.name }}" class="coll_icon" style="background-color: #{{ collection.family.border }};" />
@@ -40,25 +39,26 @@
                 </div>
             {% endif %}
 
-            {#{%
-                $totalCostCollection = array();
-                if (0 != collection.ticket_cost) $totalCostCollection[] = collection.ticket_cost . ' tickets';
-                if (0 != collection.credit_cost) $totalCostCollection[] = collection.credit_cost . ' credits';
-                if (0 != collection.draw_cost) $totalCostCollection[] = collection.draw_cost . ' draw card'.((1 != collection.draw_cost) ? 's' : '');
-                if (0 != collection.rat_cost) $totalCostCollection[] = collection.rat_cost . ' rat card'.((1 != collection.rat_cost) ? 's' : '');
-                $collectionCost = implode('<br />', $totalCostCollection);
-                if (!empty($collectionCost) and ('locks' != collection.identifier))
-                {
-                    $collectionCost = '<br class="clear" /><br /><div class="meta"><p><b>'.('0000-00-00' != collection.feat.dateAchieved ? ($expired ? 'Estimated cost' : 'Total cost') : 'Cost so far').':</b><i>' . $collectionCost.'</i></p></div>';
-                    echo $collectionCost;
-                }
-            ?>#}
+            {% if 'locks' != collection.identifier %}
+                <br class="clear" /><br />
+                <div class="meta">
+                    <p>
+                        <b>{% if collection.feat.dateAchieved %}{{ collection.retired ? 'Estimated cost' : 'Total cost' }}{% else %}Cost so far{% endif %}:</b>
+                        <i>
+                            {% if collection.ticketCost > 0 %}{{ collection.ticketCost }} tickets<br/ >{% endif %}
+                            {% if collection.creditCost > 0 %}{{ collection.creditCost }} credits<br/ >{% endif %}
+                            {% if collection.drawCost > 0 %}{{ collection.drawCost }} draw card{% if collection.drawCost != 1 %}s{% endif %}<br/ >{% endif %}
+                            {% if collection.ratCost > 0 %}{{ collection.ratCost }} rat card{% if collection.ratCost != 1 %}s{% endif %}<br/ >{% endif %}
+                        </i>
+                    </p>
+                </div>
+            {% endif %}
             <br class="clear" /><br />
 
             {% if collection.hasRelatedCollections %}
                 <p class="related_collections">Related collection(s) *:
                     {% for altCollection in collection.relatedCollections %}
-                        <br /><span><img src="{{ altCollection.image }}" alt="{{ altCollection.name }}" width="16" height="16" /> {{ altCollection.name }}</span>
+                        <br /><span><img src="{{ altCollection.icon }}" alt="{{ altCollection.name }}" width="16" height="16" /> {{ altCollection.name }}</span>
                     {% endfor %}
                 </p>
                 <br class="clear" />
@@ -90,7 +90,7 @@
             {% endif %}
             <br />
 
-            {% if collection.artists %}
+            {% if collection.hasArtists %}
                 <p>
                     <span style="float:left;"><img style="padding: 0 2px;" src="{{ asset('images/packrat/packrat.png') }}" alt="Artist" title="Art by" />Art by </span>
                     <span class="artist" style="float: left; padding-left: 3px; padding-top: 3px;">
@@ -147,19 +147,8 @@
         <br />
 
         <table class="last_seen selection_form card_info_cells">
-            {% if missing > 0 %}
-                {% for count in range(0, missing) %}
-                    <tr{% if count % 2 == 1 %} class="odd"{% endif %}>
-                        <td style="width: 33px;"><img src="{{ asset('images/missing-card.gif') }}" alt="?" title="?" /></td>
-                        <td style="width: 125px;"><strong>?</strong></td>
-                        <td style="width: 240px;">&nbsp;</td>
-                        <td style="width: 115px;">&nbsp;</td>
-                    </tr>
-                {% endfor %}
-            {% endif %}
-
             {% for card in collection.cards %}
-                <tr{% if loop.index0 % 2 == 1 %} class="odd"{% endif %}>
+                <tr{% if loop.index % 2 == 1 %} class="odd"{% endif %}>
                     <td style="width: 33px;"{% if 'credit' != card.cardType %} class="{{ card.cardType }}"{% endif %}>
                         <img class="small_image pointer" src="{{ card.image }}" alt="{{ card.name }}" title="{{ card.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ collection.identifier }}&amp;card={{ card.identifier }}"  />
                     </td>
@@ -248,6 +237,17 @@
                     </td>
                 </tr>
             {% endfor %}
+
+            {% if missing > 0 %}
+                {% for count in range(1, missing) %}
+                    <tr{% if count % 2 == 1 %} class="odd"{% endif %}>
+                        <td style="width: 33px;"><img src="{{ asset('images/missing-card.gif') }}" alt="?" title="?" /></td>
+                        <td style="width: 125px;"><strong>?</strong></td>
+                        <td style="width: 240px;">&nbsp;</td>
+                        <td style="width: 115px;">&nbsp;</td>
+                    </tr>
+                {% endfor %}
+            {% endif %}
         </table>
 
         {% if collection.hasRelatedCollections %}
