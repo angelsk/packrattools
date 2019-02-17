@@ -42,4 +42,12 @@ class DoctrineCollectionRepository implements DoctrineRepository, CollectionRepo
 
         return $queryBuilder->getQuery()->execute();
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function findOneById(int $id): ?Collection
+    {
+        return $this->getRepository()->findOneBy(['id' => $id]);
+    }
 }

@@ -81,7 +81,9 @@ class InfoController extends AbstractController
     {
         return $this->render('info/collection.html.twig', [
             'controller_name' => 'InfoController',
-            'collection' => $collection
+            'collection' => $collection,
+            'prevCollection' => $this->collectionService->getOneById($collection->getId() - 1),
+            'nextCollection' => $this->collectionService->getOneById($collection->getId() + 1),
         ]);
     }
 }

@@ -27,4 +27,14 @@ class CollectionService
     {
         return $this->repository->getCurrentCollectionsWithFamily();
     }
+
+    /**
+     * @param int $id
+     *
+     * @return Collection|null
+     */
+    public function getOneById(int $id): ?Collection
+    {
+        return $this->repository->findOneById($id);
+    }
 }

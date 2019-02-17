@@ -124,16 +124,14 @@
         <div class="information selection_form">
             <p class="left"><img src="{{ asset('images/packrat/return.png') }}" alt="All Collections" title="All Collections" /> &nbsp;<a href="{{ path('info') }}">All</a></p>
             <p style="text-align:right">
-                {#% if 1 < collection.id %}
-                    {% set prevcol = collection.id - 1 %}
-                    <a href="/info/?collection={{ collections[prevcol].identifier }}">&laquo; {{ collections[prevcol].name }}</a>
+                {% if prevCollection %}
+                    <a href="/info/?collection={{ prevCollection.identifier }}">&laquo; {{ prevCollection.name }}</a>
                 {% endif %}
                 &nbsp; &nbsp;
-                {% if $fullcollcount > collection.id %}
-                    {% set nextcol = collection.id + 1 %}
-                    <a href="/info/?collection={{ collections[nextcol].identifier }}">{{ collections[nextcol].name }} &raquo;</a>
+                {% if nextCollection %}
+                    <a href="/info/?collection={{ nextCollection.identifier }}">{{ nextCollection.name }} &raquo;</a>
                 {% endif %}
-                <br class="clear" />#}
+                <br class="clear" />
             </p>
         </div>
 
