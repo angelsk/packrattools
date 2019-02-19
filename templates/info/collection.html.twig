@@ -44,12 +44,7 @@
                 <div class="meta">
                     <p>
                         <b>{% if collection.feat.dateAchieved %}{{ collection.retired ? 'Estimated cost' : 'Total cost' }}{% else %}Cost so far{% endif %}:</b>
-                        <i>
-                            {% if collection.ticketCost > 0 %}{{ collection.ticketCost }} tickets<br/ >{% endif %}
-                            {% if collection.creditCost > 0 %}{{ collection.creditCost }} credits<br/ >{% endif %}
-                            {% if collection.drawCost > 0 %}{{ collection.drawCost }} draw card{% if collection.drawCost != 1 %}s{% endif %}<br/ >{% endif %}
-                            {% if collection.ratCost > 0 %}{{ collection.ratCost }} rat card{% if collection.ratCost != 1 %}s{% endif %}<br/ >{% endif %}
-                        </i>
+                        <i>{{ collection.getCost('<br/ >')|raw }}</i>
                     </p>
                 </div>
             {% endif %}
@@ -154,21 +149,14 @@
                         <strong>{{ card.name }}</strong>
                         <br />{{ card.pointValue }} points
                     </td>
+                    {% set infoCount = 0 %}
                     <td{% if 'credit' != card.status %} class=" {{ card.status }}"{% endif %} style="width: 240px;">
+                        {% if card.recipe %}
+                            {% set infoCount = infoCount + 1 %}
+                            <img src="{{ asset('images/packrat/make.png') }}" alt="Recipe - Cost {{ card.cost }}" title="Recipe - Cost {{ card.cost }}" />
+                        {% endif %}
                         {#% if !empty($row['recipe)) : $info_count++}}
-                              {%
-                              $totalCostRecipe = array();
-                              if (0 != $row['info['ticket_cost) $totalCostRecipe[] = $row['info['ticket_cost . ' tickets';
-                              if (0 != $row['info['credit_cost) $totalCostRecipe[] = $row['info['credit_cost . ' credits';
-                              if (0 != $row['info['draw_cost) $totalCostRecipe[] = $row['info['draw_cost . ' draw card'.((1 != $row['info['draw_cost) ? 's' : '');
-                              if (0 != $row['info['rat_cost) $totalCostRecipe[] = $row['info['rat_cost . ' rat card'.((1 != $row['info['rat_cost) ? 's' : '');
-                              $recipeAlt = implode(', ', $totalCostRecipe);
-                              if (!empty($recipeAlt)) $recipeAlt = ' - Cost: ' . $recipeAlt;
-                              ?>
-                              <img src="/assets/packrat/make.png" alt="Recipe{{ $recipeAlt}}" title="Recipe{{ $recipeAlt}}" />
-                              {%
                               Card::drawRecipe($row['recipe, $cardIds, $altimage);
-                              ?>
                           {% endif %}
                           {% if 'recipe' == card.status and !empty($row['markets %}<br />{% endif %}
                           {% if !empty($row['markets)) : $info_count++;

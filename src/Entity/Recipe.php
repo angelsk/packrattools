@@ -22,7 +22,15 @@ class Recipe
     private $id;
 
     /**
-     * @var Card|null
+     * @var Card
+     *
+     * @ORM\OneToOne(targetEntity="Card", inversedBy="recipe")
+     * @ORM\JoinColumn(referencedColumnName="card_id", nullable=false)
+     */
+    private $card;
+
+    /**
+     * @var Card
      *
      * @ORM\ManyToOne(targetEntity="Card")
      * @ORM\JoinColumn(name="ingredient_1", referencedColumnName="card_id", nullable=false)
@@ -30,7 +38,7 @@ class Recipe
     private $ingredient1;
 
     /**
-     * @var Card|null
+     * @var Card
      *
      * @ORM\ManyToOne(targetEntity="Card")
      * @ORM\JoinColumn(name="ingredient_2", referencedColumnName="card_id", nullable=false)
@@ -38,7 +46,7 @@ class Recipe
     private $ingredient2;
 
     /**
-     * @var Card|null
+     * @var Card
      *
      * @ORM\ManyToOne(targetEntity="Card")
      * @ORM\JoinColumn(name="ingredient_3", referencedColumnName="card_id", nullable=false)

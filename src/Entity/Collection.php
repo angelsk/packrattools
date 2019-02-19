@@ -18,6 +18,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Collection
 {
+    use Common\CostTrait;
+
     /**
      * @var int|null
      *
@@ -159,34 +161,6 @@ class Collection
      * @ORM\Column(name="is_premium", type="boolean", nullable=false, options={"default" = false})
      */
     public $isPremium = false;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="credit_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $creditCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="ticket_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $ticketCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="draw_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $drawCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="rat_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $ratCost = 0;
 
     /**
      * @var bool
