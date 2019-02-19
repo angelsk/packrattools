@@ -13,7 +13,7 @@
         <div class="information filter" style="border: 1px solid #{{ collection.family.border }}; background-color: #{{ collection.family.colour }};">
             <h2>
                 <img src="{{ collection.icon }}" width="16" height="16" alt="{{ collection.name }}" class="coll_icon" style="background-color: #{{ collection.family.border }};" />
-                <span class="left" style="width: 117px; {#{% if (18 >= strlen(str_replace(array(',','.'),'',collection.name))  %}#}padding-top: 5px;{#{% endif %}#}">{{ collection.name }}</span>
+                <span class="left" style="width: 117px; {#{% if (18 >= strlen(str_replace(array(',','.'),'',collection.name)) ##@TODO Flexbox %}#}padding-top: 5px;{#{% endif %}#}">{{ collection.name }}</span>
             </h2>
             <br class="clear" />
 
@@ -125,11 +125,11 @@
             <p class="left"><img src="{{ asset('images/packrat/return.png') }}" alt="All Collections" title="All Collections" /> &nbsp;<a href="{{ path('info') }}">All</a></p>
             <p style="text-align:right">
                 {% if prevCollection %}
-                    <a href="/info/?collection={{ prevCollection.identifier }}">&laquo; {{ prevCollection.name }}</a>
+                    <a href="{{ path('collection', {'identifier': prevCollection.identifier}) }}">&laquo; {{ prevCollection.name }}</a>
                 {% endif %}
                 &nbsp; &nbsp;
                 {% if nextCollection %}
-                    <a href="/info/?collection={{ nextCollection.identifier }}">{{ nextCollection.name }} &raquo;</a>
+                    <a href="{{ path('collection', {'identifier': nextCollection.identifier}) }}">{{ nextCollection.name }} &raquo;</a>
                 {% endif %}
                 <br class="clear" />
             </p>
@@ -147,14 +147,14 @@
         <table class="last_seen selection_form card_info_cells">
             {% for card in collection.cards %}
                 <tr{% if loop.index % 2 == 1 %} class="odd"{% endif %}>
-                    <td style="width: 33px;"{% if 'credit' != card.cardType %} class="{{ card.cardType }}"{% endif %}>
+                    <td style="width: 33px;"{% if 'credit' != card.status %} class="{{ card.status }}"{% endif %}>
                         <img class="small_image pointer" src="{{ card.image }}" alt="{{ card.name }}" title="{{ card.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ collection.identifier }}&amp;card={{ card.identifier }}"  />
                     </td>
                     <td style="width: 125px;">
                         <strong>{{ card.name }}</strong>
                         <br />{{ card.pointValue }} points
                     </td>
-                    <td{% if 'credit' != card.cardType %} class=" {{ card.cardType }}"{% endif %} style="width: 240px;">
+                    <td{% if 'credit' != card.status %} class=" {{ card.status }}"{% endif %} style="width: 240px;">
                         {#% if !empty($row['recipe)) : $info_count++}}
                               {%
                               $totalCostRecipe = array();
@@ -170,7 +170,7 @@
                               Card::drawRecipe($row['recipe, $cardIds, $altimage);
                               ?>
                           {% endif %}
-                          {% if 'recipe' == card.cardType and !empty($row['markets %}<br />{% endif %}
+                          {% if 'recipe' == card.status and !empty($row['markets %}<br />{% endif %}
                           {% if !empty($row['markets)) : $info_count++;
                             foreach ($row['markets as $marketType => $marketRows %}
                               <img src="{% switch ($marketType)
@@ -194,14 +194,14 @@
                               {% endif %}
                           {% endfor;
                         endif}#}
-                        {% if 'draw' == card.cardType and not collection.retired %}
+                        {% if 'draw' == card.status and not collection.retired %}
                             <img src="{{ asset('images/packrat/draw.png') }}" alt="Draw card" title="Draw card" /> Draw card
-                        {% elseif 'rat' == card.cardType %}
+                        {% elseif 'rat' == card.status %}
                             <img src="{{ asset('images/packrat/rats.png') }}" alt="Rat findings" title="Rat findings" /> *May* be seeded to the rats
                         {% endif %}
                         {% if card.soldOut %}
                             <img src="{{ asset('images/packrat/steal.png') }}" alt="Sold out" title="Sold out" />
-                            {#% if !empty($row['markets) || 'draw' == card.cardType) echo '<br />'}}
+                            {#% if !empty($row['markets) || 'draw' == card.status) echo '<br />'}}
                                 {% if 100 < $row['info['limited %}
                                     Sold out - there were only <b>{{ $row['info['limited }}</b> available
                                 {% elseif (0 < $row['info['limited %}
@@ -209,14 +209,14 @@
                                 {% else  %}
                                     Sold out - this card has sold out
                                 {% endif %}
-                            {% elseif (0 == $info_count and !$expired and 'recipe' != card.cardType %}
+                            {% elseif (0 == $info_count and !$expired and 'recipe' != card.status %}
                                 {% if 'bling' == collection.identifier %}
                                 {% else  %}
                                     <img src="/assets/packrat/steal.png" alt="Moved" title="Moved" /> Manually added (click on the image to see price history).
                                     {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}}
                                 {% endif %#}
                             {#% elseif (($expired || 0 < $info_count) and 0 < $row['info['limited %}
-                                {% if !empty($row['markets) || 'draw' == card.cardType) echo '<br />'}}
+                                {% if !empty($row['markets) || 'draw' == card.status) echo '<br />'}}
                             <img src="/assets/packrat/steal.png" alt="Limited" title="Limited" /> Limited - this card has limited availability {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}#}
                         {% endif %}
                     </td>
