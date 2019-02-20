@@ -101,6 +101,9 @@
     "ocramius/proxy-manager": {
         "version": "2.2.0"
     },
+    "pdepend/pdepend": {
+        "version": "2.5.2"
+    },
     "phpdocumentor/reflection-common": {
         "version": "1.0.1"
     },
@@ -109,6 +112,9 @@
     },
     "phpdocumentor/type-resolver": {
         "version": "0.4.0"
+    },
+    "phpmd/phpmd": {
+        "version": "2.6.0"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -138,6 +144,15 @@
             "branch": "master",
             "version": "4.0",
             "ref": "aaddfdf43cdecd4cf91f992052d76c2cadc04543"
+        }
+    },
+    "squizlabs/php_codesniffer": {
+        "version": "3.0",
+        "recipe": {
+            "repo": "github.com/symfony/recipes-contrib",
+            "branch": "master",
+            "version": "3.0",
+            "ref": "0dc9cceda799fd3a08b96987e176a261028a3709"
         }
     },
     "swiftmailer/swiftmailer": {
