@@ -74,6 +74,14 @@ class Recipe
     }
 
     /**
+     * @return Card
+     */
+    public function getIngredient1(): Card
+    {
+        return $this->ingredient1;
+    }
+
+    /**
      * @param Card $card
      */
     public function setIngredient1(Card $card): void
@@ -86,6 +94,14 @@ class Recipe
     }
 
     /**
+     * @return Card
+     */
+    public function getIngredient2(): Card
+    {
+        return $this->ingredient2;
+    }
+
+    /**
      * @param Card $card
      */
     public function setIngredient2(Card $card): void
@@ -95,6 +111,14 @@ class Recipe
         if ($this->card->getCollection() !== $card->getCollection()) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
+    }
+
+    /**
+     * @return Card
+     */
+    public function getIngredient3(): Card
+    {
+        return $this->ingredient3;
     }
 
     /**

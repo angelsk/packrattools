@@ -1,0 +1,11 @@
+{% if card.recipe.ingredient1 == card.recipe.ingredient2 and card.recipe.ingredient2 == card.recipe.ingredient3 %}
+    3 x {# if alt collection then icon #} {{ card.recipe.ingredient1.name }} {# Card::drawCardTypeIcon($ing1['type'], $ing1['marketType']) #}
+{% elseif card.recipe.ingredient1 == card.recipe.ingredient2 %}
+    2 x {{ card.recipe.ingredient1.name }} + {{ card.recipe.ingredient3.name }} {# with icons and images as above #}
+{% elseif card.recipe.ingredient2 == card.recipe.ingredient3 %}
+    {{ card.recipe.ingredient1.name }} + 2 x {{ card.recipe.ingredient2.name }} {# with icons and images as above #}
+{% else %}
+    {{ card.recipe.ingredient1.name }} + {{ card.recipe.ingredient2.name }} + {{ card.recipe.ingredient3.name }} {# with icons and images as above #}
+{% endif %}
+
+{# highlight search term @TODO #}

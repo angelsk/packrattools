@@ -154,11 +154,10 @@
                         {% if card.recipe %}
                             {% set infoCount = infoCount + 1 %}
                             <img src="{{ asset('images/packrat/make.png') }}" alt="Recipe - Cost {{ card.cost }}" title="Recipe - Cost {{ card.cost }}" />
+
+                            {% include "info/_recipe.html.twig" with { card: card } %}
                         {% endif %}
-                        {#% if !empty($row['recipe)) : $info_count++}}
-                              Card::drawRecipe($row['recipe, $cardIds, $altimage);
-                          {% endif %}
-                          {% if 'recipe' == card.status and !empty($row['markets %}<br />{% endif %}
+                          {#% if 'recipe' == card.status and !empty($row['markets %}<br />{% endif %}
                           {% if !empty($row['markets)) : $info_count++;
                             foreach ($row['markets as $marketType => $marketRows %}
                               <img src="{% switch ($marketType)
@@ -209,14 +208,11 @@
                         {% endif %}
                     </td>
                     <td style="width: 115px;">
-                        {#% if !empty($row['recipe)) :
-                            $ing1 = $cardIds[$row['recipe['ingredient_1];
-                            $ing2 = $cardIds[$row['recipe['ingredient_2];
-                            $ing3 = $cardIds[$row['recipe['ingredient_3]}}
-                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ $ing1['medium_image }}" alt="{% if isset($ing1['collection)) echo $ing1['collection . ' - '}}{{ $ing1['card_name }}" title="{% if isset($ing1['collection)) echo $ing1['collection . ' - '}}{{ $ing1['card_name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ $ing1['identifier }}&card={{ $ing1['card_identifier }}" />
-                            <img style="padding: none !important; vertical-align:middle; cursor:pointer;" src="{{ $ing2['medium_image }}" alt="{% if isset($ing2['collection)) echo $ing2['collection . ' - '}}{{ $ing2['card_name }}" title="{% if isset($ing2['collection)) echo $ing2['collection . ' - '}}{{ $ing2['card_name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ $ing2['identifier }}&card={{ $ing2['card_identifier }}" />
-                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ $ing3['medium_image }}" alt="{% if isset($ing3['collection)) echo $ing3['collection . ' - '}}{{ $ing3['card_name }}" title="{% if isset($ing3['collection)) echo $ing3['collection . ' - '}}{{ $ing3['card_name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ $ing3['identifier }}&card={{ $ing3['card_identifier }}" />
-                        {% endif %#}
+                        {% if card.recipe %}
+                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ card.recipe.ingredient1.image }}" alt="{# alt collection - #}{{ card.recipe.ingredient1.name }}" title="{# alt collection #}{{ card.recipe.ingredient1.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient1.identifier }}&amp;card={{ card.recipe.ingredient1.identifier }}" />
+                            <img style="padding: none !important; vertical-align:middle; cursor:pointer;" src="{{ card.recipe.ingredient2.image }}" alt="{# alt collection  #}{{ card.recipe.ingredient2.name }}" title="{# alt collection  #}{{ card.recipe.ingredient2.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient2.identifier }}&amp;card={{ card.recipe.ingredient2.identifier }}" />
+                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ card.recipe.ingredient3.image }}" alt="{# alt collection #}{{ card.recipe.ingredient3.name }}" title="{# alt collection #}{{ card.recipe.ingredient3.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient3.identifier }}&amp;card={{ card.recipe.ingredient3.identifier }}" />
+                        {% endif %}
                         {% if 0 != card.quantityNeeded and collection.feat %}
                             <img src="{{ asset('images/packrat/make.png') }}" alt="Needed" title="Needed" /> <em>{{ card.quantityNeeded }}</em> needed
                         {% endif %}
