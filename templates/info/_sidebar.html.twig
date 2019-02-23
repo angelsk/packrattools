@@ -1,0 +1,32 @@
+<div class="filter">
+    <form method="get" action="/info/" class="auto">
+        <div>
+            <select name="collection" onchange="this.form.submit();">
+                <option value="">--View collection--</option>
+                {#<?php foreach ($collections as $collection_id => $row) : ?>
+                    <option value="<?php echo $row['collection_identifier']; ?>"<?php if (isset($_GET['collection']) && $row['collection_identifier'] == $_GET['collection']) :?> selected="selected"<?php endif; ?>><?php echo $row['collection_name']; ?></option>
+                <?php endforeach; ?>#}
+            </select>
+            <span class="left">&nbsp;</span>
+            <noscript>
+                <p><input class="submit" type="submit" name="show" value="Show" /></p>
+            </noscript>
+        </div>
+    </form>
+    <br class="clear" />
+
+    <div class="information">
+        <h2><a href="/info/draw"><img src="{{ asset('images/packrat/draw.png') }}" alt="Bonus draw" title="Bonus draw" /> Bonus draws</a></h2>
+
+        <p>View all the <a href="/info/draw">current bonus draw cards</a>.</p><br />
+
+        <h2><a href="/info/new"><img src="{{ asset('images/packrat/trade.png') }}" alt="New releases" title="New releases" /> Newest releases</a></h2>
+
+        {#<?php Card::drawNewCards($db_link, 10); ?>#}
+
+        <p><a href="/info/new">View detailed releases from the last 5 days</a> &raquo;</p><br />
+
+        <p><a href="http://twitter.com/packrattracker"><img src="{{ asset('images/twitter.png') }}" alt="Twitter" title="Follow us on Twitter" width="16" height="16" /> Follow us on Twitter</a> for latest card releases.</p>
+
+    </div>
+</div>
