@@ -491,7 +491,6 @@ hr.new_items {
     border-color: #eeeeee #eeeeee #ffffff;
     border-width: 5px 5px medium;
     margin: 0 auto 4px;
-    ;
     padding: 8px;
     background: #ffffff url('/images/packrat/bottom-border.gif') repeat-x scroll left bottom;
     position: relative;
@@ -1324,7 +1323,6 @@ h1.section_header {
 .dialog.pack .card {
     border: 5px solid #eeeeee;
     margin: 0 auto;
-    background: #ffffff url('/images/packrat/bottom-border.gif') repeat-x scroll left bottom;
 }
 
 .dialog-wrapper .card-column {
