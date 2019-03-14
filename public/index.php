@@ -41,6 +41,6 @@ if ($trustedHosts = $_SERVER['TRUSTED_HOSTS'] ?? false) {
 $kernel = new Kernel($env, $debug);
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
-// header('X-Clacks-Overhead: GNU Terry Pratchett');
+$response->headers->set('X-Clacks-Overhead', 'GNU Terry Pratchett');
 $response->send();
 $kernel->terminate($request, $response);
