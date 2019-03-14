@@ -41,7 +41,7 @@
                             {% if collection.hasRelatedCollections %}
                                 <span class="related">
                                     {% for altCollection in collection.relatedCollections %}
-                                        <a href="/info/?collection={{ altCollection.identifier }}"><img width="16" height="16" style="vertical-align:middle;" src="{{ altCollection.icon }}" alt="{{ altCollection.name }}" title="{{ altCollection.name }}" /></a>
+                                        <a href="/info/?collection={{ altCollection.identifier }}"><img width="16" height="16" src="{{ altCollection.icon }}" alt="{{ altCollection.name }}" title="{{ altCollection.name }}" /></a>
                                     {% endfor %}
                                 </span>
                             {% endif %}

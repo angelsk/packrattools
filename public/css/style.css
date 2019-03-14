@@ -919,7 +919,7 @@ h1.section_header {
 }
 
 .minicard .status img {
-    padding: 0 !important;
+    padding: 0;
 }
 
 .minicard .related {
@@ -933,7 +933,8 @@ h1.section_header {
 }
 
 .minicard .related img {
-    padding: 0 !important;
+    padding: 0;
+    vertical-align: middle;
 }
 
 .minicard .bottom {
