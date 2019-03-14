@@ -1,0 +1,179 @@
+{% extends 'base.html.twig' %}
+
+{% set route = 'info' %}
+
+{% block title %}Packrat Recipes and Card Info{% endblock %}
+
+{% block body %}
+    <div class="content">
+        <div>
+            <h1 class="section_header left"><img src="{{ asset('images/packrat/vault.png') }}" alt="Collections" title="Collections" />&nbsp; Collections</h1>
+            <p class="section_header left">
+                <a href="{{ path('info') }}" class="selected">Current</a>
+                | <a href="{{ path('info') }}?retired">Retired</a>
+            </p>
+        </div>
+
+        <p class="section_header">
+            <img src="{{ asset('images/packrat/steal.png') }}" alt="Order" title="Order" />&nbsp; Order:
+            <a href="{{ path('info') }}" class="selected">Date</a>
+            | <a href="{{ path('info') }}?order=name">Collection name</a>
+        </p>
+        <br class="clear" />
+
+        {% for collection in collections %}
+            <div class="minicard">
+                <div>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ collection.family.border }}; background-color: #{{ collection.family.colour }};">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ collection.family.border }};">
+                            <a href="/info/?collection={{ collection.identifier }}">
+                                <img alt="{{ collection.name }}" width="16" height="16" src="{{ collection.icon }}" />
+                            </a>
+                        </p>
+                    </div>
+                    <p class="info">
+                        {% if collection.isXl or collection.isPremium or collection.hasRelatedCollections %}
+                            <span class="status">
+                                {% if collection.isXl %}<img src="{{ asset('images/packrat/XL_16.png') }}" alt="XL" title="XL" class="is_xl" />{% endif %}
+                                {% if collection.isPremium %}<img src="{{ asset('images/packrat/ticket-flat_16.png') }}" alt="Premium" title="Premium" class="is_premium" />{% endif %}
+                            </span>
+
+                            {% if collection.hasRelatedCollections %}
+                                <span class="related">
+                                    {% for altCollection in collection.relatedCollections %}
+                                        <a href="/info/?collection={{ altCollection.identifier }}"><img width="16" height="16" src="{{ altCollection.icon }}" alt="{{ altCollection.name }}" title="{{ altCollection.name }}" /></a>
+                                    {% endfor %}
+                                </span>
+                            {% endif %}
+                        {% endif %}
+
+                        <span class="name"><a href="/info/?collection={{ collection.identifier }}">{{ collection.name }}</a></span>
+                        <span class="details">
+                            {% if collection.numberOfCards != collection.releasedCards %}{{ collection.releasedCards }}/{% endif %}{{ collection.numberOfCards }}
+                            Card{% if collection.numberOfCards != 1 %}s{% endif %}
+                        </span>
+                    </p>
+
+                    <p class="bottom{% if collection.retireding %} expired{% endif %}">
+                        {% if collection.retireding %}
+                            <span class="bl expired">
+                                {% if collection.retired %}Retired {% else %}Retiring {% endif %} on
+                                {{ collection.expiryDate|date('d M Y') }}
+                            </span>
+                        {% else %}
+                            <span class="bl">
+                                Released on
+                                {{ collection.releaseDate|date('d M Y') }}
+                                {% if collection.expiryDate is not empty %}*{% endif %}
+                            </span>
+                        {% endif %}
+                    </p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <br class="clear" /><br />
+
+        <div>* Retiring in over 2 weeks time</div>
+
+        <br class="clear" /><br />
+
+        {# if current show artists, feats, statistics #}
+        <h1 id="artists"><img src="{{ asset('images/packrat/packrat.png') }}" alt="Artists" title="Artists" />&nbsp; Artists</h1>
+
+        {% for artist in artists %}
+            <div class="minicard">
+                <div>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ artist.artist_colour }}; background-color: #cccccc;">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ artist.artist_colour }};">
+                            <a href="/info/?artist={{ artist.artist_identifier }}"><img alt="{{ artist.artist_name|raw }}" width="16" height="16" src="{{ artist.artist_icon }}" /></a>
+                        </p>
+                    </div>
+                    <p class="info two_line">
+                        <span class="name"><a href="/info/?artist={{ artist.artist_identifier }}">{{ artist.artist_name|raw }}</a></span>
+                        <span class="details">{{ artist.total }} collections ({{ artist.current }} current)</span>
+                    </p>
+                    <p class="bottom">&nbsp;</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <br class="clear" /><br />
+
+        <h1 id="feats"><img src="{{ asset('images/packrat/vault.png') }}" alt="Feats" title="Feats" />&nbsp; Feats</h1>
+
+        <div class="minicard">
+            <div>
+                <div class="collection-icon" style="border-bottom: 1px solid #4d4d4d; background-color: #cccccc;">
+                    <p style="border: 1px solid #ffffff; background-color: #4d4d4d;">
+                        <a href="/info/feats"><img alt="Collection Feats" src="{{ asset('images/packrat-icon.gif') }}" /></a>
+                    </p>
+                </div>
+                <p class="info two_line">
+                    <span class="name"><a href="/info/feats">Collection Feats</a></span>
+                    <span class="details">{{ feats.collections }}/{{ feats.total }} feats ({{ feats.currentCollections }} current)</span>
+                </p>
+                <p class="bottom">&nbsp;</p>
+            </div>
+        </div>
+
+        <div class="minicard">
+            <div>
+                <div class="collection-icon" style="border-bottom: 1px solid #4d4d4d; background-color: #cccccc;">
+                    <p style="border: 1px solid #ffffff; background-color: #4d4d4d;">
+                        <a href="/info/feats?task"><img alt="Achievement Feats" src="{{ asset('images/packrat-icon.gif') }}" /></a>
+                    </p>
+                </div>
+                <p class="info two_line">
+                    <span class="name"><a href="/info/feats?task">Achievements</a></span>
+                    <span class="details">{{ feats.achievements }}/{{ feats.total }} feats ({{ feats.currentAchievements }} current)</span>
+                </p>
+                <p class="bottom">&nbsp;</p>
+            </div>
+        </div>
+
+        <br class="clear" /><br />
+
+        <h1><img src="{{ asset('images/packrat/vault.png') }}" alt="Statistics" title="Statistics" />&nbsp; Statistics</h1>
+
+        <div class="minicard">
+            <div>
+                <div class="collection-icon" style="border-bottom: 1px solid #4d4d4d; background-color: #cccccc;">
+                    <p style="border: 1px solid #ffffff; background-color: #4d4d4d;">
+                        <a href="/info/"><img alt="All Collections" src="{{ asset('images/packrat-icon.gif') }}" /></a>
+                    </p>
+                </div>
+                <p class="info two_line">
+                    <span class="name"><a href="/info/">All</a></span>
+                    <span class="details">{{ totalCollections }} Collections ({{ currentCollections }} current)<br />
+                    {{ totalCards }} Cards ({{ currentCards }} current)</span>
+                </p>
+                <p class="bottom">&nbsp;</p>
+            </div>
+        </div>
+
+        {% for index, family in families %}
+            <div class="minicard">
+                <div>
+                    <div class="collection-icon" style="border-bottom: 1px solid #{{ family.family_border }}; background-color: #{{ family.family_colour }};">
+                        <p style="border: 1px solid #ffffff; background-color: #{{ family.family_border }};">
+                            <a href="/info/?family={{ family.family_identifier }}"><img alt="{{ family.family_name }}" src="{{ asset('images/foils/' ~ family.family_icon) }}" /></a>
+                        </p>
+                    </div>
+                    <p class="info two_line">
+                        <span class="name"><a href="/info/?family={{ family.family_identifier }}">{{ family.family_name }}</a></span>
+                        <span class="details">
+                            {{ family.total }} {% if 0 != family.family_id %}Collections ({{ family.current }} current){% else %}Sets{% endif %}<br />
+                            {{ familyCards[index].total }} {% if 0 != family.family_id %}Cards ({{ familyCards[index].current }} current){% else %}Gadgets{% endif %}
+                        </span>
+                    </p>
+                    <p class="bottom">&nbsp;</p>
+                </div>
+            </div>
+        {% endfor %}
+
+        <br class="clear" />
+    </div>
+
+    {% include 'info/_sidebar.html.twig' %}
+{% endblock %}

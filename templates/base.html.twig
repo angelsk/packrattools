@@ -1,12 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable = yes" />
+        <meta name="verify-v1" content="EQE/HFgSedaBg3WFswBqaxQL2ioQmQ5wTrnGTLqNfPw=" />
+        <meta name="y_key" content="09ab61dbe1f02569" />
+
+        <title>{% block title %}Packrat Tools{% endblock %}</title>
+        <meta name="description" content="Packrat Tools - {% block description %}Useful tools for the popular Facebook collectable card game, Packrat.  Track cards, look up recipes and prices, preview feats, foils and bling and many more things with this automatically updated (95% of the time) comprehensive Packrat Tools site{% endblock %}" />
+        <meta name="author" content="Jo Carter" />
+        <meta name="keywords" content="packrat, facebook, rats, hookbang, sets, collections, feats, cards, collectable, game, apps, jocarter, jo, jocarter, tracker, markets, last seen, market tracker, tickets, credits, xl, new releases, recipes, draws, bonus draws, card info, information, feats, feat statement, foils, bling, packrat recipes, packrat wiki, wiki, packrat tracker, {% block keywords %}packrat tools{% endblock %}" />
+
+        <meta property="og:description" content="{% block meta_description %}Useful tools for the popular Facebook collectable card game, Packrat.  Track cards, look up recipes and prices, preview feats, foils and bling and many more things with this automatically updated (95% of the time) comprehensive Packrat Tools site{% endblock %}" />
+        <meta property="og:image" content="{% block og_image %}http://packrattools.com/images/tools-rat-large.png{% endblock %}" />
+        <meta property="og:title" content="{% block og_title %}Packrat Tools{% endblock %}" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="{% block og_url %}http://packrattools.com{% endblock %}" />
+        <meta property="og:site_name" content="Packrat Tools" />
+
+        <meta property="fb:app_id" content="{{ fb_app_id }}" />
+        <meta property="fb:admins" content="500828823" />
+        <meta name="twitter:card" value="summary" />
+        <meta name="twitter:site" value="@packrattracker" />
+        <meta name="twitter:creator" value="@angelsk" />
+        <meta name="twitter:domain" content="http://packrattools.com" />
+
+        {% block stylesheets %}
+            <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}" />
+        {% endblock %}
+
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+            ga('create', '{{ google_analytics }}', 'auto');
+            ga('send', 'pageview');
+        </script>
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        <div id="fb-root"></div>
+        <script>
+            window.fbAsyncInit = function() {
+                FB.init({appId: '{{ fb_app_id }}', status: true, cookie: true, xfbml: true});
+            };
+
+            (function() {
+                var e = document.createElement('script'); e.async = true;
+                e.src = document.location.protocol + '//connect.facebook.net/en_US/all.js';
+                document.getElementById('fb-root').appendChild(e);
+            }());
+        </script>
+
+        <div class="wrapper">
+            {% block header %}{% include "includes/_logo.html.twig" with { route: route|default('home') } %}{% endblock %}
+            {% include "includes/_top_nav.html.twig" with { route: route|default('home') } %}
+            {% block message %}
+                <br />
+                <div class="message">
+                    <p><b>IMPORTANT</b>: Like using this site? <a href="https://www.facebook.com/packrattools/posts/10155971665475524" target="_blank">Please consider</a> <a href="/donate">supporting us</a> to help us keep running. Thank you!</p>
+                </div>
+            {% endblock %}
+
+            {% block body %}{% endblock %}
+
+            {% block footer %}{% include "includes/_footer_nav.html.twig" %}{% endblock %}
+        </div>
+
+        <div class="overlay hidden" id="overlay"></div>
+        <div class="dialog-wrapper lg hidden" id="card-container">
+            <div class="dialog-wrapper2 lg" id="card-content"></div>
+        </div>
     </body>
 </html>

@@ -2,3 +2,7 @@ twig:
     paths: ['%kernel.project_dir%/templates']
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
+    globals:
+        google_analytics: 'UA-2497690-3'
+        fb_app_id: 238716802967
+

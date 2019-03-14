@@ -19,6 +19,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Card
 {
+    use Common\CostTrait;
+
     /**
      * @var int|null
      *
@@ -35,6 +37,13 @@ class Card
      * @ORM\JoinColumn(referencedColumnName="collection_id")
      */
     private $collection;
+
+    /**
+     * @var Recipe|null
+     *
+     * @ORM\OneToOne(targetEntity="Recipe", mappedBy="card")
+     */
+    private $recipe;
 
     /**
      * @var string
@@ -140,13 +149,6 @@ class Card
     /**
      * @var int
      *
-     * @ORM\Column(name="credit_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $creditCost = 0;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="packrat_credit_cost", type="smallint", nullable=false, options={"default" = 0})
      */
     public $apiCreditCost = 0;
@@ -154,30 +156,9 @@ class Card
     /**
      * @var int
      *
-     * @ORM\Column(name="ticket_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $ticketCost = 0;
-
-    /**
-     * @var int
-     *
      * @ORM\Column(name="packrat_ticket_cost", type="smallint", nullable=false, options={"default" = 0})
      */
     public $apiTicketCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="draw_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $drawCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="rat_cost", type="smallint", nullable=false, options={"default" = 0})
-     */
-    public $ratCost = 0;
 
     /**
      * @var \DateTime|null
@@ -222,5 +203,21 @@ class Card
     public function setCollection(Collection $collection): void
     {
         $this->collection = $collection;
+    }
+
+    /**
+     * @return Recipe|null
+     */
+    public function getRecipe(): ?Recipe
+    {
+        return $this->recipe;
+    }
+
+    /**
+     * @param Recipe $recipe
+     */
+    public function setRecipe(Recipe $recipe): void
+    {
+        $this->recipe = $recipe;
     }
 }

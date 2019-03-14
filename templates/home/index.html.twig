@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% set route = 'home' %}
+
+{% block title %}Packrat Tools{% endblock %}
+{% block header %}{% endblock %}
+{% block message %}{% endblock %}
+
+{% block body %}
+    <div class="content full">
+        <h1 class="homepage__header">The Packrat Tools Family</h1>
+
+        <p class="homepage__heroes">
+            <a href="{{ path('info') }}">
+                <img src="{{ asset('images/packrat-card-info.png') }}" width="250" height="320" alt="Packrat Recipes and Card Info Wiki" title="Packrat Recipes and Card Info Wiki" />
+            </a>
+            <a href="{{ path('mockup') }}">
+                <img src="{{ asset('images/packrat-mockups.png') }}" width="250" height="320" alt="Packrat Mockups" title="Packrat Mockups" />
+            </a>
+            <a href="{{ path('tracker') }}">
+                <img src="{{ asset('images/packrat-market-tracker.png') }}" width="250" height="320" alt="Packrat Market Tracker" title="Packrat Market Tracker" />
+            </a>
+            <a href="http://squeaks.packrattools.com/">
+                <img src="{{ asset('images/packrat-squeaks.png') }}" width="250" height="320" alt="Packrat Squeaks - Tips and Tricks" title="Packrat Squeaks - Tips and Tricks" />
+            </a>
+            <img src="{{ asset('images/future-tools-rat.png') }}" width="250" height="320" alt="Future Packrat Tools" title="Future Packrat Tools" />
+        </p>
+        <br />
+    </div>
+{% endblock %}

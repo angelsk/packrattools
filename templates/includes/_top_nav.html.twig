@@ -1,0 +1,17 @@
+<div class="top_nav">
+    <ul>
+        <li><a href="{{ path('home') }}" title="Packrat Tools"{% if route == 'home' %} class="active"{% endif %}>Home</a></li>
+        <li><a href="{{ path('tracker') }}" title="Packrat Market Tracker"{% if route == 'tracker' %} class="active"{% endif %}>Tracker</a></li>
+        <li><a href="{{ path('info') }}" title="Packrat Recipes and Card Info Wiki"{% if route == 'info' %} class="active"{% endif %}>Info &amp; Recipes</a></li>
+        <li><a href="{{ path('mockup') }}" title="Packrat Mockup Tool"{% if route == 'mockup' %} class="active"{% endif %}>Mockups</a></li>
+        <li><a href="http://squeaks.packrattools.com" title="Packrat Squeaks Articles, Tips &amp; Tricks">Squeaks</a></li>
+        <li><a href="/donate" title="Support Packrat Tools - Donate"{% if route == 'donate' %} class="active"{% endif %}>Donate</a></li>
+        <li><a href="/settings" title="Change your PRT settings/ preferences"{% if route == 'settings' %} class="active"{% endif %}>Preferences</a></li>
+        <li><a href="/feedback" title="Feedback, Help or Contact Us"{% if route == 'feedback' %} class="active"{% endif %}>Help!</a></li>
+    </ul>
+    <ul class="top_nav">
+        <li><a href="https://www.playpackrat.com/" title="Packrat: The Game" target="_blank">Packrat: The Game</a></li>
+        <li><a href="http://forum.playpackrat.com/" title="Packrat: Official Forums" target="_blank">Packrat: Official Forums</a></li>
+        <li><a href="https://packrat.zendesk.com/hc/en-us" title="Packrat: Official Help" target="_blank">Packrat: Official Help</a></li>
+    </ul>
+</div>

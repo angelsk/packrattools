@@ -18,6 +18,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Collection
 {
+    use Common\CostTrait;
+
     /**
      * @var int|null
      *
@@ -45,12 +47,13 @@ class Collection
     /**
      * @var DoctrineCollection
      *
-     * @ORM\ManyToMany(targetEntity="Artist")
+     * @ORM\ManyToMany(targetEntity="Artist", inversedBy="collections")
      * @ORM\JoinTable(
      *     name="collection_artists",
      *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="artist_id", referencedColumnName="artist_id")}
      * )
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $artists;
 
@@ -63,6 +66,7 @@ class Collection
      *     joinColumns={@ORM\JoinColumn(name="collection_id", referencedColumnName="collection_id")},
      *     inverseJoinColumns={@ORM\JoinColumn(name="related_collection_id", referencedColumnName="collection_id")}
      * )
+     * @ORM\OrderBy({"name" = "ASC"})
      */
     private $relatedCollections;
 
@@ -70,6 +74,7 @@ class Collection
      * @var DoctrineCollection
      *
      * @ORM\OneToMany(targetEntity="Card", mappedBy="collection")
+     * @ORM\OrderBy({"displayOrder" = "ASC", "pointValue" = "DESC"})
      */
     private $cards;
 
@@ -104,7 +109,7 @@ class Collection
     /**
      * @var bool
      *
-     * @ORM\Column(name="num_cards", type="boolean", nullable=false)
+     * @ORM\Column(name="num_cards", type="smallint", nullable=false, options={"default" = 0})
      */
     public $numberOfCards = 0;
 
@@ -146,49 +151,21 @@ class Collection
     /**
      * @var bool
      *
-     * @ORM\Column(name="is_xl", type="boolean", nullable=false)
+     * @ORM\Column(name="is_xl", type="boolean", nullable=false, options={"default" = false})
      */
     public $isXl = false;
 
     /**
      * @var bool
      *
-     * @ORM\Column(name="is_premium", type="boolean", nullable=false)
+     * @ORM\Column(name="is_premium", type="boolean", nullable=false, options={"default" = false})
      */
     public $isPremium = false;
 
     /**
-     * @var int
-     *
-     * @ORM\Column(name="credit_cost", type="smallint", nullable=false)
-     */
-    public $creditCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="ticket_cost", type="smallint", nullable=false)
-     */
-    public $ticketCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="draw_cost", type="smallint", nullable=false)
-     */
-    public $drawCost = 0;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="rat_cost", type="smallint", nullable=false)
-     */
-    public $ratCost = 0;
-
-    /**
      * @var bool
      *
-     * @ORM\Column(name="special_foils", type="boolean", nullable=false)
+     * @ORM\Column(name="special_foils", type="boolean", nullable=false, options={"default" = false})
      */
     public $specialFoils = false;
 
@@ -202,7 +179,7 @@ class Collection
     /**
      * @var bool
      *
-     * @ORM\Column(name="has_changed", type="boolean", nullable=false)
+     * @ORM\Column(name="has_changed", type="boolean", nullable=false, options={"default" = false})
      */
     public $hasChanged = false;
 
@@ -238,11 +215,35 @@ class Collection
     }
 
     /**
+     * @return Feat|null
+     */
+    public function getFeat(): ?Feat
+    {
+        return $this->feat;
+    }
+
+    /**
+     * @param Feat $feat
+     */
+    public function setFeat(Feat $feat): void
+    {
+        $this->feat = $feat;
+    }
+
+    /**
      * @return DoctrineCollection
      */
     public function getCards(): DoctrineCollection
     {
         return $this->cards;
+    }
+
+    /**
+     * @return int
+     */
+    public function getReleasedCards(): int
+    {
+        return $this->cards->count();
     }
 
     /**
@@ -264,6 +265,14 @@ class Collection
     }
 
     /**
+     * @return bool
+     */
+    public function hasArtists(): bool
+    {
+        return $this->artists->count() > 0;
+    }
+
+    /**
      * @param Artist $artist
      */
     public function addArtist(Artist $artist): void
@@ -282,6 +291,14 @@ class Collection
     }
 
     /**
+     * @return bool
+     */
+    public function hasRelatedCollections(): bool
+    {
+        return $this->relatedCollections->count() > 0;
+    }
+
+    /**
      * @param Collection $collection
      */
     public function addRelatedCollection(Collection $collection)
@@ -291,5 +308,33 @@ class Collection
 
             $collection->addRelatedCollection($this); // Reciprocal not not infinite
         }
+    }
+
+    /**
+     * Retired or retiring in the next two weeka
+     *
+     * @return bool
+     */
+    public function isRetireding(): bool
+    {
+        if (null === $this->expiryDate) {
+            return false;
+        }
+
+        $twoWeeks = strtotime('+2 week');
+
+        return $twoWeeks >= $this->expiryDate->getTimestamp();
+    }
+
+    /**
+     * @return bool
+     */
+    public function isRetired(): bool
+    {
+        if (null === $this->expiryDate) {
+            return false;
+        }
+
+        return time() > $this->expiryDate->getTimestamp();
     }
 }
