@@ -62,7 +62,7 @@ class Recipe
     }
 
     /**
-     * @return Card[]
+     * @return array<int, Card|null>
      */
     public function getIngredients(): array
     {
