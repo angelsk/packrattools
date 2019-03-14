@@ -199,19 +199,19 @@
                             {% elseif (0 == $info_count and !$expired and 'recipe' != card.status %}
                                 {% if 'bling' == collection.identifier %}
                                 {% else  %}
-                                    <img src="/assets/packrat/steal.png" alt="Moved" title="Moved" /> Manually added (click on the image to see price history).
+                                    <img src="/images/packrat/steal.png" alt="Moved" title="Moved" /> Manually added (click on the image to see price history).
                                     {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}}
                                 {% endif %#}
                             {#% elseif (($expired || 0 < $info_count) and 0 < $row['info['limited %}
                                 {% if !empty($row['markets) || 'draw' == card.status) echo '<br />'}}
-                            <img src="/assets/packrat/steal.png" alt="Limited" title="Limited" /> Limited - this card has limited availability {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}#}
+                            <img src="/images/packrat/steal.png" alt="Limited" title="Limited" /> Limited - this card has limited availability {% if 0 < $row['info['limited) echo ' - only <b>' . $row['info['limited . '</b> available'}#}
                         {% endif %}
                     </td>
                     <td style="width: 115px;">
                         {% if card.recipe %}
-                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ card.recipe.ingredient1.image }}" alt="{# alt collection - #}{{ card.recipe.ingredient1.name }}" title="{# alt collection #}{{ card.recipe.ingredient1.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient1.identifier }}&amp;card={{ card.recipe.ingredient1.identifier }}" />
-                            <img style="padding: none !important; vertical-align:middle; cursor:pointer;" src="{{ card.recipe.ingredient2.image }}" alt="{# alt collection  #}{{ card.recipe.ingredient2.name }}" title="{# alt collection  #}{{ card.recipe.ingredient2.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient2.identifier }}&amp;card={{ card.recipe.ingredient2.identifier }}" />
-                            <img style="padding: 1px !important; vertical-align:middle; cursor:pointer;" src="{{ card.recipe.ingredient3.image }}" alt="{# alt collection #}{{ card.recipe.ingredient3.name }}" title="{# alt collection #}{{ card.recipe.ingredient3.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient3.identifier }}&amp;card={{ card.recipe.ingredient3.identifier }}" />
+                            <img class="recipe-image" src="{{ card.recipe.ingredient1.image }}" alt="{# alt collection - #}{{ card.recipe.ingredient1.name }}" title="{# alt collection #}{{ card.recipe.ingredient1.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient1.identifier }}&amp;card={{ card.recipe.ingredient1.identifier }}" />
+                            <img class="recipe-image recipe-image--middle" src="{{ card.recipe.ingredient2.image }}" alt="{# alt collection  #}{{ card.recipe.ingredient2.name }}" title="{# alt collection  #}{{ card.recipe.ingredient2.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient2.identifier }}&amp;card={{ card.recipe.ingredient2.identifier }}" />
+                            <img class="recipe-image" src="{{ card.recipe.ingredient3.image }}" alt="{# alt collection #}{{ card.recipe.ingredient3.name }}" title="{# alt collection #}{{ card.recipe.ingredient3.name }}" width="32" height="32" data-click="card" data-href="/info/?collection={{ card.recipe.ingredient3.identifier }}&amp;card={{ card.recipe.ingredient3.identifier }}" />
                         {% endif %}
                         {% if 0 != card.quantityNeeded and collection.feat %}
                             <img src="{{ asset('images/packrat/make.png') }}" alt="Needed" title="Needed" /> <em>{{ card.quantityNeeded }}</em> needed

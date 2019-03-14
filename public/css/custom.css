@@ -1,6 +1,6 @@
 #nav {
     padding: 0 20px;
-    background: transparent url("/assets/packrat/nav_bg.gif") repeat-x scroll left top;
+    background: transparent url('/images/packrat/nav_bg.gif') repeat-x scroll left top;
     display: block;
     height: 43px;
     margin-top: 4px;
@@ -19,7 +19,7 @@
 #nav li a {
     border-top: 4px solid #f5f7fa;
     padding: 0 15px;
-    background: transparent url("/assets/packrat/nav_divider.gif") no-repeat scroll right top;
+    background: transparent url('/images/packrat/nav_divider.gif') no-repeat scroll right top;
     display: block;
     font-size: 14px;
     height: 39px;
@@ -57,7 +57,7 @@
 }
 
 #nav li .counter span {
-    background: transparent url("/assets/packrat/nav_counter.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/nav_counter.png') no-repeat scroll left top;
     display: block;
     width: 23px;
     height: 21px;

@@ -112,7 +112,9 @@ a {
     border-bottom: 1px solid transparent;
     text-decoration: none;
     -webkit-transition-property: color, border-bottom;
+    transition-property: color, border-bottom;
     -webkit-transition-duration: 250ms;
+    transition-duration: 250ms;
 }
 
 .top_nav ul li a:focus,
@@ -490,7 +492,7 @@ hr.new_items {
     margin: 0 auto 4px;
     ;
     padding: 8px;
-    background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom;
+    background: #ffffff url('/images/packrat/bottom-border.gif') repeat-x scroll left bottom;
     position: relative;
     display: block;
     width: 94px;
@@ -579,11 +581,11 @@ hr.new_items {
 
 .card-wrapper.feat .card {
     border: 5px solid #eeeeee;
-    background: transparent url("/images/packrat/feat-bg.gif") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-bg.gif') repeat-x scroll left top;
 }
 
 .card-wrapper.feat .family {
-    background: #676768 url("/images/packrat/feat-bg-inner.gif") repeat-x scroll left top;
+    background: #676768 url('/images/packrat/feat-bg-inner.gif') repeat-x scroll left top;
 }
 
 .card-wrapper.feat .points {
@@ -592,7 +594,7 @@ hr.new_items {
 }
 
 .card-wrapper.feat .feat-icon {
-    background: transparent url("/images/packrat/feat-bg-icon.gif") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-bg-icon.gif') repeat-x scroll left top;
     display: block;
 }
 
@@ -634,19 +636,19 @@ hr.new_items {
 }
 
 .card-wrapper.feat.gold .family {
-    background: transparent url("/images/packrat/feat-gold-inner.png") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-gold-inner.png') repeat-x scroll left top;
 }
 
 .card-wrapper.feat.gold .card {
-    background: transparent url("/images/packrat/feat-gold-bg.png") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-gold-bg.png') repeat-x scroll left top;
 }
 
 .card-wrapper.feat.silver .family {
-    background: transparent url("/images/packrat/feat-silver-inner.png") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-silver-inner.png') repeat-x scroll left top;
 }
 
 .card-wrapper.feat.silver .card {
-    background: transparent url("/images/packrat/feat-silver-bg.png") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-silver-bg.png') repeat-x scroll left top;
 }
 
 .card-wrapper.feat.bronze .issue span {
@@ -654,11 +656,11 @@ hr.new_items {
 }
 
 .card-wrapper.feat.bronze .family {
-    background: transparent url("/images/packrat/feat-bronze-inner.png") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-bronze-inner.png') repeat-x scroll left top;
 }
 
 .card-wrapper.feat.bronze .card {
-    background: transparent url("/images/packrat/feat-bronze-bg.png") repeat-x scroll left top;
+    background: transparent url('/images/packrat/feat-bronze-bg.png') repeat-x scroll left top;
 }
 
 .card-wrapper.foil-gadgets .family .points {
@@ -1061,7 +1063,7 @@ h1.section_header {
 
 #sidebar li.selected a.arrow {
     padding: 15px 12px;
-    background: #eeeeee url("/images/packrat/sidebar-arrow.png") no-repeat scroll left 19px;
+    background: #eeeeee url('/images/packrat/sidebar-arrow.png') no-repeat scroll left 19px;
 }
 
 #sidebar li a {
@@ -1093,7 +1095,7 @@ h1.section_header {
 }
 
 #sidebar li .counter span {
-    background: transparent url("/images/packrat/nav_counter.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/nav_counter.png') no-repeat scroll left top;
     display: block;
     width: 23px;
     height: 17px;
@@ -1114,47 +1116,47 @@ h1.section_header {
 }
 
 #sidebar li .vault b {
-    background: transparent url("/images/packrat/vault.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/vault.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .make b {
-    background: transparent url("/images/packrat/make.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/make.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .draw b {
-    background: transparent url("/images/packrat/draw.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/draw.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .gadget b {
-    background: transparent url("/images/packrat/gadget.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/gadget.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .lock b {
-    background: transparent url("/images/packrat/lock.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/lock.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .unlock b {
-    background: transparent url("/images/packrat/unlock.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/unlock.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .trade b {
-    background: transparent url("/images/packrat/trade.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/trade.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .steal b {
-    background: transparent url("/images/packrat/steal.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/steal.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
 #sidebar li .return b {
-    background: transparent url("/images/packrat/return.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/return.png') no-repeat scroll left top;
     padding-left: 22px;
 }
 
@@ -1186,7 +1188,7 @@ h1.section_header {
 }
 
 .dialog-wrapper {
-    background: transparent url("/images/packrat/bg-sm-bot.png") no-repeat scroll left bottom;
+    background: transparent url('/images/packrat/bg-sm-bot.png') no-repeat scroll left bottom;
     z-index: 10;
     /*position: absolute; top: 40px; left: 150px;*/
     width: 465px;
@@ -1200,7 +1202,7 @@ h1.section_header {
 
 .dialog-wrapper2 {
     padding: 10px 10px 0;
-    background: transparent url("/images/packrat/bg-sm-top.png") no-repeat scroll left top;
+    background: transparent url('/images/packrat/bg-sm-top.png') no-repeat scroll left top;
     display: block;
 }
 
@@ -1299,7 +1301,7 @@ h1.section_header {
 }
 
 .close-dialog {
-    background: transparent url("/images/packrat/close.gif") no-repeat scroll 5px 5px;
+    background: transparent url('/images/packrat/close.gif') no-repeat scroll 5px 5px;
     position: absolute;
     top: 15px;
     right: 15px;
@@ -1320,7 +1322,7 @@ h1.section_header {
 .dialog.pack .card {
     border: 5px solid #eeeeee;
     margin: 0 auto;
-    background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom;
+    background: #ffffff url('/images/packrat/bottom-border.gif') repeat-x scroll left bottom;
 }
 
 .dialog-wrapper .card-column {
@@ -1329,7 +1331,7 @@ h1.section_header {
 }
 
 .dialog-wrapper.successful .dialog {
-    background: #ecf8d0 url("/images/packrat/success-bg.gif") repeat-x scroll left top;
+    background: #ecf8d0 url('/images/packrat/success-bg.gif') repeat-x scroll left top;
 }
 
 .dialog-wrapper.successful .dialog-footer {
@@ -1344,7 +1346,7 @@ h1.section_header {
     border: medium none #ffffff;
     margin: 0;
     padding: 0;
-    background: transparent url("/images/packrat/button-submit.gif") no-repeat scroll left top;
+    background: transparent url('/images/packrat/button-submit.gif') no-repeat scroll left top;
     display: block;
     color: #ffffff;
     width: 78px;
@@ -1545,4 +1547,14 @@ ul#list {
 .homepage__heroes {
     text-align: center;
     padding-top: 100px;
+}
+
+.recipe-image {
+    padding: 1px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.recipe-image--middle {
+    padding: none;
 }
