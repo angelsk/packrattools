@@ -11,7 +11,7 @@
 }
 
 .left {
-    float: left !important;
+    float: left;
 }
 
 .right {
@@ -31,7 +31,7 @@
 }
 
 .large {
-    font-size: 1.4em !important;
+    font-size: 1.4em;
 }
 
 .small {
@@ -52,7 +52,7 @@
 
 h1 {
     margin-bottom: 16px;
-    font-size: 1.4em !important;
+    font-size: 1.4em;
 }
 
 h1 a {
@@ -108,7 +108,7 @@ a {
 }
 
 .top_nav ul li a {
-    font-size: 1.2em !important;
+    font-size: 1.2em;
     border-bottom: 1px solid transparent;
     text-decoration: none;
     -webkit-transition-property: color, border-bottom;
@@ -157,7 +157,7 @@ img.smallIcon {
 }
 
 .full {
-    width: 100% !important;
+    width: 100%;
     text-align: center;
 }
 
@@ -242,10 +242,10 @@ ul.information li {
 }
 
 p.fan {
-    margin-top: -10px !important;
-    width: 250px !important;
-    float: right !important;
-    margin-left: 0 !important;
+    margin-top: -10px;
+    width: 250px;
+    float: right;
+    margin-left: 0;
 }
 
 #packrat-facebook {
@@ -264,7 +264,7 @@ label {
 }
 
 .admin label {
-    width: 150px !important;
+    width: 150px;
     float: left;
     padding: 10px;
 }
@@ -274,15 +274,15 @@ label {
 }
 
 input.sml {
-    width: 30px !important;
+    width: 30px;
 }
 
 input.half {
-    width: 90px !important;
+    width: 90px;
 }
 
 .submit {
-    width: auto !important;
+    width: auto;
     float: right;
 }
 
@@ -299,13 +299,13 @@ input.txt {
 }
 
 input.submit {
-    float: right !important;
+    float: right;
     margin-left: 10px;
 }
 
 label.chk {
-    width: 92px !important;
-    padding: 0 !important;
+    width: 92px;
+    padding: 0;
     cursor: pointer;
     position: relative;
 }
@@ -326,13 +326,13 @@ label.chk .tip-wrapper.collection {
 }
 
 label.chk_large {
-    width: 120px !important;
-    padding: 0 !important;
+    width: 120px;
+    padding: 0;
 }
 
 label.chk_radio {
-    width: 118px !important;
-    padding: 0 !important;
+    width: 118px;
+    padding: 0;
     cursor: pointer;
 }
 
@@ -439,7 +439,7 @@ hr.new_items {
 .card-wrapper {
     margin: 0 2px 2px 0;
     position: relative;
-    width: 120px !important;
+    width: 120px;
     float: left;
 }
 
@@ -576,7 +576,7 @@ hr.new_items {
 }
 
 .card-wrapper.feat {
-    height: auto !important;
+    height: auto;
 }
 
 .card-wrapper.feat .card {
@@ -668,7 +668,7 @@ hr.new_items {
 }
 
 .card-wrapper.foil-gadgets .family {
-    background: transparent url('/images/packrat/foil-gadgets.gif') top left no-repeat !important;
+    background: transparent url('/images/packrat/foil-gadgets.gif') top left no-repeat;
 }
 
 .dialog-wrapper {
@@ -676,13 +676,13 @@ hr.new_items {
 }
 
 .dialog-wrapper.successful .card {
-    border: 1px solid #C1DC94 !important;
+    border: 1px solid #C1DC94;
     margin: 5px 0 3px 5px;
 }
 
 .dialog-wrapper .card {
     border: 1px solid #dddddd;
-    margin: 5px 0 3px 5px !important;
+    margin: 5px 0 3px 5px;
     background: #ffffff none repeat scroll 0 0;
 }
 
@@ -705,9 +705,9 @@ hr.new_items {
 }
 
 .tip-wrapper {
-    border: none white !important;
+    border: none white;
     position: absolute;
-    text-decoration: none !important;
+    text-decoration: none;
     z-index: 8;
     display: none;
 }
@@ -735,7 +735,7 @@ hr.new_items {
 
 .tip {
     background: transparent url('/images/packrat/tooltip.png') no-repeat scroll 50% 0;
-    border: medium none white !important;
+    border: medium none white;
     color: white;
     font-size: 11px;
     height: 29px;
@@ -744,7 +744,7 @@ hr.new_items {
     padding: 0 10px;
     position: relative;
     text-align: left;
-    text-decoration: none !important;
+    text-decoration: none;
     white-space: nowrap;
 }
 
@@ -834,7 +834,7 @@ td.egg {
 }
 
 .small_image {
-    padding: 1px !important;
+    padding: 1px;
     vertical-align: middle;
 }
 
@@ -1243,7 +1243,7 @@ h1.section_header {
 }
 
 .dialog .column h2 {
-    height: auto !important;
+    height: auto;
     margin: 35px 0 0;
     padding: 0;
     font-size: 16px;
@@ -1253,12 +1253,12 @@ h1.section_header {
 
 .dialog .column p {
     display: block;
-    margin-top: 8px !important;
-    font-size: 13px !important;
+    margin-top: 8px;
+    font-size: 13px;
 }
 
 .dialog .column p b {
-    font-size: 13px !important;
+    font-size: 13px ;
 }
 
 .dialog .info {
@@ -1340,7 +1340,7 @@ h1.section_header {
 }
 
 .dialog-wrapper.successful .dialog-footer p {
-    font-size: 12px !important;
+    font-size: 12px;
 }
 
 .publish_form_submit {
