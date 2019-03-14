@@ -50,8 +50,8 @@ class InfoController extends AbstractController
             );
         }
 
-        $gadgets = function (array $a, array $b) {
-            return $a['family_id'] === 0; // Put gadgets last
+        $gadgets = function (array $first) {
+            return $first['family_id'] === 0; // Put gadgets last
         };
 
         $families = $familyService->getStatistics();
