@@ -208,10 +208,12 @@ ul.information li {
 
 .selection_form {
     float: left;
-    display: inline;
     margin-left: 14px;
-    padding-right: 10px;
     width: 555px;
+}
+
+.card_info_cells {
+    padding-right: 10px;
 }
 
 .basket {
@@ -399,9 +401,7 @@ hr.new_items {
     display: inline-block;
     overflow: hidden;
     margin-bottom: 17px;
-    float: left;
     background-color: rgb(238, 238, 238);
-    background-image: url('/images/packrat/content-bg.gif');
     width: 625px;
     padding: 15px 0 13px 15px;
 }
@@ -1415,7 +1415,6 @@ h1.section_header {
 }
 
 .feed-icon {
-    display: inline;
     float: left;
     height: 16px;
     margin: 0 0 0 34px;
