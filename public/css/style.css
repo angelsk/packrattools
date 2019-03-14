@@ -243,7 +243,7 @@ p.fan {
     margin-top: -10px !important;
     width: 250px !important;
     float: right !important;
-    margin-left: 0px !important;
+    margin-left: 0 !important;
 }
 
 #packrat-facebook {
@@ -303,13 +303,13 @@ input.submit {
 
 label.chk {
     width: 92px !important;
-    padding: 0px !important;
+    padding: 0 !important;
     cursor: pointer;
     position: relative;
 }
 
 label.chk img {
-    margin: 0px 4px 20px;
+    margin: 0 4px 20px;
     padding: 3px;
 }
 
@@ -325,12 +325,12 @@ label.chk .tip-wrapper.collection {
 
 label.chk_large {
     width: 120px !important;
-    padding: 0px !important;
+    padding: 0 !important;
 }
 
 label.chk_radio {
     width: 118px !important;
-    padding: 0px !important;
+    padding: 0 !important;
     cursor: pointer;
 }
 
@@ -400,12 +400,12 @@ hr.new_items {
     background-color: rgb(238, 238, 238);
     background-image: url('/images/packrat/content-bg.gif');
     width: 625px;
-    padding: 15px 0pt 13px 15px;
+    padding: 15px 0 13px 15px;
 }
 
 .headline {
     border-bottom: 1px solid #dddddd;
-    margin: 0pt 22px 7px 5px;
+    margin: 0 22px 7px 5px;
     overflow: hidden;
     display: block;
     font-size: 13px;
@@ -428,14 +428,14 @@ hr.new_items {
 .artist_rounded div {
     width: 150px;
     height: 150px;
-    border-radius: 1em;
     -moz-border-radius: 1em;
     -webkit-border-radius: 1em;
+    border-radius: 1em;
     border: 2px solid rgb(59, 89, 152);
 }
 
 .card-wrapper {
-    margin: 0pt 2px 2px 0pt;
+    margin: 0 2px 2px 0;
     position: relative;
     width: 120px !important;
     float: left;
@@ -443,9 +443,9 @@ hr.new_items {
 
 .card-wrapper a.action {
     border-top: medium none #ffffff;
-    margin: 0pt 5px 5px;
-    padding: 6px 0pt 8px;
-    background: #d8dfea none repeat scroll 0% 0%;
+    margin: 0 5px 5px;
+    padding: 6px 0 8px;
+    background: #d8dfea none repeat scroll 0 0;
     position: relative;
     display: block;
     font-size: 12px;
@@ -453,27 +453,27 @@ hr.new_items {
 }
 
 .card-wrapper a.action.alt {
-    background: #fffbe2 none repeat scroll 0% 0%;
+    background: #fffbe2 none repeat scroll 0 0;
 }
 
 .card-wrapper a.action.alt:hover {
-    background: #6d84b4 none repeat scroll 0% 0%;
+    background: #6d84b4 none repeat scroll 0 0;
 }
 
 .card-wrapper a.inactive,
 .card-wrapper a.inactive:hover {
-    background: #dddddd none repeat scroll 0% 0%;
+    background: #dddddd none repeat scroll 0 0;
     cursor: default;
     font-weight: normal;
     color: #666666;
 }
 
 .card-wrapper .action.alt {
-    background: #ffdede none repeat scroll 0% 0%;
+    background: #ffdede none repeat scroll 0 0;
 }
 
 .card-wrapper .action:hover {
-    background: #6d84b4 none repeat scroll 0% 0%;
+    background: #6d84b4 none repeat scroll 0 0;
     color: #ffffff;
     font-weight: bold;
     text-decoration: none;
@@ -554,8 +554,8 @@ hr.new_items {
 .card .back .name a {
     display: block;
     position: absolute;
-    top: 0pt;
-    left: 0pt;
+    top: 0;
+    left: 0;
     z-index: 1;
     width: 86px;
     text-align: center;
@@ -566,7 +566,7 @@ hr.new_items {
 }
 
 .card .back .issue {
-    padding: 6px 0pt;
+    padding: 6px 0;
     line-height: 11px;
     text-align: center;
     font-weight: bold;
@@ -675,13 +675,13 @@ hr.new_items {
 
 .dialog-wrapper.successful .card {
     border: 1px solid #C1DC94 !important;
-    margin: 5px 0pt 3px 5px;
+    margin: 5px 0 3px 5px;
 }
 
 .dialog-wrapper .card {
     border: 1px solid #dddddd;
-    margin: 5px 0pt 3px 5px !important;
-    background: #ffffff none repeat scroll 0% 0%;
+    margin: 5px 0 3px 5px !important;
+    background: #ffffff none repeat scroll 0 0;
 }
 
 .card .front .collection {
@@ -698,13 +698,12 @@ hr.new_items {
 }
 
 .tip-wrapper.left {
-    left: 0pt;
+    left: 0;
     top: 64px;
 }
 
 .tip-wrapper {
     border: none white !important;
-    display: block;
     position: absolute;
     text-decoration: none !important;
     z-index: 8;
@@ -712,7 +711,7 @@ hr.new_items {
 }
 
 .tip-wrapper.left .tip-inner {
-    left: 0pt;
+    left: 0;
 }
 
 .tip-inner {
@@ -723,8 +722,8 @@ hr.new_items {
 }
 
 .tip-wrapper.left .tip {
-    background: transparent url('/images/packrat/tooltip-left.png') no-repeat scroll 0% 0%;
-    left: 0pt;
+    background: transparent url('/images/packrat/tooltip-left.png') no-repeat scroll 0 0;
+    left: 0;
 }
 
 .tip:hover {
@@ -733,14 +732,14 @@ hr.new_items {
 }
 
 .tip {
-    background: transparent url('/images/packrat/tooltip.png') no-repeat scroll 50% 0%;
+    background: transparent url('/images/packrat/tooltip.png') no-repeat scroll 50% 0;
     border: medium none white !important;
     color: white;
     font-size: 11px;
     height: 29px;
     left: -50%;
     line-height: 24px;
-    padding: 0pt 10px;
+    padding: 0 10px;
     position: relative;
     text-align: left;
     text-decoration: none !important;
@@ -1050,10 +1049,10 @@ h1.section_header {
 #sidebar li.selected a,
 #sidebar li.selected a:hover {
     border-bottom: 1px solid #dddddd;
-    background: #eeeeee none repeat scroll 0% 0%;
+    background: #eeeeee none repeat scroll 0 0;
     color: #333333;
     font-weight: bold;
-    margin-left: 0pt;
+    margin-left: 0;
 }
 
 #sidebar li.selected a b {
@@ -1068,7 +1067,7 @@ h1.section_header {
 #sidebar li a {
     border-bottom: 1px solid #dddddd;
     padding: 15px 12px;
-    background: #e6e6e6 none repeat scroll 0% 0%;
+    background: #e6e6e6 none repeat scroll 0 0;
     display: block;
     font-size: 13px;
     margin-left: 1px;
@@ -1088,7 +1087,7 @@ h1.section_header {
 }
 
 #sidebar li .counter {
-    margin: -1px 0pt 0pt 4px;
+    margin: -1px 0 0 4px;
     position: absolute;
     right: 10px;
 }
@@ -1170,10 +1169,10 @@ h1.section_header {
 
 #overlay {
     position: fixed;
-    top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
     width: 100%;
     height: 100%;
     z-index: 99;
@@ -1181,7 +1180,7 @@ h1.section_header {
 }
 
 .dialog-wrapper.lg {
-    background: transparent url('/images/packrat/bg-lg-bot.png') no-repeat scroll 0% 100%;
+    background: transparent url('/images/packrat/bg-lg-bot.png') no-repeat scroll 0 100%;
     left: 50px;
     width: 660px;
 }
@@ -1196,11 +1195,11 @@ h1.section_header {
 }
 
 .dialog-wrapper2.lg {
-    background: transparent url('/images/packrat/bg-lg-top.png') no-repeat scroll 0% 0%;
+    background: transparent url('/images/packrat/bg-lg-top.png') no-repeat scroll 0 0;
 }
 
 .dialog-wrapper2 {
-    padding: 10px 10px 0pt;
+    padding: 10px 10px 0;
     background: transparent url("/images/packrat/bg-sm-top.png") no-repeat scroll left top;
     display: block;
 }
@@ -1208,7 +1207,7 @@ h1.section_header {
 .dialog-title {
     border: 1px solid #3b5998;
     padding: 8px 10px;
-    background: #6d84b4 none repeat scroll 0% 0%;
+    background: #6d84b4 none repeat scroll 0 0;
     display: block;
     color: #ffffff;
     font-weight: bold;
@@ -1225,13 +1224,13 @@ h1.section_header {
     border-color: #ffffff #555555;
     border-width: medium 1px;
     padding: 10px;
-    background: #ffffff none repeat scroll 0% 0%;
+    background: #ffffff none repeat scroll 0 0;
     overflow: hidden;
     display: block;
 }
 
 .dialog .column {
-    margin: 5px 0pt 0pt 10px;
+    margin: 5px 0 0 10px;
     position: relative;
     width: 287px;
     font-size: 13px;
@@ -1242,8 +1241,8 @@ h1.section_header {
 
 .dialog .column h2 {
     height: auto !important;
-    margin: 35px 0pt 0pt;
-    padding: 0pt;
+    margin: 35px 0 0;
+    padding: 0;
     font-size: 16px;
     font-weight: bold;
     color: #333333;
@@ -1269,7 +1268,7 @@ h1.section_header {
 }
 
 .dialog .info p {
-    padding: 10px 0pt 15px;
+    padding: 10px 0 15px;
 }
 
 .dialog-footer {
@@ -1277,7 +1276,7 @@ h1.section_header {
     border-color: #cccccc #555555 #555555;
     border-width: 1px;
     padding: 10px;
-    background: #f2f2f2 none repeat scroll 0% 0%;
+    background: #f2f2f2 none repeat scroll 0 0;
     overflow: hidden;
     display: block;
     font-size: 12px;
@@ -1314,13 +1313,13 @@ h1.section_header {
 }
 
 .dialog.pack {
-    padding: 15px 0pt 13px 15px;
-    background: #eeeeee none repeat scroll 0% 0%;
+    padding: 15px 0 13px 15px;
+    background: #eeeeee none repeat scroll 0 0;
 }
 
 .dialog.pack .card {
     border: 5px solid #eeeeee;
-    margin: 0pt auto;
+    margin: 0 auto;
     background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom;
 }
 
@@ -1334,7 +1333,7 @@ h1.section_header {
 }
 
 .dialog-wrapper.successful .dialog-footer {
-    background: #ffffff none repeat scroll 0% 0%;
+    background: #ffffff none repeat scroll 0 0;
 }
 
 .dialog-wrapper.successful .dialog-footer p {
@@ -1343,8 +1342,8 @@ h1.section_header {
 
 .publish_form_submit {
     border: medium none #ffffff;
-    margin: 0pt;
-    padding: 0pt;
+    margin: 0;
+    padding: 0;
     background: transparent url("/images/packrat/button-submit.gif") no-repeat scroll left top;
     display: block;
     color: #ffffff;
@@ -1368,7 +1367,7 @@ h1.section_header {
 
 .afire-feed {
     font-size: 11px;
-    margin: 10px 0pt 20px 20px;
+    margin: 10px 0 20px 20px;
     width: 474px;
 }
 
@@ -1377,16 +1376,16 @@ h1.section_header {
     color: #999;
     font-size: 9px;
     font-weight: bold;
-    margin: 0pt 0pt 12px;
-    padding: 10px 5px 0pt 0pt;
+    margin: 0 0 12px;
+    padding: 10px 5px 0 0;
 }
 
 .afire-feed .date-divider span {
-    background: white none repeat scroll 0% 0%;
+    background: white none repeat scroll 0 0;
     display: block;
     float: left;
     margin-top: -7px;
-    padding: 0pt 5px 0pt 0pt;
+    padding: 0 5px 0 0;
     width: 52px;
     font-family: 'Lucida Grande', Verdana;
     font-size: 9px;
@@ -1396,8 +1395,8 @@ h1.section_header {
     border-bottom: 1px solid #D8DFEA;
     display: block;
     float: right;
-    margin: 0pt 0pt 16px;
-    padding: 0pt;
+    margin: 0 0 16px;
+    padding: 0;
     position: relative;
     width: 415px;
 }
@@ -1405,9 +1404,9 @@ h1.section_header {
 .feed-item,
 .feed-vault {
     height: 100%;
-    margin: 0pt;
+    margin: 0;
     overflow: hidden;
-    padding: 0pt;
+    padding: 0;
     position: relative;
 }
 
@@ -1415,22 +1414,22 @@ h1.section_header {
     display: inline;
     float: left;
     height: 16px;
-    margin: 0pt 0pt 0pt 34px;
-    padding: 0pt;
+    margin: 0 0 0 34px;
+    padding: 0;
     width: 16px;
 }
 
 .feed-item.last .feed-content,
 .feed-comment.last .feed-comment-wrapper {
     border: medium none white;
-    margin-bottom: 0pt;
+    margin-bottom: 0;
 }
 
 .feed-content p {
     color: #333;
     display: block;
-    margin: 0pt;
-    padding: 0pt;
+    margin: 0;
+    padding: 0;
 }
 
 .feed-item p {
@@ -1461,7 +1460,7 @@ ul.preferences li {
 }
 
 ul.preferences li input {
-    margin-bottom: 0px;
+    margin-bottom: 0;
     margin-right: 5px;
 }
 
