@@ -62,7 +62,7 @@ h1 a {
     height: 60px;
 }
 
-h3.section {
+.section {
     font-size: 11px;
     margin: 0;
     padding: 4px 0 5px 10px;
@@ -120,12 +120,12 @@ a {
 
 .top_nav ul li a:focus,
 .top_nav ul li a:hover,
-.top_nav ul li a.active {
+.top_nav ul li .active {
     border-bottom: 1px solid #333;
     color: #333;
 }
 
-img.smallIcon {
+.smallIcon {
     width: 10px;
     vertical-align: top;
 }
@@ -244,7 +244,7 @@ ul.information li {
     margin-left: 30px;
 }
 
-p.fan {
+.fan {
     margin-top: -10px;
     width: 250px;
     float: right;
@@ -276,11 +276,11 @@ label {
     width: 190px;
 }
 
-input.sml {
+.sml {
     width: 30px;
 }
 
-input.half {
+.half {
     width: 90px;
 }
 
@@ -296,7 +296,7 @@ select {
     margin-bottom: 10px;
 }
 
-input.txt {
+.txt {
     width: 300px;
     margin-top: 10px;
 }
@@ -318,7 +318,7 @@ label.chk img {
     padding: 3px;
 }
 
-label.hires img {
+.hires img {
     border: #CD9B1D 1px dashed;
     padding: 2px;
 }
@@ -328,12 +328,12 @@ label.chk .tip-wrapper.collection {
     top: -30px;
 }
 
-label.chk_large {
+.chk_large {
     width: 120px;
     padding: 0;
 }
 
-label.chk_radio {
+.chk_radio {
     width: 118px;
     padding: 0;
     cursor: pointer;
@@ -389,7 +389,7 @@ ul.pack_colours li input {
     text-align: right;
 }
 
-hr.new_items {
+.new_items {
     border-color: #CCCCCC -moz-use-text-color -moz-use-text-color;
     border-style: dotted none none;
     border-width: thin;
@@ -799,7 +799,7 @@ td img {
     vertical-align: middle;
 }
 
-table.last_seen td {
+.last_seen td {
     height: 32px;
 }
 
@@ -809,23 +809,23 @@ table.orders th {
     text-align: center;
 }
 
-tr.odd {
+.odd {
     background-color: #edeff4;
 }
 
-td.premium {
+.premium {
     background-color: #ccffcc;
 }
 
-td.xl {
+.xl {
     background-color: #cbddff;
 }
 
-td.credit {
+.credit {
     background-color: #fffbe2;
 }
 
-td.egg {
+.egg {
     background-color: #f4cfe8;
 }
 
@@ -961,7 +961,7 @@ h1.section_header {
     color: #7582aa;
 }
 
-.minicard span.details {
+.minicard .details {
     display: block;
     width: 145px;
     height: 23px;
@@ -969,16 +969,6 @@ h1.section_header {
     padding: 1px 0 0 0;
     margin: 2px 0 0 0;
     color: #666;
-}
-
-.minicard span.online {
-    display: inline;
-    font-size: 10px;
-    padding: 1px;
-    margin: 2px 0 0 0;
-    color: #222;
-    background: #fff8cc;
-    border-bottom: 1px solid #ffe222;
 }
 
 .minicard .collection-icon {
@@ -1060,11 +1050,6 @@ h1.section_header {
 
 #sidebar li.selected a b {
     font-weight: bold;
-}
-
-#sidebar li.selected a.arrow {
-    padding: 15px 12px;
-    background: #eeeeee url('/images/packrat/sidebar-arrow.png') no-repeat scroll left 19px;
 }
 
 #sidebar li a {
@@ -1470,7 +1455,7 @@ form.message {
     clear: both;
 }
 
-form.message input.save {
+form.message .save {
     float: none;
     margin: 5px;
 }
@@ -1484,21 +1469,21 @@ div.date {
     border: 1px dotted #ccc;
 }
 
-div.spacer {
+.spacer {
     border: none;
     width: 92px;
 }
 
-div.today {
+.today {
     border: 1px solid #6d84b4;
     background-color: #edeff4;
 }
 
-div.weekend {
+.weekend {
     background-color: #eee;
 }
 
-div.date span.day {
+div.date .day {
     font-weight: bold;
     font-size: 120%;
 }
@@ -1508,21 +1493,21 @@ div.date div.collections span {
     padding: 3px 0;
 }
 
-div.date div.collections span.retires {
+div.date div.collections .retires {
     color: #df4343;
 }
 
-div.date div.collections span.released {
+div.date div.collections .released {
     color: #557F00;
 }
 
-div.date div.collections span.feats {
+div.date div.collections .feats {
     color: #3B5998;
 }
 
 /* admin area - images */
 
-ul#list {
+#list {
     display: none;
 }
 
