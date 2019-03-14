@@ -10,7 +10,8 @@
     clear: both;
 }
 
-.left {
+.left,
+.section_header.left {
     float: left;
 }
 
