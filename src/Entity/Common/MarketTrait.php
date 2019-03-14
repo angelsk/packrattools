@@ -2,6 +2,8 @@
 
 namespace App\Entity\Common;
 
+use Doctrine\ORM\Mapping as ORM;
+
 trait MarketTrait
 {
     /**
