@@ -107,7 +107,7 @@ class Collection
     public $icon;
 
     /**
-     * @var bool
+     * @var int
      *
      * @ORM\Column(name="num_cards", type="smallint", nullable=false, options={"default" = 0})
      */
