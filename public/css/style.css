@@ -1,13 +1,13 @@
 * {
-	margin: 0;
-	padding: 0;
-	font-size: 11px;
-	color: #666;
-	font-family: "Lucida Grande", "Verdana";
+    margin: 0;
+    padding: 0;
+    font-size: 11px;
+    color: #666;
+    font-family: "Lucida Grande", "Verdana";
 }
 
 .clear {
-   clear: both;
+    clear: both;
 }
 
 .left {
@@ -15,11 +15,11 @@
 }
 
 .right {
-	float: right;
+    float: right;
 }
 
 .center {
-  text-align: center;
+    text-align: center;
 }
 
 .pad_right {
@@ -31,23 +31,23 @@
 }
 
 .large {
-  font-size: 1.4em !important;
+    font-size: 1.4em !important;
 }
 
 .small {
-	font-size: 0.6em;
+    font-size: 0.6em;
 }
 
 .small a {
-	font-size: 0.6em;
+    font-size: 0.6em;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .pointer {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 h1 {
@@ -56,75 +56,75 @@ h1 {
 }
 
 h1 a {
-	display: block;
-	width: 282px;
-	height: 60px;
+    display: block;
+    width: 282px;
+    height: 60px;
 }
 
 h3.section {
-	font-size: 11px;
-	margin: 0;
-	padding: 4px 0 5px 10px;
-	color: #333;
-	border-top: 1px solid #94a3c4;
-	background: #eceff5;
+    font-size: 11px;
+    margin: 0;
+    padding: 4px 0 5px 10px;
+    color: #333;
+    border-top: 1px solid #94a3c4;
+    background: #eceff5;
 }
 
 .section-sub {
-	overflow: hidden;
-	height: 100%;
-	padding: 2px 8px;
-	border-bottom: 1px solid #eceff5;
+    overflow: hidden;
+    height: 100%;
+    padding: 2px 8px;
+    border-bottom: 1px solid #eceff5;
 }
 
 img {
-	border: none;
-	vertical-align:bottom;
+    border: none;
+    vertical-align: bottom;
 }
 
 a {
-	color: #3b5998;
-	text-decoration: none;
+    color: #3b5998;
+    text-decoration: none;
 }
 
 .wrapper {
-  margin-left: auto;
-  margin-right: auto;
-  width: 970px;
-  position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 970px;
+    position: relative;
 }
 
 .top_nav {
-  position: absolute;
-  right: 0;
-  top: 20px;
+    position: absolute;
+    right: 0;
+    top: 20px;
 }
 
 .top_nav ul li {
-  list-style: none;
-  float: left;
-  display: block;
-  margin-left: 15px;
+    list-style: none;
+    float: left;
+    display: block;
+    margin-left: 15px;
 }
 
 .top_nav ul li a {
-  font-size: 1.2em !important;
-	border-bottom: 1px solid transparent;
-	text-decoration: none;
-	-webkit-transition-property: color, border-bottom;
-	-webkit-transition-duration: 250ms;
+    font-size: 1.2em !important;
+    border-bottom: 1px solid transparent;
+    text-decoration: none;
+    -webkit-transition-property: color, border-bottom;
+    -webkit-transition-duration: 250ms;
 }
 
 .top_nav ul li a:focus,
 .top_nav ul li a:hover,
 .top_nav ul li a.active {
-	border-bottom: 1px solid #333;
-	color: #333;
+    border-bottom: 1px solid #333;
+    color: #333;
 }
 
 img.smallIcon {
-    width:10px;
-    vertical-align:top;
+    width: 10px;
+    vertical-align: top;
 }
 
 .logo {
@@ -139,7 +139,7 @@ img.smallIcon {
 }
 
 .content-padding p {
-  line-height: 1.6em;
+    line-height: 1.6em;
 }
 
 .content_narrow {
@@ -171,15 +171,19 @@ img.smallIcon {
     float: left;
 }
 
-ul.message, ul.information {
+ul.message,
+ul.information {
     list-style: none;
 }
 
-ul.message li, ul.information li {
+ul.message li,
+ul.information li {
     padding-bottom: 2px;
 }
 
-.message, .information, .error {
+.message,
+.information,
+.error {
     padding: 7px 7px 7px 10px;
     margin-bottom: 14px;
 }
@@ -200,39 +204,39 @@ ul.message li, ul.information li {
 }
 
 .selection_form {
-    float:left;
-    display:inline;
+    float: left;
+    display: inline;
     margin-left: 14px;
     padding-right: 10px;
     width: 555px;
 }
 
 .basket {
-  background: url('/images/cart.png') top left no-repeat;
-  text-indent: 20px;
-  height: 16px;
+    background: url('/images/cart.png') top left no-repeat;
+    text-indent: 20px;
+    height: 16px;
 }
 
 .pagination {
-  text-align: center;
+    text-align: center;
 }
 
 .footer {
-  clear: both;
-  text-align: center;
-  width: 940px;
-  padding: 15px;
-  overflow: hidden;
-  display:block;
+    clear: both;
+    text-align: center;
+    width: 940px;
+    padding: 15px;
+    overflow: hidden;
+    display: block;
 }
 
 .footer p {
-  float: left;
-  display: block;
-  width: 570px;
-  margin-top: 15px;
-  text-align: center;
-  margin-left: 30px;
+    float: left;
+    display: block;
+    width: 570px;
+    margin-top: 15px;
+    text-align: center;
+    margin-left: 30px;
 }
 
 p.fan {
@@ -248,39 +252,41 @@ p.fan {
 }
 
 .footer.full p {
-  width: 100%;
+    width: 100%;
 }
 
 label {
     width: 200px;
-    float:left;
+    float: left;
     padding: 10px;
 }
 
 .admin label {
     width: 150px !important;
-    float:left;
+    float: left;
     padding: 10px;
 }
 
 .admin input {
-   width: 190px;
+    width: 190px;
 }
 
 input.sml {
-   width: 30px !important;
+    width: 30px !important;
 }
 
 input.half {
-  width: 90px !important;
+    width: 90px !important;
 }
 
 .submit {
-   width: auto !important;
-   float: right;
+    width: auto !important;
+    float: right;
 }
 
-input, textarea, select {
+input,
+textarea,
+select {
     float: left;
     margin-bottom: 10px;
 }
@@ -291,15 +297,15 @@ input.txt {
 }
 
 input.submit {
-  float: right !important;
-  margin-left: 10px;
+    float: right !important;
+    margin-left: 10px;
 }
 
 label.chk {
-  width: 92px !important;
-  padding: 0px !important;
-  cursor: pointer;
-  position: relative;
+    width: 92px !important;
+    padding: 0px !important;
+    cursor: pointer;
+    position: relative;
 }
 
 label.chk img {
@@ -308,18 +314,18 @@ label.chk img {
 }
 
 label.hires img {
-  border: #CD9B1D 1px dashed;
-  padding: 2px;
+    border: #CD9B1D 1px dashed;
+    padding: 2px;
 }
 
-  label.chk .tip-wrapper.collection {
+label.chk .tip-wrapper.collection {
     margin-left: 10px;
     top: -30px;
-  }
+}
 
 label.chk_large {
-  width: 120px !important;
-  padding: 0px !important;
+    width: 120px !important;
+    padding: 0px !important;
 }
 
 label.chk_radio {
@@ -361,9 +367,9 @@ ul.pack_colours li input {
 }
 
 .feat_st {
-  font-size:0.9em;
-  padding-top:7px;
-  /*text-align:justify;*/
+    font-size: 0.9em;
+    padding-top: 7px;
+    /*text-align:justify;*/
 }
 
 .feat_points {
@@ -379,65 +385,304 @@ ul.pack_colours li input {
 }
 
 hr.new_items {
-    border-color:#CCCCCC -moz-use-text-color -moz-use-text-color;
-    border-style:dotted none none;
-    border-width:thin;
-    height:1px;
-    margin:10px 0;
+    border-color: #CCCCCC -moz-use-text-color -moz-use-text-color;
+    border-style: dotted none none;
+    border-width: thin;
+    height: 1px;
+    margin: 10px 0;
 }
 
-.collection-wrapper { display: inline-block; overflow: hidden; margin-bottom: 17px; float: left; background-color: rgb(238, 238, 238); background-image: url('/images/packrat/content-bg.gif'); width: 625px; padding: 15px 0pt 13px 15px; }
-.headline { border-bottom: 1px solid #dddddd; margin: 0pt 22px 7px 5px; overflow: hidden; display: block; font-size: 13px; color: #888888; padding-bottom: 10px; }
-.big_wrapper { background: url('/images/packrat/content-bg.gif') repeat-y scroll rgb(238, 238, 238); overflow: hidden; }
+.collection-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    margin-bottom: 17px;
+    float: left;
+    background-color: rgb(238, 238, 238);
+    background-image: url('/images/packrat/content-bg.gif');
+    width: 625px;
+    padding: 15px 0pt 13px 15px;
+}
 
-.artist_rounded { width: 150px; padding: 0; margin-right: 20px; float: left; }
-.artist_rounded div { width: 150px; height: 150px; border-radius: 1em; -moz-border-radius: 1em; -webkit-border-radius: 1em;  border: 2px solid rgb(59, 89, 152); }
+.headline {
+    border-bottom: 1px solid #dddddd;
+    margin: 0pt 22px 7px 5px;
+    overflow: hidden;
+    display: block;
+    font-size: 13px;
+    color: #888888;
+    padding-bottom: 10px;
+}
 
-.card-wrapper { margin: 0pt 2px 2px 0pt; position: relative; width: 120px !important; float: left; }
-.card-wrapper a.action { border-top: medium none #ffffff; margin: 0pt 5px 5px; padding: 6px 0pt 8px; background: #d8dfea none repeat scroll 0% 0%; position: relative; display: block; font-size: 12px; text-align: center; }
-.card-wrapper a.action.alt { background: #fffbe2 none repeat scroll 0% 0%; }
-.card-wrapper a.action.alt:hover { background: #6d84b4 none repeat scroll 0% 0%; }
-.card-wrapper a.inactive, .card-wrapper a.inactive:hover { background: #dddddd none repeat scroll 0% 0%; cursor: default; font-weight: normal; color: #666666; }
-.card-wrapper .action.alt { background: #ffdede none repeat scroll 0% 0%; }
-.card-wrapper .action:hover { background: #6d84b4 none repeat scroll 0% 0%; color: #ffffff; font-weight: bold; text-decoration: none; }
-.card-wrapper .action.bling:hover { background: transparent; }
-.card { border-style: solid solid none; border-color: #eeeeee #eeeeee #ffffff; border-width: 5px 5px medium; margin: 0 auto 4px;; padding: 8px; background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom; position: relative; display: block; width: 94px; }
-.card .family { padding: 4px; overflow: hidden; }
-.card .front .icon { padding: 11px; width: 64px; height: 64px; background-color: #ffffff; background-position: 50% 50%; background-repeat: no-repeat; }
-.card .front .collection { width: 22px; height: 21px; background-position: 50% 50%; background-repeat: no-repeat; float: left; }
-.card .front .points { font-size: 11px; color: #333333; padding-top: 6px; float: right; font-weight: bold; }
-.card .back { display: none; font-size: 11px; z-index: 2; }
-.card .back .icon { padding: 4px 11px; width: 64px; height: 32px; background-color: #ffffff; background-position: 50% 50%; background-repeat: no-repeat; }
-.card .back .name { position: relative; display: block; margin-top: 4px; width: 86px; height: 40px; text-align: center; z-index: 2; }
-.card .back .name a { display: block; position: absolute; top: 0pt; left: 0pt; z-index: 1; width: 86px; text-align: center; }
-.card .back .name a:hover { text-decoration: underline; }
-.card .back .issue { padding: 6px 0pt; line-height: 11px; text-align: center; font-weight: bold; color: #333333; }
+.big_wrapper {
+    background: url('/images/packrat/content-bg.gif') repeat-y scroll rgb(238, 238, 238);
+    overflow: hidden;
+}
 
-.card-wrapper.feat { height: auto !important; }
-.card-wrapper.feat .card { border: 5px solid #eeeeee; background: transparent url("/images/packrat/feat-bg.gif") repeat-x scroll left top; }
-.card-wrapper.feat .family { background: #676768 url("/images/packrat/feat-bg-inner.gif") repeat-x scroll left top; }
-.card-wrapper.feat .points { color: #ffffff; line-height: 10px; }
-.card-wrapper.feat .feat-icon { background: transparent url("/images/packrat/feat-bg-icon.gif") repeat-x scroll left top; display: block; }
-.card-wrapper.feat .icon { border: 1px solid #a199cc; width: 62px; height: 62px; background-color: transparent; }
-.card-wrapper.feat .feat-name { color: #ffffff; text-align: center; line-height: 12px; padding-top: 18px; height: 54px; }
-.card-wrapper.feat .issue span { display: block; font-size: 9px; padding-bottom: 2px; color: #aaaaaa; font-weight: normal; }
-.card-wrapper.feat .issue { font-weight: bold; color: #ffffff; }
-.card-wrapper.feat.feat-disabled { filter: alpha(opacity=50); opacity: 0.5; }
-.card-wrapper.feat.gold .issue span { color: #ffffff; }
-.card-wrapper.feat.gold .family { background: transparent url("/images/packrat/feat-gold-inner.png") repeat-x scroll left top; }
-.card-wrapper.feat.gold .card { background: transparent url("/images/packrat/feat-gold-bg.png") repeat-x scroll left top; }
-.card-wrapper.feat.silver .family { background: transparent url("/images/packrat/feat-silver-inner.png") repeat-x scroll left top; }
-.card-wrapper.feat.silver .card { background: transparent url("/images/packrat/feat-silver-bg.png") repeat-x scroll left top; }
-.card-wrapper.feat.bronze .issue span { color: #ffffff; }
-.card-wrapper.feat.bronze .family { background: transparent url("/images/packrat/feat-bronze-inner.png") repeat-x scroll left top; }
-.card-wrapper.feat.bronze .card { background: transparent url("/images/packrat/feat-bronze-bg.png") repeat-x scroll left top; }
+.artist_rounded {
+    width: 150px;
+    padding: 0;
+    margin-right: 20px;
+    float: left;
+}
 
-.card-wrapper.foil-gadgets .family  .points { color: #fff; }
-.card-wrapper.foil-gadgets .family  { background: transparent url('/images/packrat/foil-gadgets.gif') top left no-repeat !important; }
+.artist_rounded div {
+    width: 150px;
+    height: 150px;
+    border-radius: 1em;
+    -moz-border-radius: 1em;
+    -webkit-border-radius: 1em;
+    border: 2px solid rgb(59, 89, 152);
+}
 
-.dialog-wrapper { overflow: hidden; }
-.dialog-wrapper.successful .card { border: 1px solid #C1DC94 !important; margin: 5px 0pt 3px 5px; }
-.dialog-wrapper .card { border: 1px solid #dddddd; margin: 5px 0pt 3px 5px !important; background: #ffffff none repeat scroll 0% 0%; }
+.card-wrapper {
+    margin: 0pt 2px 2px 0pt;
+    position: relative;
+    width: 120px !important;
+    float: left;
+}
+
+.card-wrapper a.action {
+    border-top: medium none #ffffff;
+    margin: 0pt 5px 5px;
+    padding: 6px 0pt 8px;
+    background: #d8dfea none repeat scroll 0% 0%;
+    position: relative;
+    display: block;
+    font-size: 12px;
+    text-align: center;
+}
+
+.card-wrapper a.action.alt {
+    background: #fffbe2 none repeat scroll 0% 0%;
+}
+
+.card-wrapper a.action.alt:hover {
+    background: #6d84b4 none repeat scroll 0% 0%;
+}
+
+.card-wrapper a.inactive,
+.card-wrapper a.inactive:hover {
+    background: #dddddd none repeat scroll 0% 0%;
+    cursor: default;
+    font-weight: normal;
+    color: #666666;
+}
+
+.card-wrapper .action.alt {
+    background: #ffdede none repeat scroll 0% 0%;
+}
+
+.card-wrapper .action:hover {
+    background: #6d84b4 none repeat scroll 0% 0%;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.card-wrapper .action.bling:hover {
+    background: transparent;
+}
+
+.card {
+    border-style: solid solid none;
+    border-color: #eeeeee #eeeeee #ffffff;
+    border-width: 5px 5px medium;
+    margin: 0 auto 4px;
+    ;
+    padding: 8px;
+    background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom;
+    position: relative;
+    display: block;
+    width: 94px;
+}
+
+.card .family {
+    padding: 4px;
+    overflow: hidden;
+}
+
+.card .front .icon {
+    padding: 11px;
+    width: 64px;
+    height: 64px;
+    background-color: #ffffff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.card .front .collection {
+    width: 22px;
+    height: 21px;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+.card .front .points {
+    font-size: 11px;
+    color: #333333;
+    padding-top: 6px;
+    float: right;
+    font-weight: bold;
+}
+
+.card .back {
+    display: none;
+    font-size: 11px;
+    z-index: 2;
+}
+
+.card .back .icon {
+    padding: 4px 11px;
+    width: 64px;
+    height: 32px;
+    background-color: #ffffff;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+}
+
+.card .back .name {
+    position: relative;
+    display: block;
+    margin-top: 4px;
+    width: 86px;
+    height: 40px;
+    text-align: center;
+    z-index: 2;
+}
+
+.card .back .name a {
+    display: block;
+    position: absolute;
+    top: 0pt;
+    left: 0pt;
+    z-index: 1;
+    width: 86px;
+    text-align: center;
+}
+
+.card .back .name a:hover {
+    text-decoration: underline;
+}
+
+.card .back .issue {
+    padding: 6px 0pt;
+    line-height: 11px;
+    text-align: center;
+    font-weight: bold;
+    color: #333333;
+}
+
+.card-wrapper.feat {
+    height: auto !important;
+}
+
+.card-wrapper.feat .card {
+    border: 5px solid #eeeeee;
+    background: transparent url("/images/packrat/feat-bg.gif") repeat-x scroll left top;
+}
+
+.card-wrapper.feat .family {
+    background: #676768 url("/images/packrat/feat-bg-inner.gif") repeat-x scroll left top;
+}
+
+.card-wrapper.feat .points {
+    color: #ffffff;
+    line-height: 10px;
+}
+
+.card-wrapper.feat .feat-icon {
+    background: transparent url("/images/packrat/feat-bg-icon.gif") repeat-x scroll left top;
+    display: block;
+}
+
+.card-wrapper.feat .icon {
+    border: 1px solid #a199cc;
+    width: 62px;
+    height: 62px;
+    background-color: transparent;
+}
+
+.card-wrapper.feat .feat-name {
+    color: #ffffff;
+    text-align: center;
+    line-height: 12px;
+    padding-top: 18px;
+    height: 54px;
+}
+
+.card-wrapper.feat .issue span {
+    display: block;
+    font-size: 9px;
+    padding-bottom: 2px;
+    color: #aaaaaa;
+    font-weight: normal;
+}
+
+.card-wrapper.feat .issue {
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.card-wrapper.feat.feat-disabled {
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
+.card-wrapper.feat.gold .issue span {
+    color: #ffffff;
+}
+
+.card-wrapper.feat.gold .family {
+    background: transparent url("/images/packrat/feat-gold-inner.png") repeat-x scroll left top;
+}
+
+.card-wrapper.feat.gold .card {
+    background: transparent url("/images/packrat/feat-gold-bg.png") repeat-x scroll left top;
+}
+
+.card-wrapper.feat.silver .family {
+    background: transparent url("/images/packrat/feat-silver-inner.png") repeat-x scroll left top;
+}
+
+.card-wrapper.feat.silver .card {
+    background: transparent url("/images/packrat/feat-silver-bg.png") repeat-x scroll left top;
+}
+
+.card-wrapper.feat.bronze .issue span {
+    color: #ffffff;
+}
+
+.card-wrapper.feat.bronze .family {
+    background: transparent url("/images/packrat/feat-bronze-inner.png") repeat-x scroll left top;
+}
+
+.card-wrapper.feat.bronze .card {
+    background: transparent url("/images/packrat/feat-bronze-bg.png") repeat-x scroll left top;
+}
+
+.card-wrapper.foil-gadgets .family .points {
+    color: #fff;
+}
+
+.card-wrapper.foil-gadgets .family {
+    background: transparent url('/images/packrat/foil-gadgets.gif') top left no-repeat !important;
+}
+
+.dialog-wrapper {
+    overflow: hidden;
+}
+
+.dialog-wrapper.successful .card {
+    border: 1px solid #C1DC94 !important;
+    margin: 5px 0pt 3px 5px;
+}
+
+.dialog-wrapper .card {
+    border: 1px solid #dddddd;
+    margin: 5px 0pt 3px 5px !important;
+    background: #ffffff none repeat scroll 0% 0%;
+}
 
 .card .front .collection {
     background-position: 50% 50%;
@@ -446,26 +691,30 @@ hr.new_items {
     height: 21px;
     width: 22px;
 }
+
 .tip-wrapper.collection {
     margin-left: 10px;
     top: 65px;
 }
+
 .tip-wrapper.left {
     left: 0pt;
     top: 64px;
 }
+
 .tip-wrapper {
     border: none white !important;
     display: block;
     position: absolute;
     text-decoration: none !important;
     z-index: 8;
-    display:none;
+    display: none;
 }
 
 .tip-wrapper.left .tip-inner {
     left: 0pt;
 }
+
 .tip-inner {
     clear: left;
     float: left;
@@ -477,10 +726,12 @@ hr.new_items {
     background: transparent url('/images/packrat/tooltip-left.png') no-repeat scroll 0% 0%;
     left: 0pt;
 }
+
 .tip:hover {
     border: none white;
     text-decoration: none;
 }
+
 .tip {
     background: transparent url('/images/packrat/tooltip.png') no-repeat scroll 50% 0%;
     border: medium none white !important;
@@ -524,8 +775,8 @@ h2 {
 }
 
 .related_collections span a {
-  font-size: 80%;
-  vertical-align: middle;
+    font-size: 80%;
+    vertical-align: middle;
 }
 
 table {
@@ -533,21 +784,26 @@ table {
     margin-right: auto;
 }
 
-th, td {
-  padding: 2px 5px ;
+th,
+td {
+    padding: 2px 5px;
 }
 
 th {
-  text-align: left;
+    text-align: left;
 }
 
-td img { padding: 2px 0; vertical-align: middle; }
+td img {
+    padding: 2px 0;
+    vertical-align: middle;
+}
 
 table.last_seen td {
-  height: 32px;
+    height: 32px;
 }
 
-table.orders td, table.orders th {
+table.orders td,
+table.orders th {
     padding: 5px 15px;
     text-align: center;
 }
@@ -578,393 +834,707 @@ td.egg {
 
 .small_image {
     padding: 1px !important;
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 .section_header {
-    float:right;
+    float: right;
     padding-right: 10px;
     padding-bottom: 10px;
 }
 
-p.section_header.left { margin-top: 3px; }
+p.section_header.left {
+    margin-top: 3px;
+}
 
-h1.section_header { display: inline; }
+h1.section_header {
+    display: inline;
+}
 
 .selected {
-    font-weight:bold;
+    font-weight: bold;
 }
 
 /* collections */
 
 .cards-wrapper {
-	position: relative;
-	display: block;
-	overflow: hidden;
-	background: #eee;
-	border-top: 1px solid #c1c1c1;
+    position: relative;
+    display: block;
+    overflow: hidden;
+    background: #eee;
+    border-top: 1px solid #c1c1c1;
 }
 
 .minicard {
-  position: relative;
-  overflow: hidden;
-  margin: 0 2px 2px 0;
-  background: #fff;
-  float: left;
-  height: auto;
-  border: none;
-  padding: 0;
+    position: relative;
+    overflow: hidden;
+    margin: 0 2px 2px 0;
+    background: #fff;
+    float: left;
+    height: auto;
+    border: none;
+    padding: 0;
 }
+
 .minicard div {
-  display: block;
-  width: 239px;
-  border: 6px solid #eee;
+    display: block;
+    width: 239px;
+    border: 6px solid #eee;
 }
+
 .minicard p {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
+
 .minicard img {
-  padding: 8px;
-  float: left;
+    padding: 8px;
+    float: left;
 }
+
 .minicard .info {
-  float: left;
-  padding-top:15px;
-  color: #666;
-  width:165px;
+    float: left;
+    padding-top: 15px;
+    color: #666;
+    width: 165px;
 }
+
 .minicard .info.two_line {
-  padding-top: 12px;
+    padding-top: 12px;
 }
+
 .minicard .name {
-  display: block;
-  font-size: 11px;
-  width: 145px;
-  color: #3b5998;
+    display: block;
+    font-size: 11px;
+    width: 145px;
+    color: #3b5998;
 }
+
 .minicard .status {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 18px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 18px;
 }
+
 .minicard .status img {
-   padding: 0 !important;
+    padding: 0 !important;
 }
+
 .minicard .related {
-  position: absolute;
-  bottom: 33px;
-  right: 10px;
-  width: auto;
-  max-width: 100px;
-  max-height: 40px;
-  overflow: hidden;
+    position: absolute;
+    bottom: 33px;
+    right: 10px;
+    width: auto;
+    max-width: 100px;
+    max-height: 40px;
+    overflow: hidden;
 }
+
 .minicard .related img {
-   padding: 0 !important;
+    padding: 0 !important;
 }
+
 .minicard .bottom {
-  clear: both;
-  overflow: hidden;
-  height: auto;
-  color: #7582aa;
-  padding: 5px 8px;
-  background: #dee3f1;
-  border-bottom: 1px solid #c1c1c1;
+    clear: both;
+    overflow: hidden;
+    height: auto;
+    color: #7582aa;
+    padding: 5px 8px;
+    background: #dee3f1;
+    border-bottom: 1px solid #c1c1c1;
 }
+
 .minicard .bottom span.expired {
-  color: #df4343;
-  margin-left: 1px;
+    color: #df4343;
+    margin-left: 1px;
 }
+
 .minicard .bottom.expired {
-  background: none repeat scroll rgb(255, 225, 225);
+    background: none repeat scroll rgb(255, 225, 225);
 }
+
 .minicard .bottom span {
-  font-size: 0.9em;
-  color: #7582aa;
+    font-size: 0.9em;
+    color: #7582aa;
 }
+
 .minicard span.details {
-  display: block;
-  width: 145px;
-  height: 23px;
-  font-size: 10px;
-  padding: 1px 0 0 0;
-  margin: 2px 0 0 0;
-  color: #666;
+    display: block;
+    width: 145px;
+    height: 23px;
+    font-size: 10px;
+    padding: 1px 0 0 0;
+    margin: 2px 0 0 0;
+    color: #666;
 }
+
 .minicard span.online {
-  display: inline;
-  font-size: 10px;
-  padding: 1px;
-  margin: 2px 0 0 0;
-  color: #222;
-  background: #fff8cc;
-  border-bottom: 1px solid #ffe222;
+    display: inline;
+    font-size: 10px;
+    padding: 1px;
+    margin: 2px 0 0 0;
+    color: #222;
+    background: #fff8cc;
+    border-bottom: 1px solid #ffe222;
 }
+
 .minicard .collection-icon {
-	float: left;
-	padding: 5px;
-	margin: 8px;
-	width: 42px;
-	border: none;
+    float: left;
+    padding: 5px;
+    margin: 8px;
+    width: 42px;
+    border: none;
 }
+
 .minicard .collection-icon p {
-	position: relative;
-	width: 40px;
-	height: 40px;
+    position: relative;
+    width: 40px;
+    height: 40px;
 }
+
 .minicard .collection-icon p a img {
-	padding: 12px;
-	margin: 0;
+    padding: 12px;
+    margin: 0;
 }
 
-.meta { margin: 0 5px 15px 11px; font-size: 11px; color: #888888; }
-.meta b { display: block; margin-bottom: 3px; font-weight: normal; }
-.meta p { color: #666666; font-weight: bold; }
+.meta {
+    margin: 0 5px 15px 11px;
+    font-size: 11px;
+    color: #888888;
+}
 
-.filter .meta { margin: 0 0 5px 0; }
-.filter .meta b { float: left; width: 74px; }
-.filter .meta p { float: left; }
-.filter .meta i { float: left; display: block; }
+.meta b {
+    display: block;
+    margin-bottom: 3px;
+    font-weight: normal;
+}
 
-#sidebar { float:right; height:100%; width:119px; outline-color: rgb(51, 51, 51); border-left: 1px solid #dddddd; color: rgb(136, 136, 136); font-size: 11px; }
-#sidebar ul { margin-bottom: 15px; }
-#sidebar li.selected a, #sidebar li.selected a:hover { border-bottom: 1px solid #dddddd; background: #eeeeee none repeat scroll 0% 0%; color: #333333; font-weight: bold; margin-left: 0pt; }
-#sidebar li.selected a b { font-weight: bold; }
-#sidebar li.selected a.arrow { padding: 15px 12px; background: #eeeeee url("/images/packrat/sidebar-arrow.png") no-repeat scroll left 19px; }
-#sidebar li a { border-bottom: 1px solid #dddddd; padding: 15px 12px; background: #e6e6e6 none repeat scroll 0% 0%; display: block; font-size: 13px; margin-left: 1px; }
-#sidebar li a:hover { text-decoration: none; background-color: #eceff5; }
-#sidebar li a b { font-weight: normal; }
-#sidebar li.bottom a { border-bottom: medium none #ffffff; }
-#sidebar li .counter { margin: -1px 0pt 0pt 4px; position: absolute; right: 10px; }
-#sidebar li .counter span { background: transparent url("/images/packrat/nav_counter.png") no-repeat scroll left top; display: block; width: 23px; height: 17px; line-height: 12px; color: #ffffff; padding-top: 2px; font-size: 12px; font-weight: bold; text-align: center; }
-#sidebar .collection.sm { display: block; width: 42px; height: 42px; float: left; margin-right: 8px; }
-#sidebar li .vault b { background: transparent url("/images/packrat/vault.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .make b { background: transparent url("/images/packrat/make.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .draw b { background: transparent url("/images/packrat/draw.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .gadget b { background: transparent url("/images/packrat/gadget.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .lock b { background: transparent url("/images/packrat/lock.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .unlock b { background: transparent url("/images/packrat/unlock.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .trade b { background: transparent url("/images/packrat/trade.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .steal b { background: transparent url("/images/packrat/steal.png") no-repeat scroll left top; padding-left: 22px; }
-#sidebar li .return b { background: transparent url("/images/packrat/return.png") no-repeat scroll left top; padding-left: 22px; }
+.meta p {
+    color: #666666;
+    font-weight: bold;
+}
+
+.filter .meta {
+    margin: 0 0 5px 0;
+}
+
+.filter .meta b {
+    float: left;
+    width: 74px;
+}
+
+.filter .meta p {
+    float: left;
+}
+
+.filter .meta i {
+    float: left;
+    display: block;
+}
+
+#sidebar {
+    float: right;
+    height: 100%;
+    width: 119px;
+    outline-color: rgb(51, 51, 51);
+    border-left: 1px solid #dddddd;
+    color: rgb(136, 136, 136);
+    font-size: 11px;
+}
+
+#sidebar ul {
+    margin-bottom: 15px;
+}
+
+#sidebar li.selected a,
+#sidebar li.selected a:hover {
+    border-bottom: 1px solid #dddddd;
+    background: #eeeeee none repeat scroll 0% 0%;
+    color: #333333;
+    font-weight: bold;
+    margin-left: 0pt;
+}
+
+#sidebar li.selected a b {
+    font-weight: bold;
+}
+
+#sidebar li.selected a.arrow {
+    padding: 15px 12px;
+    background: #eeeeee url("/images/packrat/sidebar-arrow.png") no-repeat scroll left 19px;
+}
+
+#sidebar li a {
+    border-bottom: 1px solid #dddddd;
+    padding: 15px 12px;
+    background: #e6e6e6 none repeat scroll 0% 0%;
+    display: block;
+    font-size: 13px;
+    margin-left: 1px;
+}
+
+#sidebar li a:hover {
+    text-decoration: none;
+    background-color: #eceff5;
+}
+
+#sidebar li a b {
+    font-weight: normal;
+}
+
+#sidebar li.bottom a {
+    border-bottom: medium none #ffffff;
+}
+
+#sidebar li .counter {
+    margin: -1px 0pt 0pt 4px;
+    position: absolute;
+    right: 10px;
+}
+
+#sidebar li .counter span {
+    background: transparent url("/images/packrat/nav_counter.png") no-repeat scroll left top;
+    display: block;
+    width: 23px;
+    height: 17px;
+    line-height: 12px;
+    color: #ffffff;
+    padding-top: 2px;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+}
+
+#sidebar .collection.sm {
+    display: block;
+    width: 42px;
+    height: 42px;
+    float: left;
+    margin-right: 8px;
+}
+
+#sidebar li .vault b {
+    background: transparent url("/images/packrat/vault.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .make b {
+    background: transparent url("/images/packrat/make.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .draw b {
+    background: transparent url("/images/packrat/draw.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .gadget b {
+    background: transparent url("/images/packrat/gadget.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .lock b {
+    background: transparent url("/images/packrat/lock.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .unlock b {
+    background: transparent url("/images/packrat/unlock.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .trade b {
+    background: transparent url("/images/packrat/trade.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .steal b {
+    background: transparent url("/images/packrat/steal.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
+
+#sidebar li .return b {
+    background: transparent url("/images/packrat/return.png") no-repeat scroll left top;
+    padding-left: 22px;
+}
 
 #card-container {
-  position: absolute;
-  top: 30px;
-  z-index: 999;
-  width: 660px;
-  left: 50%;
-  margin-left: -330px;
+    position: absolute;
+    top: 30px;
+    z-index: 999;
+    width: 660px;
+    left: 50%;
+    margin-left: -330px;
 }
 
-#overlay{
-  position:fixed;
-  top:0px;
-  left:0px;
-  bottom:0px;
-  right:0px;
-  width: 100%;
-  height: 100%;
-  z-index: 99;
-  background-color:rgba(0,0,0,0.5);
+#overlay {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 .dialog-wrapper.lg {
-	background: transparent url('/images/packrat/bg-lg-bot.png') no-repeat scroll 0% 100%;
-	left: 50px;
-	width: 660px;
+    background: transparent url('/images/packrat/bg-lg-bot.png') no-repeat scroll 0% 100%;
+    left: 50px;
+    width: 660px;
 }
-.dialog-wrapper { background: transparent url("/images/packrat/bg-sm-bot.png") no-repeat scroll left bottom; z-index: 10; /*position: absolute; top: 40px; left: 150px;*/ width: 465px; padding-bottom: 10px; margin-left: 90px; }
+
+.dialog-wrapper {
+    background: transparent url("/images/packrat/bg-sm-bot.png") no-repeat scroll left bottom;
+    z-index: 10;
+    /*position: absolute; top: 40px; left: 150px;*/
+    width: 465px;
+    padding-bottom: 10px;
+    margin-left: 90px;
+}
+
 .dialog-wrapper2.lg {
-	background: transparent url('/images/packrat/bg-lg-top.png') no-repeat scroll 0% 0%;
+    background: transparent url('/images/packrat/bg-lg-top.png') no-repeat scroll 0% 0%;
 }
-.dialog-wrapper2 { padding: 10px 10px 0pt; background: transparent url("/images/packrat/bg-sm-top.png") no-repeat scroll left top; display: block; }
-.dialog-title { border: 1px solid #3b5998; padding: 8px 10px; background: #6d84b4 none repeat scroll 0% 0%; display: block; color: #ffffff; font-weight: bold; font-size: 13px; }
-.dialog-title span { font-size: 11px; font-weight: normal; }
-.dialog { border-style: none solid; border-color: #ffffff #555555; border-width: medium 1px; padding: 10px; background: #ffffff none repeat scroll 0% 0%; overflow: hidden; display: block; }
-.dialog .column { margin: 5px 0pt 0pt 10px; position: relative; width: 287px; font-size: 13px; line-height: 15px; color: #666666; float: left; }
-.dialog .column h2 { height: auto !important; margin: 35px 0pt 0pt; padding: 0pt; font-size: 16px; font-weight: bold; color: #333333; }
-.dialog .column p { display: block; margin-top: 8px !important; font-size: 13px !important; }
-.dialog .column p b { font-size: 13px !important; }
-.dialog .info { border-bottom: 1px solid #cccccc; overflow: hidden; font-size: 12px; line-height: 14px; color: #666666; margin-bottom: 15px; }
-.dialog .info p { padding: 10px 0pt 15px; }
-.dialog-footer { border-style: solid; border-color: #cccccc #555555 #555555; border-width: 1px; padding: 10px; background: #f2f2f2 none repeat scroll 0% 0%; overflow: hidden; display: block; font-size: 12px; color: #888888; }
-.dialog-footer p { float: left; line-height: 29px; }
-.dialog-footer .action { float: right; }
-.dialog-footer .action .cancel { line-height: 29px; margin-right: 5px; float: left; }
-.close-dialog { background: transparent url("/images/packrat/close.gif") no-repeat scroll 5px 5px; position: absolute; top: 15px; right: 15px; display: block; width: 28px; height: 28px; }
-.close-dialog:hover { background-position: 5px -23px; }
-.dialog.pack { padding: 15px 0pt 13px 15px; background: #eeeeee none repeat scroll 0% 0%; }
-.dialog.pack .card { border: 5px solid #eeeeee; margin: 0pt auto; background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom; }
+
+.dialog-wrapper2 {
+    padding: 10px 10px 0pt;
+    background: transparent url("/images/packrat/bg-sm-top.png") no-repeat scroll left top;
+    display: block;
+}
+
+.dialog-title {
+    border: 1px solid #3b5998;
+    padding: 8px 10px;
+    background: #6d84b4 none repeat scroll 0% 0%;
+    display: block;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+.dialog-title span {
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.dialog {
+    border-style: none solid;
+    border-color: #ffffff #555555;
+    border-width: medium 1px;
+    padding: 10px;
+    background: #ffffff none repeat scroll 0% 0%;
+    overflow: hidden;
+    display: block;
+}
+
+.dialog .column {
+    margin: 5px 0pt 0pt 10px;
+    position: relative;
+    width: 287px;
+    font-size: 13px;
+    line-height: 15px;
+    color: #666666;
+    float: left;
+}
+
+.dialog .column h2 {
+    height: auto !important;
+    margin: 35px 0pt 0pt;
+    padding: 0pt;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333333;
+}
+
+.dialog .column p {
+    display: block;
+    margin-top: 8px !important;
+    font-size: 13px !important;
+}
+
+.dialog .column p b {
+    font-size: 13px !important;
+}
+
+.dialog .info {
+    border-bottom: 1px solid #cccccc;
+    overflow: hidden;
+    font-size: 12px;
+    line-height: 14px;
+    color: #666666;
+    margin-bottom: 15px;
+}
+
+.dialog .info p {
+    padding: 10px 0pt 15px;
+}
+
+.dialog-footer {
+    border-style: solid;
+    border-color: #cccccc #555555 #555555;
+    border-width: 1px;
+    padding: 10px;
+    background: #f2f2f2 none repeat scroll 0% 0%;
+    overflow: hidden;
+    display: block;
+    font-size: 12px;
+    color: #888888;
+}
+
+.dialog-footer p {
+    float: left;
+    line-height: 29px;
+}
+
+.dialog-footer .action {
+    float: right;
+}
+
+.dialog-footer .action .cancel {
+    line-height: 29px;
+    margin-right: 5px;
+    float: left;
+}
+
+.close-dialog {
+    background: transparent url("/images/packrat/close.gif") no-repeat scroll 5px 5px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: block;
+    width: 28px;
+    height: 28px;
+}
+
+.close-dialog:hover {
+    background-position: 5px -23px;
+}
+
+.dialog.pack {
+    padding: 15px 0pt 13px 15px;
+    background: #eeeeee none repeat scroll 0% 0%;
+}
+
+.dialog.pack .card {
+    border: 5px solid #eeeeee;
+    margin: 0pt auto;
+    background: #ffffff url("/images/packrat/bottom-border.gif") repeat-x scroll left bottom;
+}
+
 .dialog-wrapper .card-column {
-	float: left;
-	width: 110px;
+    float: left;
+    width: 110px;
 }
-.dialog-wrapper.successful .dialog { background: #ecf8d0 url("/images/packrat/success-bg.gif") repeat-x scroll left top; }
-.dialog-wrapper.successful .dialog-footer { background: #ffffff none repeat scroll 0% 0%;  }
-.dialog-wrapper.successful .dialog-footer p { font-size: 12px !important; }
-.publish_form_submit { border: medium none #ffffff; margin: 0pt; padding: 0pt; background: transparent url("/images/packrat/button-submit.gif") no-repeat scroll left top; display: block; color: #ffffff; width: 78px; height: 29px; font-size: 13px; font-weight: bold; text-align: center; cursor: pointer; }
-.submit-button:hover, .publish_form_submit:hover { color: #dee4f1; }
-.dialog-wrapper .afire-feed {  float: left; margin-bottom: 10px; }
+
+.dialog-wrapper.successful .dialog {
+    background: #ecf8d0 url("/images/packrat/success-bg.gif") repeat-x scroll left top;
+}
+
+.dialog-wrapper.successful .dialog-footer {
+    background: #ffffff none repeat scroll 0% 0%;
+}
+
+.dialog-wrapper.successful .dialog-footer p {
+    font-size: 12px !important;
+}
+
+.publish_form_submit {
+    border: medium none #ffffff;
+    margin: 0pt;
+    padding: 0pt;
+    background: transparent url("/images/packrat/button-submit.gif") no-repeat scroll left top;
+    display: block;
+    color: #ffffff;
+    width: 78px;
+    height: 29px;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.submit-button:hover,
+.publish_form_submit:hover {
+    color: #dee4f1;
+}
+
+.dialog-wrapper .afire-feed {
+    float: left;
+    margin-bottom: 10px;
+}
+
 .afire-feed {
-	font-size: 11px;
-	margin: 10px 0pt 20px 20px;
-	width: 474px;
+    font-size: 11px;
+    margin: 10px 0pt 20px 20px;
+    width: 474px;
 }
- .afire-feed .date-divider {
-	border-bottom: 1px solid #D8DFEA;
-	color: #999;
-	font-size: 9px;
-	font-weight: bold;
-	margin: 0pt 0pt 12px;
-	padding: 10px 5px 0pt 0pt;
+
+.afire-feed .date-divider {
+    border-bottom: 1px solid #D8DFEA;
+    color: #999;
+    font-size: 9px;
+    font-weight: bold;
+    margin: 0pt 0pt 12px;
+    padding: 10px 5px 0pt 0pt;
 }
+
 .afire-feed .date-divider span {
-	background: white none repeat scroll 0% 0%;
-	display: block;
-	float: left;
-	margin-top: -7px;
-	padding: 0pt 5px 0pt 0pt;
-	width: 52px;
-	font-family: 'Lucida Grande', Verdana;
-	font-size: 9px;
+    background: white none repeat scroll 0% 0%;
+    display: block;
+    float: left;
+    margin-top: -7px;
+    padding: 0pt 5px 0pt 0pt;
+    width: 52px;
+    font-family: 'Lucida Grande', Verdana;
+    font-size: 9px;
 }
+
 .feed-content {
-	border-bottom: 1px solid #D8DFEA;
-	display: block;
-	float: right;
-	margin: 0pt 0pt 16px;
-	padding: 0pt;
-	position: relative;
-	width: 415px;
+    border-bottom: 1px solid #D8DFEA;
+    display: block;
+    float: right;
+    margin: 0pt 0pt 16px;
+    padding: 0pt;
+    position: relative;
+    width: 415px;
 }
-.feed-item, .feed-vault {
-	height: 100%;
-	margin: 0pt;
-	overflow: hidden;
-	padding: 0pt;
-	position: relative;
+
+.feed-item,
+.feed-vault {
+    height: 100%;
+    margin: 0pt;
+    overflow: hidden;
+    padding: 0pt;
+    position: relative;
 }
+
 .feed-icon {
-	display: inline;
-	float: left;
-	height: 16px;
-	margin: 0pt 0pt 0pt 34px;
-	padding: 0pt;
-	width: 16px;
+    display: inline;
+    float: left;
+    height: 16px;
+    margin: 0pt 0pt 0pt 34px;
+    padding: 0pt;
+    width: 16px;
 }
-.feed-item.last .feed-content, .feed-comment.last .feed-comment-wrapper {
-	border: medium none white;
-	margin-bottom: 0pt;
+
+.feed-item.last .feed-content,
+.feed-comment.last .feed-comment-wrapper {
+    border: medium none white;
+    margin-bottom: 0pt;
 }
+
 .feed-content p {
-	color: #333;
-	display: block;
-	margin: 0pt;
-	padding: 0pt;
+    color: #333;
+    display: block;
+    margin: 0pt;
+    padding: 0pt;
 }
+
 .feed-item p {
-	float: left;
-	line-height: 15px;
-	padding-bottom: 8px;
-	width: 390px;
+    float: left;
+    line-height: 15px;
+    padding-bottom: 8px;
+    width: 390px;
 }
+
 .feed-content p span {
-	color: #888;
-	font-size: 9px;
-	font-weight: normal;
-	padding-left: 1px;
+    color: #888;
+    font-size: 9px;
+    font-weight: normal;
+    padding-left: 1px;
 }
+
 .feed-content p img {
-	vertical-align: baseline;
+    vertical-align: baseline;
 }
 
 ul.preferences {
-  padding-bottom: 5px;
+    padding-bottom: 5px;
 }
 
 ul.preferences li {
-  padding: 5px;
-  list-style-type: none;
+    padding: 5px;
+    list-style-type: none;
 }
 
 ul.preferences li input {
-  margin-bottom: 0px;
-  margin-right: 5px;
+    margin-bottom: 0px;
+    margin-right: 5px;
 }
 
 form.message {
-  margin-top: 10px;
-  clear: both;
+    margin-top: 10px;
+    clear: both;
 }
 
 form.message input.save {
-  float: none;
-  margin: 5px;
+    float: none;
+    margin: 5px;
 }
 
 div.date {
-  width: 90px;
-  height: 135px;
-  float: left;
-  padding: 5px;
-  margin: 3px;
-  border: 1px dotted #ccc;
+    width: 90px;
+    height: 135px;
+    float: left;
+    padding: 5px;
+    margin: 3px;
+    border: 1px dotted #ccc;
 }
 
-  div.spacer {
+div.spacer {
     border: none;
     width: 92px;
-  }
+}
 
-  div.today {
+div.today {
     border: 1px solid #6d84b4;
     background-color: #edeff4;
-  }
+}
 
-  div.weekend {
+div.weekend {
     background-color: #eee;
-  }
+}
 
-  div.date span.day {
+div.date span.day {
     font-weight: bold;
     font-size: 120%;
-  }
+}
 
-  div.date div.collections span {
+div.date div.collections span {
     display: block;
     padding: 3px 0;
-  }
+}
 
-  div.date div.collections span.retires {
+div.date div.collections span.retires {
     color: #df4343;
-  }
+}
 
-  div.date div.collections span.released {
+div.date div.collections span.released {
     color: #557F00;
-  }
+}
 
-  div.date div.collections span.feats {
+div.date div.collections span.feats {
     color: #3B5998;
-  }
+}
 
 /* admin area - images */
 
 ul#list {
-	display: none;
+    display: none;
 }
 
 #images img {
-	padding: 2px;
-	border: 1px solid #ccc;
-	margin: 5px;
+    padding: 2px;
+    border: 1px solid #ccc;
+    margin: 5px;
 }
 
 #load {
-	margin-bottom: 20px;
-	font-weight: bold;
+    margin-bottom: 20px;
+    font-weight: bold;
 }
 
 .homepage__header {
