@@ -10,6 +10,9 @@
         Custom rule set for PRT to check code complexity
     </description>
 
+    <!-- Exclude auto-generated migrations -->
+    <exclude-pattern>src/Migrations</exclude-pattern>
+
     <!-- Import the entire default rule sets -->
     <rule ref="rulesets/unusedcode.xml" />
     <rule ref="rulesets/codesize.xml" />
@@ -20,20 +23,9 @@
     <!-- Import entire naming rule set and customize rules -->
     <rule ref="rulesets/naming.xml">
         <exclude name="ShortVariable" />
-        <exclude name="LongVariable" />
-        <exclude name="ShortMethodName" />
     </rule>
+    <!-- Allow $id as a veriable -->
     <rule ref="rulesets/naming.xml/ShortVariable">
-        <properties>
-            <property name="minimum" value="2" />
-        </properties>
-    </rule>
-    <rule ref="rulesets/naming.xml/LongVariable">
-        <properties>
-            <property name="maximum" value="25" />
-        </properties>
-    </rule>
-    <rule ref="rulesets/naming.xml/ShortMethodName">
         <properties>
             <property name="minimum" value="2" />
         </properties>
