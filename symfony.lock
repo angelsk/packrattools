@@ -92,8 +92,32 @@
     "jdorn/sql-formatter": {
         "version": "v1.2.17"
     },
+    "jean85/pretty-package-versions": {
+        "version": "1.2"
+    },
     "monolog/monolog": {
         "version": "1.23.0"
+    },
+    "nette/bootstrap": {
+        "version": "v2.4.6"
+    },
+    "nette/di": {
+        "version": "v2.4.15"
+    },
+    "nette/finder": {
+        "version": "v2.5.0"
+    },
+    "nette/neon": {
+        "version": "v3.0.0"
+    },
+    "nette/php-generator": {
+        "version": "v3.2.1"
+    },
+    "nette/robot-loader": {
+        "version": "v3.1.1"
+    },
+    "nette/utils": {
+        "version": "v2.5.3"
     },
     "nikic/php-parser": {
         "version": "v4.0.1"
@@ -115,6 +139,18 @@
     },
     "phpmd/phpmd": {
         "version": "2.6.0"
+    },
+    "phpstan/phpdoc-parser": {
+        "version": "0.3.1"
+    },
+    "phpstan/phpstan": {
+        "version": "0.11.4"
+    },
+    "phpstan/phpstan-doctrine": {
+        "version": "0.11.2"
+    },
+    "phpstan/phpstan-symfony": {
+        "version": "0.11.2"
     },
     "psr/cache": {
         "version": "1.0.1"
@@ -298,6 +334,9 @@
     },
     "symfony/polyfill-intl-icu": {
         "version": "v1.8.0"
+    },
+    "symfony/polyfill-intl-idn": {
+        "version": "v1.10.0"
     },
     "symfony/polyfill-mbstring": {
         "version": "v1.8.0"

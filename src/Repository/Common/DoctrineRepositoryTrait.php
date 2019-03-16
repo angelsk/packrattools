@@ -4,7 +4,7 @@ namespace App\Repository\Common;
 
 use Doctrine\Common\Persistence\ManagerRegistry;
 use Doctrine\Common\Persistence\ObjectManager;
-use Doctrine\Common\Persistence\ObjectRepository;
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\QueryBuilder;
 
 trait DoctrineRepositoryTrait
@@ -33,9 +33,9 @@ trait DoctrineRepositoryTrait
     }
 
     /**
-     * @return ObjectRepository
+     * @return EntityRepository
      */
-    private function getRepository(): ObjectRepository
+    private function getRepository(): EntityRepository
     {
         return $this->getManager()->getRepository($this->getEntityClass());
     }
@@ -45,6 +45,12 @@ trait DoctrineRepositoryTrait
      */
     private function getManager(): ObjectManager
     {
-        return $this->managerRegistry->getManagerForClass($this->getEntityClass());
+        $manager = $this->managerRegistry->getManagerForClass($this->getEntityClass());
+
+        if (null === $manager) {
+            throw new \Exception('Could not connect to the database, weirdly');
+        }
+
+        return $manager;
     }
 }

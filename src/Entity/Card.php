@@ -81,7 +81,7 @@ class Card
     public $pointValue = 0;
 
     /**
-     * @var bool
+     * @var int
      *
      * @ORM\Column(name="ordr", type="smallint", nullable=false, options={"default" = 0})
      */

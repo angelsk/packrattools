@@ -3,8 +3,8 @@
 namespace App\Service;
 
 use App\Adapter\Adapter;
-use function GuzzleHttp\json_decode;
 use Psr\Http\Message\ResponseInterface;
+use function GuzzleHttp\json_decode;
 
 class PackratApi
 {

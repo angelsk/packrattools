@@ -2,6 +2,10 @@
 
 namespace App\Entity\Common;
 
+use App\Entity\Card;
+use App\Entity\Collection;
+use Doctrine\ORM\Mapping as ORM;
+
 trait CardAndCollectionTrait
 {
     /**

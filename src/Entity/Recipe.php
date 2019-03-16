@@ -62,7 +62,7 @@ class Recipe
     }
 
     /**
-     * @return Card[]
+     * @return array<int, Card|null>
      */
     public function getIngredients(): array
     {
@@ -88,7 +88,8 @@ class Recipe
     {
         $this->ingredient1 = $card;
 
-        if ($this->card->getCollection() !== $card->getCollection()) {
+        if ($this->card->getCollection() !== $card->getCollection()
+            && $this->card->getCollection() !== null && $card->getCollection() !== null) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
     }
@@ -108,7 +109,8 @@ class Recipe
     {
         $this->ingredient2 = $card;
 
-        if ($this->card->getCollection() !== $card->getCollection()) {
+        if ($this->card->getCollection() !== $card->getCollection()
+            && $this->card->getCollection() !== null && $card->getCollection() !== null) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
     }
@@ -128,7 +130,8 @@ class Recipe
     {
         $this->ingredient3 = $card;
 
-        if ($this->card->getCollection() !== $card->getCollection()) {
+        if ($this->card->getCollection() !== $card->getCollection()
+            && $this->card->getCollection() !== null && $card->getCollection() !== null) {
             $this->card->getCollection()->addRelatedCollection($card->getCollection());
         }
     }
