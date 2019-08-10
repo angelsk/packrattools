@@ -45,7 +45,7 @@ class PackratRecipesCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $collectionApiId = 703; // Hardcoded for now
+        $collectionApiId = 743; // Hardcoded for now
 
         $collection = $this->packratApi->getCollection($collectionApiId);
         $dbCollection = $this->getCollectionFromDatabase($collectionApiId);
@@ -111,7 +111,7 @@ class PackratRecipesCommand extends Command
                 $collection = $ing['collection'];
                 $related = [];
 
-                if ($collection['related_collection_id'] !== '0') {
+                if (isset($collection['related_collection_id']) && $collection['related_collection_id'] !== '0') {
                     $related = explode(',', $collection['related_collection_id']);
                 }
 
