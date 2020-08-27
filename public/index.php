@@ -15,7 +15,7 @@ if (!isset($_SERVER['APP_ENV'])) {
             'or add "symfony/dotenv" as a Composer dependency to load variables from a .env file.'
         );
     }
-    (new Dotenv())->load(__DIR__.'/../.env');
+    (new Dotenv())->load(__DIR__.'/../.env.local');
 }
 
 $env = $_SERVER['APP_ENV'] ?? 'dev';
