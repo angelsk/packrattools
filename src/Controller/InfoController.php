@@ -33,7 +33,7 @@ class InfoController extends AbstractController
      * @param FeatService $featService
      * @param FamilyService $familyService
      *
-     * @Route("/info/", name="info")
+     * @Route("/api/info/", name="info")
      */
     public function index(
         Request $request,
@@ -75,7 +75,7 @@ class InfoController extends AbstractController
     }
 
     /**
-     * @Route("/info/collection/{identifier}", name="collection")
+     * @Route("/api/info/collection/{identifier}", name="collection")
      */
     public function collection(Collection $collection)
     {

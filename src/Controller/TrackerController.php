@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class TrackerController extends AbstractController
 {
     /**
-     * @Route("/tracker", name="tracker")
+     * @Route("/api/tracker", name="tracker")
      */
     public function index()
     {

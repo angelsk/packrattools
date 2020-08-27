@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MockupController extends AbstractController
 {
     /**
-     * @Route("/mockup", name="mockup")
+     * @Route("/api/mockup", name="mockup")
      */
     public function index()
     {
