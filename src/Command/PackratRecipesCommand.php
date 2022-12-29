@@ -4,6 +4,7 @@ namespace App\Command;
 
 use App\Service\PackratApi;
 use Doctrine\ORM\EntityManagerInterface;
+use GuzzleHttp\Exception\RequestException;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
@@ -38,14 +39,14 @@ class PackratRecipesCommand extends Command
 
     protected function configure()
     {
-        $this->setDescription('Process recipes from the Packrat API');
+        $this->setDescription('Process recipes from the Packrat API for the special collections');
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
 
-        $collectionApiId = 743; // Hardcoded for now
+        $collectionApiId = 943; // Hardcoded for 900th
 
         $collection = $this->packratApi->getCollection($collectionApiId);
         $dbCollection = $this->getCollectionFromDatabase($collectionApiId);
@@ -56,19 +57,37 @@ class PackratRecipesCommand extends Command
         foreach ($collection['cards'] as $packratCardId) {
             $card = $this->packratApi->getCard($packratCardId);
             $dbCard = $this->getCardFromDatabase($packratCardId);
+
             $recipe = [];
             $relatedCollectionIds = [$dbCollection['collection_id']];
 
-            foreach ($card['recipe'] as $packratRecipeId) {
-                $recipeCard = $this->packratApi->getCard($packratRecipeId);
-                $dbRecipeCard = $this->getCardFromDatabase($packratRecipeId);
-                $recipeCollection = $this->getCollectionFromDatabase($recipeCard['collection_id']);
-                $recipe[] = [
-                    'api' => $recipeCard,
-                    'db' => $dbRecipeCard,
-                    'collection' => $recipeCollection
-                ];
-                $relatedCollectionIds[] = $recipeCollection['collection_id'];
+            if (isset($card['recipe'])) {
+                foreach ($card['recipe'] as $packratRecipeId) {
+                    try {
+                        $recipeCard = $this->packratApi->getCard($packratRecipeId);
+                    } catch (RequestException $exception) {
+                        // Not found
+                        $recipeCard = [];
+                    }
+                    $dbRecipeCard = $this->getCardFromDatabase($packratRecipeId);
+
+                    if (empty($recipeCard) && empty($dbRecipeCard)) {
+                        break;
+                    }
+
+                    $recipeCollection = $this->getCollectionFromDatabase($recipeCard['collection_id']);
+                    $recipe[] = [
+                        'api' => $recipeCard,
+                        'db' => $dbRecipeCard,
+                        'collection' => $recipeCollection,
+                    ];
+                    $relatedCollectionIds[] = $recipeCollection['collection_id'];
+                }
+            }
+
+            if (3 !== count($recipe)) {
+                $io->error('[ERROR] Missing recipe for ' . $dbCard['card_name']);
+                continue;
             }
 
             $io->block(
@@ -146,9 +165,9 @@ class PackratRecipesCommand extends Command
             WHERE c.packrat_id = :packrat_id
         ';
         $stmt = $conn->prepare($sql);
-        $stmt->execute(['packrat_id' => $packratId]);
+        $result = $stmt->executeQuery(['packrat_id' => $packratId]);
 
-        return $stmt->fetchAll()[0];
+        return $result->fetchAssociative();
     }
 
     private function getCardFromDatabase(int $packratId): array
@@ -160,8 +179,8 @@ class PackratRecipesCommand extends Command
             WHERE c.packrat_id = :packrat_id
         ';
         $stmt = $conn->prepare($sql);
-        $stmt->execute(['packrat_id' => $packratId]);
+        $result = $stmt->executeQuery(['packrat_id' => $packratId]);
 
-        return $stmt->fetchAll()[0];
+        return $result->fetchAssociative();
     }
 }

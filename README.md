@@ -1,5 +1,11 @@
 # Packrat Tools website
 
+## Update X00th collections
+
+- Update `$collectionApiId` with Packrat's collection ID
+- Export live DB and import into packrat_tools_live locally
+- Run `bin/console packrat:recipes`
+
 ## Tests
 
 * Run specs: `vendor/bin/phpspec run`
