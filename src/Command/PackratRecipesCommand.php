@@ -6,9 +6,7 @@ use App\Service\PackratApi;
 use Doctrine\ORM\EntityManagerInterface;
 use GuzzleHttp\Exception\RequestException;
 use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 use Symfony\Component\Console\Style\SymfonyStyle;
 
@@ -16,19 +14,10 @@ class PackratRecipesCommand extends Command
 {
     protected static $defaultName = 'packrat:recipes';
 
-    /**
-     * @var PackratApi
-     */
-    private $packratApi;
+    private PackratApi $packratApi;
 
-    /**
-     * @var EntityManagerInterface
-     */
-    private $entityManager;
+    private EntityManagerInterface $entityManager;
 
-    /**
-     * @param PackratApi $packratApi
-     */
     public function __construct(PackratApi $packratApi, EntityManagerInterface $entityManager)
     {
         $this->packratApi = $packratApi;
@@ -37,7 +26,7 @@ class PackratRecipesCommand extends Command
         parent::__construct();
     }
 
-    protected function configure()
+    protected function configure(): void
     {
         $this->setDescription('Process recipes from the Packrat API for the special collections');
     }
@@ -165,9 +154,7 @@ class PackratRecipesCommand extends Command
             WHERE c.packrat_id = :packrat_id
         ';
         $stmt = $conn->prepare($sql);
-        $result = $stmt->executeQuery(['packrat_id' => $packratId]);
-
-        return $result->fetchAssociative();
+        return $stmt->executeQuery(['packrat_id' => $packratId])->fetchAssociative();
     }
 
     private function getCardFromDatabase(int $packratId): array
@@ -179,8 +166,6 @@ class PackratRecipesCommand extends Command
             WHERE c.packrat_id = :packrat_id
         ';
         $stmt = $conn->prepare($sql);
-        $result = $stmt->executeQuery(['packrat_id' => $packratId]);
-
-        return $result->fetchAssociative();
+        return $stmt->executeQuery(['packrat_id' => $packratId])->fetchAssociative();
     }
 }
