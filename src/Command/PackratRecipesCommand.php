@@ -31,11 +31,12 @@ class PackratRecipesCommand extends Command
         $this->setDescription('Process recipes from the Packrat API for the special collections');
     }
 
+    // bin/console packrat:recipes > xxxcollection.sql
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $io = new SymfonyStyle($input, $output);
 
-        $collectionApiId = 943; // Hardcoded for 900th
+        $collectionApiId = 976; // Hardcoded for treasure hunt
 
         $collection = $this->packratApi->getCollection($collectionApiId);
         $dbCollection = $this->getCollectionFromDatabase($collectionApiId);
