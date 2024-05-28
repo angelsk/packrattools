@@ -36,7 +36,8 @@ class PackratRecipesCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $collectionApiId = 976; // Hardcoded for treasure hunt
+        $collectionApiId = 1001; // Hardcoded for mythic treasure hunt
+        //$collectionApiId = 493; // Special items
 
         $collection = $this->packratApi->getCollection($collectionApiId);
         $dbCollection = $this->getCollectionFromDatabase($collectionApiId);
