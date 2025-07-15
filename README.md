@@ -3,8 +3,8 @@
 ## Update X00th collections
 
 - Update `$collectionApiId` with Packrat's collection ID
-- Export live DB and import into packrat_tools_live locally
-- Run `bin/console packrat:recipes`
+- Export live DB and import into `packrat_tools_live` DB locally
+- Run `bin/console packrat:recipes > xxxcollection.sql`
 
 ## Tests
 
