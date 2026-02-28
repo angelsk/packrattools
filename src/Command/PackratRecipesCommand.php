@@ -36,10 +36,10 @@ class PackratRecipesCommand extends Command
     {
         $io = new SymfonyStyle($input, $output);
 
-        $collectionApiId = 1059; // Magical Treasure Hunt
+        //$collectionApiId = 1059; // Magical Treasure Hunt
         //$collectionApiId = 1043; // 1000th
         //$collectionApiId = 1001; // Mythic Treasure Hunt
-        //$collectionApiId = 493; // Special items
+        $collectionApiId = 493; // Special items
 
         $collection = $this->packratApi->getCollection($collectionApiId);
         $dbCollection = $this->getCollectionFromDatabase($collectionApiId);
@@ -49,7 +49,7 @@ class PackratRecipesCommand extends Command
 
         foreach ($collection['cards'] as $packratCardId) {
             $card = $this->packratApi->getCard($packratCardId);
-            $dbCard = $this->getCardFromDatabase($packratCardId);
+            $dbCard = $this->getCardFromDatabase($packratCardId, $io);
 
             $recipe = [];
             $relatedCollectionIds = [$dbCollection['collection_id']];
@@ -62,7 +62,7 @@ class PackratRecipesCommand extends Command
                         // Not found
                         $recipeCard = [];
                     }
-                    $dbRecipeCard = $this->getCardFromDatabase($packratRecipeId);
+                    $dbRecipeCard = $this->getCardFromDatabase($packratRecipeId, $io);
 
                     if (empty($recipeCard) && empty($dbRecipeCard)) {
                         break;
@@ -161,7 +161,7 @@ class PackratRecipesCommand extends Command
         return $stmt->executeQuery(['packrat_id' => $packratId])->fetchAssociative();
     }
 
-    private function getCardFromDatabase(int $packratId): array
+    private function getCardFromDatabase(int $packratId, SymfonyStyle $io): array
     {
         $conn = $this->entityManager->getConnection();
 
@@ -170,6 +170,13 @@ class PackratRecipesCommand extends Command
             WHERE c.packrat_id = :packrat_id
         ';
         $stmt = $conn->prepare($sql);
-        return $stmt->executeQuery(['packrat_id' => $packratId])->fetchAssociative();
+        $card = $stmt->executeQuery(['packrat_id' => $packratId])->fetchAssociative();
+
+        if (false !== $card) {
+            return $card;
+        }
+
+        $io->error('[ERROR] Missing card in DB for ' . $packratId);
+        return [];
     }
 }
