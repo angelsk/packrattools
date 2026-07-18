@@ -39,7 +39,8 @@ class PackratRecipesCommand extends Command
         //$collectionApiId = 1059; // Magical Treasure Hunt
         //$collectionApiId = 1043; // 1000th
         //$collectionApiId = 1001; // Mythic Treasure Hunt
-        $collectionApiId = 493; // Special items
+        //$collectionApiId = 493; // Special items
+        $collectionApiId = 1143; // 1100th
 
         $collection = $this->packratApi->getCollection($collectionApiId);
         $dbCollection = $this->getCollectionFromDatabase($collectionApiId);
